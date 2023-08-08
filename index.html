@@ -1,57 +1,78 @@
 <!DOCTYPE html>
 <html>
-<link rel="icon" href="icon_path" type="image/icon type">
-  <head>
-    <title>Title of the document</title>
-    <link rel="icon" href="http://example.com/favicon.png">
-  </head>
+<head>
+    <title>Screenshots Gallery</title>
     <style>
-        .button {
-        background-color: #ff0000;
-        border: none;
-        color: rgb(255, 255, 255);
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2a2a2a;
+            color: #fff;
         }
-        .button2 {
-        background-color: #00ffbb;
-        border: none;
-        color: rgb(0, 0, 0);
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
         }
-        .button3 {
-        background-color: #ff0000;
-        border: none;
-        color: rgb(0, 0, 0);
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #444;
+            border: 1px solid #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        h1, h2 {
+            margin: 0 0 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+        .card {
+            background-color: #222;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
         }
     </style>
-  <body>
-    <button onclick="window.location.href='https://n8n.oakljen.com';"class="button">
-      N8N - Automation
-    </button>
-    <button onclick="window.location.href='https://www.youtube.com';"class="button2">
-      youtube
-    </button>
-    <button onclick="window.location.href='https://github.com/oakljen/oakljen.github.io';"class="button3">
-      Github Repo
-    </button>
-  </body>
+</head>
+<body>
+    <header>
+        <h1>Screenshots Gallery</h1>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>Form Screenshot</h2>
+            <img src="cardgame/Formpic.png" alt="Form Screenshot">
+        </div>
+
+        <div class="card">
+            <h2>Oakley's Cards</h2>
+            <img src="cardgame/Oakley.png" alt="Oakley's Cards Screenshot">
+        </div>
+
+        <div class="card">
+            <h2>Noah's Cards</h2>
+            <img src="cardgame/Noah.png" alt="Noah's Cards Screenshot">
+        </div>
+
+        <div class="card">
+            <h2>Brayden's Cards</h2>
+            <img src="cardgame/Brayden.png" alt="Brayden's Cards Screenshot">
+        </div>
+
+        <div class="card">
+            <h2>Dougal's Cards</h2>
+            <img src="cardgame/Dougal.png" alt="Dougal's Cards Screenshot">
+        </div>
+    </div>
+</body>
 </html>
