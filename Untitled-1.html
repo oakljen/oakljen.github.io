@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Chat</title>
+</head>
+<body>
+    <div id="chat">
+        <!-- Chat messages will be displayed here -->
+    </div>
+    
+    <input type="text" id="message" placeholder="Type your message">
+    <button id="send">Send</button>
+
+    <script>
+        const chat = document.getElementById("chat");
+        const messageInput = document.getElementById("message");
+        const sendButton = document.getElementById("send");
+
+        sendButton.addEventListener("click", () => {
+            const message = messageInput.value.trim();
+            if (message !== "") {
+                const messageElement = document.createElement("div");
+                messageElement.textContent = "You: " + message;
+                chat.appendChild(messageElement);
+                messageInput.value = "";
+
+                // Append the message to the chat log (for demonstration purposes)
+                appendMessageToLog(message);
+            }
+        });
+
+        function appendMessageToLog(message) {
+            const chatLog = document.getElementById("chat-log");
+            chatLog.textContent += "You: " + message + "\n";
+        }
+    </script>
+
+    <hr>
+    <h2>Chat Log</h2>
+    <pre id="chat-log"></pre>
+</body>
+</html>
