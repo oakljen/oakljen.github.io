@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Screenshots Gallery</title>
+    <title>DARE DECK</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #2a2a2a;
+            background-color: #000000;
             color: #fff;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .logo {
+            width: 60px; /* Adjust the width as needed */
+            height: 60px; /* Adjust the height as needed */
+            object-fit: contain;
+        }
+        nav {
+            background-color: #141414;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: #00e5ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #444;
-            border: 1px solid #333;
+            background-color: #141414;
+            border: 3px solid #00e5ff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-        }
-        h1, h2 {
-            margin: 0 0 20px;
         }
         img {
             max-width: 100%;
@@ -37,39 +54,55 @@
             border-radius: 5px;
         }
         .card {
-            background-color: #222;
+            background-color: #202020;
             padding: 10px;
             border: 1px solid #333;
             border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Screenshots Gallery</h1>
+        <img class="logo" src="cardgame/DARE DECK.png" alt="Dare Deck Logo">
+        <nav>
+            <a href="#screenshot">Dare Deck Screenshot</a>
+            <a href="#groupcard">Group Card</a>
+            <a href="#oakley">Oakley's Cards</a>
+            <a href="#noah">Noah's Cards</a>
+            <a href="#brayden">Brayden's Cards</a>
+            <a href="#dougal">Dougal's Cards</a>
+        </nav>
     </header>
     <div class="container">
-        <div class="card">
-            <h2>Form Screenshot</h2>
+        <div class="card" id="screenshot">
             <img src="cardgame/Formpic.png" alt="Form Screenshot">
         </div>
 
-        <div class="card">
+        <div class="card" id="groupcard">
+            <h2>Group Card</h2>
+            <img src="cardgame/Group_Card.png" alt="Group Card Screenshot">
+        </div>
+
+        <div class="card" id="oakley">
             <h2>Oakley's Cards</h2>
             <img src="cardgame/Oakley.png" alt="Oakley's Cards Screenshot">
         </div>
 
-        <div class="card">
+        <div class="card" id="noah">
             <h2>Noah's Cards</h2>
             <img src="cardgame/Noah.png" alt="Noah's Cards Screenshot">
         </div>
 
-        <div class="card">
+        <div class="card" id="brayden">
             <h2>Brayden's Cards</h2>
             <img src="cardgame/Brayden.png" alt="Brayden's Cards Screenshot">
         </div>
 
-        <div class="card">
+        <div class="card" id="dougal">
             <h2>Dougal's Cards</h2>
             <img src="cardgame/Dougal.png" alt="Dougal's Cards Screenshot">
         </div>
