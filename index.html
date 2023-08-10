@@ -63,22 +63,39 @@
             margin-right: auto;
             width: 100%;
         }
+        .card img {
+            display: block;
+            margin: 0 auto;
+        }
     </style>
+    <script>
+        function toggleCards(playerId) {
+            var cardSections = document.querySelectorAll('.card');
+            for (var i = 0; i < cardSections.length; i++) {
+                cardSections[i].style.display = 'none';
+            }
+            document.getElementById(playerId).style.display = 'block';
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleCards('screenshot'); // Show Dare Deck Screenshot by default
+        });
+    </script>
 </head>
 <body>
     <header>
         <img class="logo" src="cardgame/DARE DECK.png" alt="Dare Deck Logo">
         <nav>
-            <a href="#screenshot">Dare Deck Screenshot</a>
-            <a href="#groupcard">Group Card</a>
-            <a href="#oakley">Oakley's Cards</a>
-            <a href="#noah">Noah's Cards</a>
-            <a href="#brayden">Brayden's Cards</a>
-            <a href="#dougal">Dougal's Cards</a>
+            <a href="#screenshot" onclick="toggleCards('screenshot')">Dare Deck Screenshot</a>
+            <a href="#groupcard" onclick="toggleCards('groupcard')">Group Card</a>
+            <a href="#oakley" onclick="toggleCards('oakley')">Oakley's Cards</a>
+            <a href="#noah" onclick="toggleCards('noah')">Noah's Cards</a>
+            <a href="#brayden" onclick="toggleCards('brayden')">Brayden's Cards</a>
+            <a href="#dougal" onclick="toggleCards('dougal')">Dougal's Cards</a>
         </nav>
     </header>
     <div class="container">
         <div class="card" id="screenshot">
+            <h2>Dare Deck Screenshot</h2>
             <img src="cardgame/Formpic.png" alt="Form Screenshot">
         </div>
 
@@ -86,23 +103,27 @@
             <h2>Group Card</h2>
             <img src="cardgame/Group_Card.png" alt="Group Card Screenshot">
         </div>
-
-        <div class="card" id="oakley">
+        
+        <!-- Oakley's Cards -->
+        <div class="card" id="oakley" style="display: none;">
             <h2>Oakley's Cards</h2>
             <img src="cardgame/Oakley.png" alt="Oakley's Cards Screenshot">
         </div>
-
-        <div class="card" id="noah">
+        
+        <!-- Noah's Cards -->
+        <div class="card" id="noah" style="display: none;">
             <h2>Noah's Cards</h2>
             <img src="cardgame/Noah.png" alt="Noah's Cards Screenshot">
         </div>
-
-        <div class="card" id="brayden">
+        
+        <!-- Brayden's Cards -->
+        <div class="card" id="brayden" style="display: none;">
             <h2>Brayden's Cards</h2>
             <img src="cardgame/Brayden.png" alt="Brayden's Cards Screenshot">
         </div>
-
-        <div class="card" id="dougal">
+        
+        <!-- Dougal's Cards -->
+        <div class="card" id="dougal" style="display: none;">
             <h2>Dougal's Cards</h2>
             <img src="cardgame/Dougal.png" alt="Dougal's Cards Screenshot">
         </div>
