@@ -162,18 +162,124 @@
     margin-top: 40px;
     margin-bottom: 40px;
   }
+/* Style the form container */
+#custom-form {
+    margin: 0 auto; /* Center-align the form horizontally */
+    background-color: #000000;
+    padding: 20px;
+    border: 1px solid #00FFFF;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Style form inputs and labels */
+#custom-form input[type="text"],
+#custom-form input[type="number"] {
+    width: calc(100% - 24px); /* Adjust the width to account for padding and border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #00f7ff;
+    border-radius: 5px;
+    background-color: #000;
+    color: #00f7ff;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+#custom-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style the form button */
+#custom-form button {
+    background-color: #00e5ff;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#custom-form button:hover {
+    background-color: #00b8cc;
+}
+
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-    </style>
+  .radio-players {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    width: 200px; /* Adjust the width as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add margin between the player names */
+.radio-player {
+    display: inline-block;
+    width: 50%; /* Adjust the width as needed */
+    text-align: center;
+    margin-right: 10px; /* Add margin to create separation */
+}
+
+
+/* Optionally, add borders or other styling to separate the player options */
+
+  .radio-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    width: 200px; /* Adjust the width as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.radio-left, .radio-right {
+    display: inline-block;
+    width: 50%; /* Each option takes up half of the container width */
+    text-align: center; /* Center-align the text within each option */
+}
+
+/* Give the "No" option a left border and the "Yes" option a right border */
+.radio-left {
+    border-right: 1px solid #00e5ff;
+}
+
+.radio-right {
+    border-left: 1px solid #00e5ff;
+}
+
+
+ </style>
     <script>
+        
+
         function toggleCards(playerId) {
             var cardSections = document.querySelectorAll('.card');
             for (var i = 0; i < cardSections.length; i++) {
                 cardSections[i].style.display = 'none';
             }
             document.getElementById(playerId).style.display = 'block';
+        }
+
+        function toggleFormAndLeaderboard() {
+            var formSection = document.getElementById('custom-form');
+            var leaderboardSection = document.getElementById('leaderboard');
+
+            if (formSection.style.display === 'none' || formSection.style.display === '') {
+                formSection.style.display = 'block';
+                leaderboardSection.style.display = 'none';
+            } else {
+                formSection.style.display = 'none';
+                leaderboardSection.style.display = 'block';
+            }
         }
 
         function updateCountdown() {
@@ -205,12 +311,12 @@
     <header>
         <img class="logo" src="cardgame/DARE DECK.png" alt="Dare Deck Logo">
         <nav>
-            <a href="">Made With The Love Of Oakley :)</a>
+            <a href="#custom-form" onclick="toggleFormAndLeaderboard()">Form</a>
         </nav>
     </header>
     <div class="container">
-
-        <div id="display">
+        <section id="leaderboard" class="hide">
+            <div id="display">
             <div id="loader"> 
                 <h4></h4> 
             </div>
@@ -219,8 +325,8 @@
             <div id="errorMessage"> 
                 <h2> Failed to get data. Please refresh </h2>
             </div>
-        </div>
-        <script>
+            </div>
+            <script>
             let allNamesElm = document.getElementById("allNames");
             let loaderElm = document.getElementById("loader");
             let errorMessageElm = document.getElementById("errorMessage");
@@ -291,7 +397,53 @@
             }).catch(err =>{
                 setErrorDisplay();
             });
-        </script>
+            </script>
+        </section>
+
+        <section id="custom-form" style="display: none;">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSe4kJnSwFDUefNOQzVsm-XHkzRvF5-dKE0KHbjrPWlgc_u97g/formResponse">
+                <div class="radio-players">
+                    <label class="radio-player">
+                        <input type="radio" name="entry.1874815004" value="Oakley"> Oakley
+                    </label>
+                    <label class="radio-player">
+                        <input type="radio" name="entry.1874815004" value="Noah"> Noah
+                    </label>
+                    <label class="radio-player">
+                        <input type="radio" name="entry.1874815004" value="Brayden"> Brayden
+                    </label>
+                    <label class="radio-player">
+                        <input type="radio" name="entry.1874815004" value="Dougal"> Dougal
+                    </label>
+                </div>
+                <!-- Add more radio buttons as needed -->
+        
+                <label for="cardNumber">Card Number (1-73):</label>
+                <input type="number" name="entry.1758743432" id="cardNumber" placeholder="Card Number" min="1" max="73" required>
+        
+                <label for="completed">Completed:</label>
+                <div class="radio-options">
+                    <label class="radio-left">
+                        <input type="radio" name="entry.558366927" id="completed-no" value="No" required>
+                        No
+                    </label>
+                    <label class="radio-right">
+                        <input type="radio" name="entry.558366927" id="completed-yes" value="Yes">
+                        Yes
+                    </label>
+                </div>
+        
+                <label for="witness">Witness:</label>
+                <input type="text" name="entry.985377143" id="witness" placeholder="Witness">
+        
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        
+        
+
+</body>
+</html>
         <div class="countdown" id="countdown">
             <strong>Next month starts in:</strong>
             <div id="countdown-display"></div>
