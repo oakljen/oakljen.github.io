@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakley's Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(90deg, #02002e, #004726);
+            background-size: 200% 200%;
+            animation: gradientShift 8s infinite alternate ease-in-out;
+            margin: 0;
+            padding: 20px;
+            color: rgb(0, 0, 0);
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid #007bff;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        #snapchat:hover {
+            background-color: rgb(241, 241, 0);
+            color: black;
+        }
+        #github:hover {
+            background-color: black;
+            color: white;
+        }
+        #whatsapp:hover {
+            background-color: rgb(0, 156, 0);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="media/profile.jpg" alt="Your Profile Picture" class="profile-img">
+        <h1>Oakley's Links</h1>
+        <a class="link" id="snapchat" href="https://www.snapchat.com/add/oakleyjenke" target="_blank">Snapchat</a>
+        <a class="link" id="github" href="https://github.com/oakljen" target="_blank">GitHub</a>
+        <a class="link" id="whatsapp" href="https://oakljen.com/whatsapp" target="_blank">Whatsapp</a>
+    </div>
+</body>
+</html>
