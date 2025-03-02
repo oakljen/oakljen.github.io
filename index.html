@@ -3,146 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oakley's Tech Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Oakley Jenke</title>
     <style>
         body {
             background-color: #121212;
             color: #e0e0e0;
             font-family: 'Courier New', Courier, monospace;
-        }
-        header, footer {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        header {
             padding: 1em;
+            margin-top: -8vh;
+        }
+        h1 {
+            font-size: clamp(3rem, 5vw, 10rem);
+            font-family: 'Space Mono', monospace;
+            color: white;
+            padding: 0rem clamp(1rem, 2vw, 3rem);
+            border-radius: clamp(0.4rem, 1vw, 1rem);
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.01), rgba(0, 255, 204, 0.05));
+            box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.5);
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+        p {
+            margin-top: -5px;
+            font-size: 1.2em;
+        }
+        nav {
+            margin-top: -8vh;
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
         }
         nav ul li {
             display: inline;
-            margin: 0 15px;
         }
         nav ul li a {
             color: #00ffcc;
             text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s;
         }
-        section {
-            margin: 2em 0;
+        nav ul li a:hover {
+            color: #ffcc00;
         }
-        h2 {
-            color: #00ffcc;
-        }
-        .project-list {
+        .container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
         }
-        .project-item {
+        .content-box {
+            padding: 2em;
+            border: 1px solid #00ffcc;
+            border-radius: 10px;
             background-color: #1e1e1e;
-            padding: 1em;
-            border-radius: 8px;
-            width: calc(33% - 2em);
+            box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
         }
-        .project-item a {
-            color: #00ffcc;
-            text-decoration: none;
-        }
-        .project-item a:hover {
-            text-decoration: underline;
-        }
-        .project-item p {
-            color: #a0a0a0;
-        }
-        @media (max-width: 768px) {
-            .project-item {
-                width: calc(50% - 2em);
-            }
-        }
-        @media (max-width: 480px) {
-            .project-item {
-                width: 100%;
-            }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            padding: 1em 0;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Oakley's Tech Hub</h1>
-        <p>Exploring automation, AI, and cutting-edge tech projects.</p>
+        <h1 id="hacked-text" data-value="Oakley Jenke">Oakley Jenke</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#automation">Home Automation</a></li>
-            <li><a href="#hardware">Hardware Setup</a></li>
-            <li><a href="#3dprinting">3D Printing</a></li>
-            <li><a href="#github">GitHub</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="socials.html">Socials</a></li>
         </ul>
     </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm Oakley! I specialize in home automation, AI, and hardware projects. From integrating smart home devices to training AI models, I thrive on making technology work smarter.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li>Home Automation with Home Assistant</li>
-            <li>AI Training Project (Goal: 6,000 epochs)</li>
-            <li>3D Modeling & Printing</li>
-            <li>GPU-Accelerated Data Matching</li>
-            <li>Custom NFC Linktree for Social Links</li>
-            <li>Integration of Clipsal Wiser, Crestron, and C-Bus</li>
-            <li>Flight & Racing Sim Setup</li>
-        </ul>
-    </section>
-    <section id="automation">
-        <h2>Home Automation Setup</h2>
-        <p>Running Home Assistant on an Intel NUC with x86 architecture, integrating:</p>
-        <ul>
-            <li>Clipsal Wiser with C-Bus</li>
-            <li>Crestron System</li>
-            <li>Ness Alarm (via M1 App)</li>
-            <li>Philips Hue Smart Lighting</li>
-            <li>Pooled Energy Management</li>
-            <li>Custom Dashboard with Mushroom Cards & Button Cards</li>
-        </ul>
-    </section>
-    <section id="hardware">
-        <h2>Hardware Setup</h2>
-        <ul>
-            <li><strong>Server:</strong> Intel NUC running Home Assistant</li>
-            <li><strong>Networking:</strong> Powerline Ethernet for stable connectivity</li>
-            <li><strong>Microphone:</strong> Elgato Wave:3</li>
-            <li><strong>Headphones:</strong> Logitech Pro X Wireless</li>
-            <li><strong>3D Printer:</strong> Utilizing Bambu Labs Slicer for high-quality prints</li>
-        </ul>
-    </section>
-    <section id="3dprinting">
-        <h2>3D Printing</h2>
-        <p>Engaged in 3D modeling projects, including car models, for custom printing endeavors. Leveraging Bambu Labs Slicer to optimize prints and enhance quality.</p>
-    </section>
-    <section id="github">
-        <h2>GitHub Projects</h2>
-        <div class="project-list">
-            <!-- Example Project Item -->
-            <div class="project-item">
-                <h3><a href="https://github.com/oakljen/Pranks" target="_blank">Pranks</a></h3>
-                <p>A collection of executable pranks developed for entertainment purposes.</p>
-            </div>
-            <!-- Additional projects can be added here -->
+    <div class="container">
+        <div class="content-box">
+            <p>Website under construction. Stay tuned!</p>
         </div>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Connect with me through my <a href="#">Linktree</a> for social links or scan the NFC card for direct access.</p>
-    </section>
+    </div>
     <footer>
         <p>&copy; 2025 Oakley. All rights reserved.</p>
     </footer>
+    <script>
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let iteration = 0;
+        let textElement = document.querySelector("#hacked-text");
+        let originalText = textElement.dataset.value;
+        let interval = setInterval(() => {
+            textElement.innerText = originalText
+                .split("")
+                .map((letter, index) => {
+                    if (index < iteration) {
+                        return originalText[index];
+                    }
+                    return letters[Math.floor(Math.random() * 26)];
+                })
+                .join("");
+            if (iteration >= originalText.length) {
+                clearInterval(interval);
+            }
+            iteration += 1 / 3;
+        }, 30);
+    </script>
 </body>
-</html
-::contentReference[oaicite:10]{index=10}
- 
+</html>
