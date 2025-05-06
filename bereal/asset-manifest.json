@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/bereal/static/css/main.f855e6bc.css",
-    "main.js": "/bereal/static/js/main.9e3ed1c3.js",
+    "main.js": "/bereal/static/js/main.ce9c72eb.js",
     "static/js/453.d156a595.chunk.js": "/bereal/static/js/453.d156a595.chunk.js",
     "service-worker.js": "/bereal/service-worker.js",
     "index.html": "/bereal/index.html",
     "main.f855e6bc.css.map": "/bereal/static/css/main.f855e6bc.css.map",
-    "main.9e3ed1c3.js.map": "/bereal/static/js/main.9e3ed1c3.js.map",
+    "main.ce9c72eb.js.map": "/bereal/static/js/main.ce9c72eb.js.map",
     "453.d156a595.chunk.js.map": "/bereal/static/js/453.d156a595.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.9e3ed1c3.js"
+    "static/js/main.ce9c72eb.js"
   ]
 }
