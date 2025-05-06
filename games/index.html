@@ -1,1 +1,19 @@
-<meta http-equiv="refresh" content="0; url=https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Autoplay Audio</title>
+</head>
+<body>
+  <audio id="bg-audio" src="media/media1.MP3"></audio>
+
+  <script>
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('bg-audio');
+      audio.play().catch((e) => {
+        console.log("Autoplay failed:", e);
+      });
+    });
+  </script>
+</body>
+</html>
