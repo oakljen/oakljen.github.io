@@ -17,3 +17,16 @@ button {
   padding: 0.5rem 1rem;
   margin: 0.5rem;
 }
+
+#scoreboard {
+  margin-top: 2rem;
+}
+
+#scoreboard ul {
+  list-style: none;
+  padding: 0;
+}
+
+#scoreboard li {
+  margin: 0.25rem 0;
+}
