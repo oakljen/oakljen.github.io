@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Location Game</h1>
+  </header>
+  <main>
+    <button id="login-btn">Sign in with Google</button>
+    <button id="logout-btn" style="display:none;">Sign Out</button>
+    <p id="user-info"></p>
+    <p id="score-display">Score: 0</p>
+    <button id="check-location" style="display:none;">Check Location</button>
+    <p id="result"></p>
+    <section id="scoreboard">
+      <h2>Top Players</h2>
+      <ul id="leaderboard"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
