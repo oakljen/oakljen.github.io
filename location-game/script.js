@@ -1,11 +1,11 @@
 // Firebase configuration - replace with your own credentials
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDszjPNZDTZBNHc_Vfl5RrRt7ycpnLNBFI",
+  authDomain: "location-81172.firebaseapp.com",
+  projectId: "location-81172",
+  storageBucket: "location-81172.firebasestorage.app",
+  messagingSenderId: "199121467881",
+  appId: "1:199121467881:web:c8b2569016b1b581a33378"
 };
 
 firebase.initializeApp(firebaseConfig);
