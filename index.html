@@ -1,128 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oakley Jenke</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-        header {
-            padding: 1em;
-            margin-top: -8vh;
-        }
-        h1 {
-            font-size: clamp(3rem, 5vw, 10rem);
-            font-family: 'Space Mono', monospace;
-            color: white;
-            padding: 0rem clamp(1rem, 2vw, 3rem);
-            border-radius: clamp(0.4rem, 1vw, 1rem);
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.01), rgba(0, 255, 204, 0.05));
-            box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.5);
-            position: relative;
-            display: inline-block;
-            text-transform: uppercase;
-            overflow: hidden;
-        }
-        p {
-            margin-top: -5px;
-            font-size: 1.2em;
-        }
-        nav {
-            margin-top: -8vh;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-        nav ul li {
-            display: inline;
-        }
-        nav ul li a {
-            color: #00ffcc;
-            text-decoration: none;
-            font-size: 1.5em;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1;
-        }
-        .content-box {
-            padding: 2em;
-            border: 1px solid #00ffcc;
-            border-radius: 10px;
-            background-color: #1e1e1e;
-            box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
-        }
-        footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
-            padding: 1em 0;
-            font-size: 0.9em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oakley Jenke</title>
+  <style>
+    body {
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+      color: #e0e0e0;
+      background: linear-gradient(120deg, #02002e, #004726);
+      background-size: 200% 200%;
+      animation: gradientShift 8s infinite alternate ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    .hero {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #00ffcc;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin: 0.5rem 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-size: 1.25rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1 id="hacked-text" data-value="Oakley Jenke">Oakley Jenke</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="socials.html">Socials</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="content-box">
-            <p>Website under construction. Stay tuned!</p>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; 2025 Oakley. All rights reserved.</p>
-    </footer>
-    <script>
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let iteration = 0;
-        let textElement = document.querySelector("#hacked-text");
-        let originalText = textElement.dataset.value;
-        let interval = setInterval(() => {
-            textElement.innerText = originalText
-                .split("")
-                .map((letter, index) => {
-                    if (index < iteration) {
-                        return originalText[index];
-                    }
-                    return letters[Math.floor(Math.random() * 26)];
-                })
-                .join("");
-            if (iteration >= originalText.length) {
-                clearInterval(interval);
-            }
-            iteration += 1 / 3;
-        }, 30);
-    </script>
+  <div class="hero">
+    <img src="media/profile.jpg" alt="Oakley Jenke">
+    <h1 id="hacked-text" data-value="Oakley Jenke">Oakley Jenke</h1>
+    <p>A place for my projects and experiments.</p>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="linktree.html">Socials</a></li>
+      <li><a href="bingo/">Bingo</a></li>
+      <li><a href="onshot/">Onshot</a></li>
+      <li><a href="location-game/">Location Game</a></li>
+    </ul>
+  </nav>
+  <footer>
+    <p>&copy; 2025 Oakley. All rights reserved.</p>
+  </footer>
+  <script>
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let iteration = 0;
+    let textElement = document.querySelector("#hacked-text");
+    let originalText = textElement.dataset.value;
+    let interval = setInterval(() => {
+      textElement.innerText = originalText
+        .split("")
+        .map((letter, index) => {
+          if (index < iteration) {
+            return originalText[index];
+          }
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+      if (iteration >= originalText.length) {
+        clearInterval(interval);
+      }
+      iteration += 1 / 3;
+    }, 30);
+  </script>
 </body>
 </html>
