@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html leng="en">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <style>
+        .login-btn{
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        head {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        p {
+            color: #666;
+        }
+
+        #reel {
+            color: #afafaf;
+            font-weight: bold;
+        }
+        #reel:hover {
+            color: #ff0000;
+            text-decoration: underline;
+        }
+
+        .step2images {
+            display: flex;
+            gap: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            height: 60px;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+        background-color: #111;
+        }
+    </style>
+    <script>
+    function updateCountdown() {
+        const now = new Date();
+        const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1, 0, 0, 0, 0);
+        const diff = nextMonth - now;
+
+        const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown').textContent =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    });
+
+    window.addEventListener('load', fetchIpInfo);
+
+    async function fetchIpInfo() {
+        const ipEl  = document.getElementById('ipInfo');   // where to show the IP
+        const outEl = document.getElementById('output');   // optional debug area
+
+        try {
+        const res = await fetch('https://free.freeipapi.com/api/json');
+        if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+        const data = await res.json();
+
+        // Show IP
+        ipEl.textContent = data.ipAddress ?? 'unknown';
+
+        // If you want to dump the whole payload:
+        if (outEl) outEl.textContent = JSON.stringify(data, null, 2);
+        } catch (err) {
+        ipEl.textContent = 'unknown';
+        if (outEl) outEl.textContent = 'Failed to fetch IP info:\n' + err.message;
+        console.error(err);
+        }
+    }
+    </script>
+    <head>
+        <title>Not Scam</title>
+        <meta charset="UTF-8">
+        <div class="header">
+            <ul class="nav">
+                <li><a href="https://cornhub.website">Home</a></li>
+                <li><a href="https://cornhub.website/about">About</a></li>
+                <li><a href="https://cornhub.website/contact">Contact</a></li>
+                <li><a href="https://cornhub.website/privacy">Privacy Policy</a></li>
+                <button style="float:right" class="login-btn" onclick="alert('Login functionality not implemented yet!')">Login</button>
+            </ul>
+        </div>
+    </head>
+    <body>
+        <h1>Welcome <span id="ipInfo">loading…</span> 😁</h1>
+        <h1>How to get rich quick (trust no scam)</h1>
+
+        <h2>Step 1. Support my bros over at download <a href="https://cornhub.website">freeR4m.com</a> </h2>
+        <p>Me and these bros go <em>wayyyy</em> back and they can hook you up with an additional virtual stick of <strong>DDR16 156GB</strong> ram</p>
+
+        <h2>Step 2. Bee a <abbr id="reel" title="Real Emos and EGirls League">REEL</abbr> won and join my onlin cause</h2>
+        <p>Yo my gee, aftr u cumplete step 1 yall wanna make shore u enroll in MY very own dropshiping cause to becum the rl hustler. All over causes r jus total bs</p>
+        <div class="#about">
+            <p>My cause is the only one that will teach you how to make money by selling <strong>nothing</strong> to people who want to buy <strong>everything</strong>.</p>
+            <p>Sign up now and get a free e-book on "How to Sell Air"! <em class="aloysius">(co-authored by Aloysius O' Hare)</em></p>
+            <div class="step2images">
+                <img src="https://static.wikia.nocookie.net/rise-of-the-brave-tangled-dragons/images/0/0c/Aloysius_O%27Hare.jpg/revision/latest?cb=20160806104825">
+                <img src="https://www.shutterstock.com/image-photo/stack-books-against-background-library-260nw-2459213053.jpg" alt="Aloysius O'Hare">
+            </div>
+
+        <h2>Step 3. Send feet picks to me mate (not me)</h2>
+        <p>Anyting wil do (man or wo man; smol or big; calluseed or nah), send to feetsnifer3000@HOTmail.com trust the prosses my man ;) or wo man or what eves I dont discrimineight</p>
+        <h2>Step 4. Meet me</h2>
+        <p>I queit freqently visit the back of the locall macca's for other unrelated bisnus butt u can find me there at, my next meet up is in <span class="countdown" id="countdown">9d 4h 20m 31</span></p>
+
+        <form>
+            <input type="file" id="myFile" name="filename">
+            <input type="submit">
+        </form>
+    </body>
+    <footer style="background-color:#222; color:#fff; padding:30px 0; margin-top:40px; font-size:16px;">
+        <div style="max-width:1000px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1; min-width:200px; margin-bottom:20px;">
+                <h3 style="margin-top:0; color:#4CAF50;">Not Scam Inc.</h3>
+                <p style="margin:0;">Empowering hustlers since 2025.<br>Learn, earn, and have fun!</p>
+            </div>
+            <div style="flex:1; min-width:200px; margin-bottom:20px;">
+                <h4 style="margin-bottom:8px; color:#4CAF50;">Contact</h4>
+                <p style="margin:0;">Email: <a href="mailto:info@notscam.com" style="color:#fff; text-decoration:underline;">info@notscam.com</a></p>
+                <p style="margin:0;">Phone: <a href="tel:+123" style="color:#fff; text-decoration:underline;">+6 (969) 420-711</a></p>
+            </div>
+            <div style="flex:1; min-width:200px; margin-bottom:20px;">
+                <h4 style="margin-bottom:8px; color:#4CAF50;">Follow Us</h4>
+                <a href="https://twitter.com" target="_blank" style="margin-right:12px; color:#fff; text-decoration:none; font-size:20px;">Twitter</a>
+                <a href="https://facebook.com" target="_blank" style="margin-right:12px; color:#fff; text-decoration:none; font-size:20px;">Facebook</a>
+                <a href="https://instagram.com" target="_blank" style="color:#fff; text-decoration:none; font-size:20px;">Instagram</a>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:20px; color:#aaa; font-size:14px;">
+            &copy; 2025 Not Scam Inc. All rights unreserved.
+        </div>
+    </footer>
+</html>
