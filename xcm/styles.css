@@ -1,0 +1,216 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   THEME VARIABLES
+   ───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Dark gray accent instead of red */
+  --accent: #5e5e5e;       /* primary accent color (dark gray) */
+  --accent-dark: #4a4a4a;  /* darker shade for hovers */
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("C:/Users/Desktop/Website/fonts/Harlow_Solid_Italic.ttf");
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GLOBAL RESET & BODY
+   ───────────────────────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(16, 16, 16);
+  color: white;
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   HEADER & NAVIGATION
+   ───────────────────────────────────────────────────────────────────────────── */
+.topHeader {
+  text-align: center;
+  color: white;
+  font-size: 4em;
+  margin: 1em 0;
+}
+/* ─────────────────────────────────────────────────────────────────────────────
+   HERO SECTION
+   ───────────────────────────────────────────────────────────────────────────── */
+.hero-image {
+  /* Half the viewport height */
+  height: 50vh;
+
+  /* Layered background with a dark-gray overlay */
+  background-image:
+    linear-gradient(rgba(32, 32, 32, 0.5), rgba(27, 27, 27, 0.438)),
+    url("media/edit.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  /* Block margin-collapse so headings below won’t leak through */
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: "Playfair Display";
+}
+
+.hero-text-main {
+  font-size: 100px;
+}
+.hero-text-sub {
+  font-size: 24px;
+  margin-top: 0.5em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MAIN CONTENT (if any)
+   ───────────────────────────────────────────────────────────────────────────── */
+.content {
+  text-align: center;
+  color: white;
+  padding: 2em 1em;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTACT SECTION
+   ───────────────────────────────────────────────────────────────────────────── */
+.contactme {
+  background-color: rgb(22, 22, 22);
+  padding: 2em 1em;
+  text-align: center;
+}
+
+/* Reset heading margins and apply dark-gray accent */
+.contactme .topHeader {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--accent);
+}
+
+.contactme-topHeader {
+  margin-bottom: 1em;
+  color: white;
+  font-size: 3em;
+  font-family: "Playfair Display";
+}
+
+/* Underline/separator using dark-gray accent */
+.separator {
+  width: 5%;
+  height: 2px;
+  margin: 0 auto 1.5em;
+  background-color: var(--accent);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTACT FORM
+   ───────────────────────────────────────────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(22, 22, 22);
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2em;
+  gap: 1em;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Inputs & textarea share the same base styling */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 3px solid #6e6e6e;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+/* Only allow vertical resizing on the message box */
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Floating label setup */
+.form-group label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  background: rgb(22,22,22);
+  padding: 0 4px;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+}
+
+/* When focused or when there’s content, float the label and color it */
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.05em;
+  left: 16px;
+  font-size: 0.75em;
+  color: var(--accent);
+}
+
+/* Focus state on the fields */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Submit button styling using dark-gray accent */
+.submit-button {
+  align-self: center;
+  margin-top: 1em;
+  padding: 12px 20px;
+  border: none;
+  background-color: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  scale: 2;
+}
+
+.submit-button:hover {
+  background-color: var(--accent-dark);
+  transform: scale(1.05);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────────────────────────────────────────────── */
+footer {
+  background-color: rgb(22, 22, 22);
+  color: rgb(94, 94, 94);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+}
