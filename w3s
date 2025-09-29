@@ -1,0 +1,10 @@
+<h1>W3Schools References for Form & Validation</h1>
+<ul>
+  <li><a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">HTML Forms</a></li>
+  <li><a href="https://www.w3schools.com/html/html_form_input_types.asp" target="_blank">HTML Input Types</a></li>
+  <li><a href="https://www.w3schools.com/Tags/att_input_type_tel.asp" target="_blank">HTML &lt;input type="tel"&gt;</a></li>
+  <li><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_tel" target="_blank">Tryit: &lt;input type="tel"&gt; Example</a></li>
+  <li><a href="https://www.w3schools.com/js/js_validation.asp" target="_blank">JavaScript Form Validation</a></li>
+  <li><a href="https://www.w3schools.com/js/js_validation_api.asp" target="_blank">JavaScript Validation API (Constraint Validation)</a></li>
+  <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_validation_html" target="_blank">Tryit: JS Validation Example</a></li>
+</ul>
