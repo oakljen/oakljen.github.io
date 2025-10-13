@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Penny's Pet Rescue{% endblock %}</title>
+  <link href="{% static 'PetRescue/styles/style.css' %}" rel="stylesheet" type="text/css"/>
+  <script src="{% static 'PetRescue/scripts/validation.js' %}"></script>
+  <style>
+
+  </style>
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  {% include 'partials/header.html' %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'partials/footer.html' %}
+
+  {% block extra_js %}{% endblock %}
+  
+  <script>
+  
+  </script>
+</body>
+</html>

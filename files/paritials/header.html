@@ -1,0 +1,51 @@
+{% load static %}
+<header>
+  <div class="nav-wrap">
+    <ul class="topnav">
+      <li class="logo" onclick="location.href='{% url 'home' %}';">
+        <img src="{% static 'PetRescue/media/logo_small.svg' %}" alt="Site logo">
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'home' %}selected{% else %}unselected{% endif %}">
+        <a href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'browse' %}selected{% else %}unselected{% endif %}">
+        <a href="{% url 'browse' %}">Browse</a>
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'contact' %}selected{% else %}unselected{% endif %}">
+        <a href="{% url 'contact' %}">Contact Us</a>
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'mission' %}selected{% else %}unselected{% endif %}">
+        <a href="{% url 'mission' %}">Our Mission</a>
+      </li>
+      <li class="{% if request.resolver_match.url_name == 'donate' %}selected{% else %}unselected{% endif %} donate">
+        <a href="{% url 'donate' %}">Donate</a>
+      </li>
+      {% if request.resolver_match.url_name == 'home' %}
+      <li class="dog-slot" aria-hidden="true"></li>
+      {% endif %}
+      
+            {% if user.is_authenticated %}
+            <li class="user-chip">
+              <div class="dropdown" id="profileDropdownRoot">
+                <div class="user-chip-stack" id="profileToggle">
+                  {% if user.profile_picture %}
+                    <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                  {% endif %}
+                  <img class="profile-arrow" src="{% static 'media/arrow-down.svg' %}" alt="Arrow">
+                </div>
+                <div id="profileDropdownMenu" class="dropdown-content" role="menu">
+                  <a href="{% url 'profile' %}" role="menuitem">Profile</a>
+                  <a href="{% url 'browse' %}" role="menuitem">Browse Animals</a>
+                  <a href="{% url 'adopt' %}" role="menuitem">Adopt Animal</a>
+                  <a href="{% url 'logout' %}" role="menuitem">Logout</a>
+                </div>
+              </div>
+            </li>
+            {% else %}
+            <li class="login">
+              <a href="{% url 'login' %}">Login / Sign up</a>
+            </li>
+            {% endif %}
+    </ul>
+  </div>
+</header>

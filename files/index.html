@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Penny's Pet Rescue{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Page-specific paw + hero styles (kept minimal) */
+  :root{
+    --paw-size: 840px;
+    --paw-opacity: 0.08;
+    --paw-rotate: 35deg;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="paw">
+ 
+</div>
+
+<div class="page-content">
+  
+  </div>
+
+  {% if featured_pets %}
+  <div class="featured-pets">
+    <h2 style="width: 100%; text-align: center; margin-bottom: 30px;">Featured Pets</h2>
+    {% for pet in featured_pets %}
+    <div class="pet-card">
+      {% if pet.photo %}
+        <img src="{{ pet.photo.url }}" alt="{{ pet.name }}">
+      {% else %}
+        <img src="{% static 'PetRescue/media/dog.png' %}" alt="{{ pet.name }}">
+      {% endif %}
+      <h3>{{ pet.name }}</h3>
+      <p><strong>{{ pet.breed }}</strong> - {{ pet.age }} years old</p>
+      <p><strong>${{ pet.adoption_fee }}</strong></p>
+      <a href="{% url 'pet_detail' pet.animal_id %}" class="btn">View Details</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  function browsepet(){
+    document.location.href="{% url 'browse' %}";
+  }
+
+  function adoptPet(){
+    document.location.href="{% url 'adopt' %}";
+  }
+
+  function appointment(){
+    document.location.href="{% url 'contact' %}";
+  }
+</script>
+{% endblock %}
