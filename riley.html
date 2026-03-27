@@ -60,7 +60,7 @@ body {
 const CONFIG = {
   mateName: 'Riley',
   facePath: 'images/faces/',
-  wandererCount: 40,  // ← change this number to add more
+  wandererCount: 14,  // ← change this number to add more
 };
 
 let loadedFaces = [];
@@ -75,24 +75,13 @@ async function tryLoadImage(src) {
 }
 
 async function loadFaces() {
-  // Fetch the folder — any standard web server (Apache, Nginx, Python http.server,
-  // VS Code Live Server, etc.) will return a directory listing we can parse.
   try {
-    const res = await fetch(CONFIG.facePath);
-    const html = await res.text();
-    // Grab every image href from the listing
-    const matches = [...html.matchAll(/href="([^"?#]+\.(?:jpg|jpeg|png|gif|webp))"/gi)];
-    const filenames = [...new Set(matches.map(m => {
-      // Decode %5C etc, then split on both slash types, take just the filename
-      const decoded = decodeURIComponent(m[1]);
-      const parts = decoded.split(/[\\/]/);
-      return parts[parts.length - 1];
-    }))].filter(f => f.length > 0);    if (filenames.length > 0) {
-      const results = await Promise.all(filenames.map(f => tryLoadImage(CONFIG.facePath + f)));
-      loadedFaces = results.filter(Boolean);
-    }
+    const res = await fetch(CONFIG.facePath + 'files.json');
+    const json = await res.json();
+    const results = await Promise.all(json.files.map(f => tryLoadImage(CONFIG.facePath + f)));
+    loadedFaces = results.filter(Boolean);
   } catch (e) {
-    // No server / listing disabled — game still runs with colour placeholders
+    console.warn('Could not load files.json', e);
   }
   assignFaces();
 }

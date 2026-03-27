@@ -1,0 +1,1 @@
+node -e "const fs=require('fs'); const files=fs.readdirSync('.').filter(f=>/\.(jpg|jpeg|png|gif|webp)$/i.test(f)); fs.writeFileSync('files.json', JSON.stringify({files}))"
