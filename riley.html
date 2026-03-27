@@ -315,54 +315,18 @@ function drawSign(x,y,text,sub) {
   ctx.fillText(sub,x,y-8);
 }
 
-// Draw a face-blob wanderer: a face circle with tiny stick legs underneath
 function drawWanderer(w) {
-  const bob = Math.sin(globalTimer * 0.05 + w.bobPhase) * 2;
-  const cx = w.x, cy = w.y + bob;
-  const r = w.r;
-
-  ctx.save();
-  ctx.translate(cx, cy);
-  ctx.scale(w.squish, 2 - w.squish);
-
-  // Shadow
-  ctx.fillStyle = 'rgba(0,0,0,0.15)';
-  ctx.beginPath(); ctx.ellipse(0, r + 6, r * 0.7, 4, 0, 0, Math.PI * 2); ctx.fill();
-
-  // Stick legs
-  const legSwing = w.moving ? Math.sin(globalTimer * 0.25 + w.legPhase) * 8 : 0;
-  ctx.strokeStyle = '#5a3010';
-  ctx.lineWidth = 3;
-  ctx.lineCap = 'round';
-  // Left leg
-  ctx.beginPath();
-  ctx.moveTo(-4, r - 2);
-  ctx.lineTo(-7 + legSwing, r + 14);
-  ctx.stroke();
-  // Right leg
-  ctx.beginPath();
-  ctx.moveTo(4, r - 2);
-  ctx.lineTo(7 - legSwing, r + 14);
-  ctx.stroke();
-  // Tiny feet
-  ctx.strokeStyle = '#3a1e00';
-  ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(-7 + legSwing, r + 14); ctx.lineTo(-12 + legSwing, r + 14); ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(7 - legSwing, r + 14); ctx.lineTo(12 - legSwing, r + 14); ctx.stroke();
-
-  // Face circle
-  const fc = getFaceCanvas(w.face, r, w.color);
-  ctx.drawImage(fc, -r, -r, r * 2, r * 2);
-
-  // Glass shine
-  const shine = ctx.createRadialGradient(-r*0.25, -r*0.3, 0, 0, 0, r);
-  shine.addColorStop(0,   'rgba(255,255,255,0.28)');
-  shine.addColorStop(0.4, 'rgba(255,255,255,0.04)');
-  shine.addColorStop(1,   'rgba(0,0,0,0.08)');
-  ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2);
-  ctx.fillStyle = shine; ctx.fill();
-
-  ctx.restore();
+  const size = w.r * 2;
+  if (w.face) {
+    ctx.drawImage(w.face, w.x - w.r, w.y - w.r, size, size);
+  } else {
+    ctx.fillStyle = w.color;
+    ctx.fillRect(w.x - w.r, w.y - w.r, size, size);
+    ctx.fillStyle = '#fff';
+    ctx.font = `bold ${Math.floor(w.r * 0.9)}px Arial`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('?', w.x, w.y);
+  }
 }
 
 function drawPlayer() {
@@ -445,12 +409,7 @@ function updateWanderers() {
       if (Math.random() < 0.2) { w.dx = 0; w.dy = 0; }
     }
 
-    // Squish spring
-    w.squish  += w.squishV;
-    w.squishV -= (w.squish - 1) * 0.25;
-    w.squishV *= 0.75;
-    w.squish   = Math.max(0.85, Math.min(1.15, w.squish));
-
+    // Speed wobble for the tilt feel — no squish needed
     const nx = w.x + w.dx * w.speed;
     const ny = w.y + w.dy * w.speed;
     const margin = w.r + 2;
