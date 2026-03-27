@@ -60,13 +60,7 @@ body {
 const CONFIG = {
   mateName: 'Riley',
   facePath: 'images/faces/',
-  faceFiles: [
-    'face1.jpg','face2.jpg','face3.jpg','face4.jpg','face5.jpg','face6.jpg','face7.jpg','face8.jpg',
-    'face1.png','face2.png','face3.png','face4.png','face5.png',
-    'riley.jpg','riley.png','photo.jpg','photo.png','mugshot.jpg','mugshot.png',
-    '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg',
-    '1.png','2.png','3.png','4.png','5.png',
-  ],
+  wandererCount: 40,  // ← change this number to add more
 };
 
 let loadedFaces = [];
@@ -81,8 +75,25 @@ async function tryLoadImage(src) {
 }
 
 async function loadFaces() {
-  const results = await Promise.all(CONFIG.faceFiles.map(f => tryLoadImage(CONFIG.facePath + f)));
-  loadedFaces = results.filter(Boolean);
+  // Fetch the folder — any standard web server (Apache, Nginx, Python http.server,
+  // VS Code Live Server, etc.) will return a directory listing we can parse.
+  try {
+    const res = await fetch(CONFIG.facePath);
+    const html = await res.text();
+    // Grab every image href from the listing
+    const matches = [...html.matchAll(/href="([^"?#]+\.(?:jpg|jpeg|png|gif|webp))"/gi)];
+    const filenames = [...new Set(matches.map(m => {
+      // Decode %5C etc, then split on both slash types, take just the filename
+      const decoded = decodeURIComponent(m[1]);
+      const parts = decoded.split(/[\\/]/);
+      return parts[parts.length - 1];
+    }))].filter(f => f.length > 0);    if (filenames.length > 0) {
+      const results = await Promise.all(filenames.map(f => tryLoadImage(CONFIG.facePath + f)));
+      loadedFaces = results.filter(Boolean);
+    }
+  } catch (e) {
+    // No server / listing disabled — game still runs with colour placeholders
+  }
   assignFaces();
 }
 
@@ -179,7 +190,7 @@ const RING_COLORS = ['#ff6b6b','#ffa94d','#ffd43b','#a9e34b','#4dabf7','#cc5de8'
 
 const WANDER_BOUNDS = { x: 60, y: 500, w: 1060, h: 410 };
 
-const wanderers = Array.from({length: 14}, (_, i) => ({
+const wanderers = Array.from({length: CONFIG.wandererCount}, (_, i) => ({
   x: WANDER_BOUNDS.x + 40 + Math.random() * (WANDER_BOUNDS.w - 80),
   y: WANDER_BOUNDS.y + 40 + Math.random() * (WANDER_BOUNDS.h - 80),
   r: 18 + Math.random() * 10,           // radius of the face circle
