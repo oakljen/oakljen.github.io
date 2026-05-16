@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✈️ Auckland Bound 🥝 — Countdown</title>
+
+<!-- Discord / OpenGraph embed -->
+<meta property="og:type"        content="website"/>
+<meta property="og:url"         content="https://oakljen.github.io/countdown.html"/>
+<meta property="og:title"       content="✈️ Auckland Bound 🥝"/>
+<meta property="og:description"       content="⏳ 82d · 22h · 18m remaining&#10;🦸 Sydney, NSW  →  🥝 Auckland, NZ&#10;📅 Saturday 8 August 2026 · Tap for the live countdown!"/>
+<meta property="og:image"       content="https://oakljen.github.io/og-preview.png"/>
+<meta property="og:image:width"  content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name"   content="Auckland Countdown"/>
+
+<!-- Discord sidebar accent colour -->
+<meta name="theme-color" content="#38bdf8"/>
+
+<!-- Twitter / fallback -->
+<meta name="twitter:card"        content="summary_large_image"/>
+<meta name="twitter:title"       content="✈️ Auckland Bound 🥝"/>
+<meta name="twitter:description"      content="⏳ 82d · 22h · 18m remaining&#10;🦸 Sydney, NSW  →  🥝 Auckland, NZ&#10;📅 Saturday 8 August 2026 · Tap for the live countdown!"/>
+<meta name="twitter:image"       content="https://oakljen.github.io/og-preview.png"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #020508;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  /* ── Stars ── */
+  .stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .star  { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 3s infinite alternate; }
+  @keyframes twinkle {
+    from { opacity: 0.04; transform: scale(1); }
+    to   { opacity: 0.88; transform: scale(1.4); }
+  }
+
+  /* ── Aurora ── */
+  .aurora {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 30% at 20% 80%, rgba(0,180,130,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 25% at 80% 20%, rgba(80,60,220,0.05) 0%, transparent 70%),
+      radial-gradient(ellipse 70% 40% at 50% 50%, rgba(0,90,180,0.04) 0%, transparent 70%);
+  }
+
+  /* ── Layout ── */
+  .container {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 22px 16px 14px;
+    width: 100%; max-width: 860px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 999px;
+    padding: 5px 16px;
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, #7dd3f7 60%, #38bdf8 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  .route {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; font-size: clamp(0.8rem, 2vw, 1rem);
+    color: rgba(255,255,255,0.4); letter-spacing: 0.05em; margin-bottom: 20px;
+  }
+  .route .loc  { color: rgba(255,255,255,0.78); font-weight: 600; }
+  .route .arrow { animation: bounce-x 1.5s ease-in-out infinite; }
+  @keyframes bounce-x {
+    0%,100% { transform: translateX(0); }
+    50%     { transform: translateX(5px); }
+  }
+
+  /* ── Map ── */
+  .map-wrap {
+    position: relative; width: 100%; max-width: 720px;
+    margin: 0 auto 22px; border-radius: 18px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow:
+      0 0 0 1px rgba(56,189,248,0.07),
+      0 20px 60px rgba(0,0,0,0.8),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+
+  #map {
+    width: 100%; height: 360px;
+    background: #030b15;
+  }
+
+  /* Leaflet overrides */
+  .leaflet-container        { background: #030b15 !important; }
+  .leaflet-attribution-flag { display: none !important; }
+  .leaflet-control-attribution {
+    background: rgba(0,0,0,0.55) !important;
+    color: rgba(255,255,255,0.18) !important;
+    font-size: 9px !important; backdrop-filter: blur(4px);
+    border-radius: 6px 0 0 0 !important;
+  }
+  .leaflet-control-attribution a { color: rgba(255,255,255,0.25) !important; }
+
+  /* Marching ants on flight path */
+  @keyframes march { to { stroke-dashoffset: -17; } }
+
+  /* City pin keyframes (referenced by inline style) */
+  @keyframes pin-pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:0.45} }
+  @keyframes pin-ring  { 0%{transform:scale(1);opacity:0.55} 100%{transform:scale(3.8);opacity:0} }
+
+  /* ── Countdown ── */
+  .countdown {
+    display: flex; gap: clamp(8px,2.5vw,20px);
+    justify-content: center; margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .unit { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+  .num {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(56,189,248,0.22);
+    border-radius: 14px;
+    padding: clamp(14px,3vw,22px) clamp(16px,3.5vw,30px);
+    font-size: clamp(2.2rem,7.5vw,4.4rem);
+    font-weight: 900; min-width: clamp(78px,16vw,118px); line-height: 1;
+    color: #38bdf8;
+    text-shadow: 0 0 14px rgba(56,189,248,0.55), 0 0 32px rgba(56,189,248,0.2);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 24px rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .label {
+    font-size: clamp(0.6rem,1.4vw,0.75rem);
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.28); font-weight: 400;
+  }
+
+  /* ── Footer ── */
+  .footer-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; font-size: clamp(0.7rem,1.8vw,0.85rem);
+    color: rgba(255,255,255,0.22); letter-spacing: 0.08em; flex-wrap: wrap;
+  }
+  .footer-row .sep { opacity: 0.25; }
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="aurora"></div>
+
+<div class="container">
+  <div class="badge">🗓️ &nbsp; countdown &nbsp; 🗓️</div>
+  <h1>✈️ Auckland Bound 🥝</h1>
+  <div class="route">
+    <span class="loc">🦘 Sydney, NSW</span>
+    <span class="arrow">→</span>
+    <span class="loc">🌿 Auckland, NZ</span>
+  </div>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+  </div>
+
+  <div class="countdown">
+    <div class="unit"><div class="num" id="days">--</div><div class="label">🌙 Days</div></div>
+    <div class="unit"><div class="num" id="hours">--</div><div class="label">⏰ Hours</div></div>
+    <div class="unit"><div class="num" id="mins">--</div><div class="label">⚡ Mins</div></div>
+    <div class="unit"><div class="num" id="secs">--</div><div class="label">💫 Secs</div></div>
+  </div>
+
+  <div class="footer-row">
+    <span>📅 Saturday, 8 August 2026</span>
+    <span class="sep">•</span>
+    <span>🌏 Sydney → Auckland</span>
+    <span class="sep">•</span>
+    <span>🛫 Bon Voyage!</span>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  /* ── Stars ── */
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 200; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2.2 + 0.3;
+    s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*5}s;animation-duration:${1.5+Math.random()*4}s;`;
+    starsEl.appendChild(s);
+  }
+
+  /* ── Leaflet Map ── */
+  const map = L.map('map', {
+    zoomControl:       false,
+    attributionControl: true,
+    dragging:          false,
+    scrollWheelZoom:   false,
+    touchZoom:         false,
+    doubleClickZoom:   false,
+    boxZoom:           false,
+    keyboard:          false,
+    zoomSnap:          0,
+  });
+
+  // CartoDB Dark Matter — free, no API key needed
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19,
+    attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> © <a href="https://carto.com">CARTO</a>'
+  }).addTo(map);
+
+  // Fit view to show Australia + NZ + Tasman Sea
+  map.fitBounds([[-47, 108], [-24, 180]], { padding: [28, 40] });
+
+  /* ── Flight Path (Quadratic Bezier arc) ── */
+  const sydney   = [-33.87, 151.21];
+  const auckland = [-36.85, 174.76];
+  const ctrl     = [-27, 163]; // pulls the arc north over the Tasman Sea
+
+  const N = 80;
+  const waypoints = [];
+  for (let i = 0; i <= N; i++) {
+    const t = i / N, u = 1 - t;
+    waypoints.push([
+      u*u*sydney[0]   + 2*u*t*ctrl[0]   + t*t*auckland[0],
+      u*u*sydney[1]   + 2*u*t*ctrl[1]   + t*t*auckland[1],
+    ]);
+  }
+
+  // Glow layer (thicker, faint)
+  L.polyline(waypoints, { color: 'rgba(56,189,248,0.12)', weight: 8,  lineCap: 'round' }).addTo(map);
+  // Dashed line
+  const flightLine = L.polyline(waypoints, {
+    color: 'rgba(56,189,248,0.75)', weight: 2, dashArray: '10 7', lineCap: 'round'
+  }).addTo(map);
+
+  // Animate the dashes (marching ants)
+  setTimeout(() => {
+    document.querySelectorAll('.leaflet-overlay-pane path').forEach(p => {
+      p.style.animation = 'march 0.85s linear infinite';
+    });
+  }, 400);
+
+  /* ── City Pin helper ── */
+  function addPin(latlng, dotColor, label, delay = '0s') {
+    L.marker(latlng, {
+      icon: L.divIcon({
+        html: `
+          <div style="position:relative;width:0;height:0;">
+            <div style="
+              position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;
+              background:${dotColor};border-radius:50%;
+              border:2px solid rgba(255,255,255,0.35);
+              box-shadow:0 0 10px ${dotColor};
+              animation:pin-pulse 2s ${delay} ease-in-out infinite;
+            "></div>
+            <div style="
+              position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;
+              background:${dotColor};border-radius:50%;opacity:0.35;
+              animation:pin-ring 2s ${delay} ease-out infinite;
+            "></div>
+            <div style="
+              position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+              background:rgba(2,6,16,0.9);
+              border:1px solid rgba(255,255,255,0.1);
+              border-radius:8px;padding:4px 10px;
+              font-family:Inter,sans-serif;font-size:11px;font-weight:700;
+              color:rgba(255,255,255,0.88);white-space:nowrap;
+              box-shadow:0 2px 12px rgba(0,0,0,0.6);
+            ">${label}</div>
+          </div>`,
+        iconSize: [0,0], iconAnchor: [0,0], className: ''
+      })
+    }).addTo(map);
+  }
+
+  addPin(sydney,   '#38bdf8', '🦘 Sydney, NSW');
+  addPin(auckland, '#34d399', '🥝 Auckland, NZ', '1s');
+
+  /* ── Distance badge at arc midpoint ── */
+  const mid = waypoints[Math.floor(N / 2)];
+  L.marker(mid, {
+    icon: L.divIcon({
+      html: `<div style="
+        background:rgba(2,6,16,0.88);
+        border:1px solid rgba(56,189,248,0.28);
+        border-radius:8px;padding:5px 11px;
+        font-family:Inter,sans-serif;font-size:10px;font-weight:700;
+        color:rgba(56,189,248,0.95);white-space:nowrap;
+        box-shadow:0 2px 12px rgba(0,0,0,0.55);
+      ">✈️ ~2,160 km &nbsp;·&nbsp; ~3 hr flight</div>`,
+      iconSize: [0,0], iconAnchor: [-10, 30], className: ''
+    })
+  }).addTo(map);
+
+  /* ── Animated Plane ── */
+  function getBearing(p1, p2) {
+    const r = Math.PI / 180;
+    const la1 = p1[0]*r, la2 = p2[0]*r, dl = (p2[1]-p1[1])*r;
+    return (Math.atan2(
+      Math.sin(dl)*Math.cos(la2),
+      Math.cos(la1)*Math.sin(la2) - Math.sin(la1)*Math.cos(la2)*Math.cos(dl)
+    ) * 180/Math.PI + 360) % 360;
+  }
+
+  const mkPlane = (rot, opacity = 1) => L.divIcon({
+    html: `<div style="font-size:22px;line-height:1;transform:rotate(${rot - 45}deg);opacity:${opacity};filter:drop-shadow(0 0 6px rgba(56,189,248,0.95));">✈️</div>`,
+    iconSize: [26,26], iconAnchor: [13,13], className: ''
+  });
+
+  const planeMkr = L.marker(waypoints[0], { icon: mkPlane(0,0), zIndexOffset: 1000 }).addTo(map);
+  let pidx = 0;
+
+  setInterval(() => {
+    pidx = (pidx + 1) % waypoints.length;
+    const next = (pidx + 1) % waypoints.length;
+    const b = getBearing(waypoints[pidx], waypoints[next]);
+    const fade = pidx < 6 ? pidx/6 : (pidx > N - 6 ? (N - pidx)/6 : 1);
+    planeMkr.setLatLng(waypoints[pidx]);
+    planeMkr.setIcon(mkPlane(b, fade));
+  }, 65);
+
+  /* ── Countdown ── */
+  const target = new Date('2026-08-08T00:00:00');
+  const els = {
+    days:  document.getElementById('days'),
+    hours: document.getElementById('hours'),
+    mins:  document.getElementById('mins'),
+    secs:  document.getElementById('secs'),
+  };
+  const pad = n => String(n).padStart(2, '0');
+
+  function tick() {
+    const diff = target - new Date();
+    if (diff <= 0) { Object.values(els).forEach(e => e.textContent = '00'); return; }
+    els.days.textContent  = pad(Math.floor(diff / 86400000));
+    els.hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    els.mins.textContent  = pad(Math.floor((diff % 3600000)  / 60000));
+    els.secs.textContent  = pad(Math.floor((diff % 60000)    / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
