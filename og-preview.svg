@@ -65,7 +65,7 @@
   <!-- Main title -->
   <text x="600" y="195" font-size="82" font-weight="900" text-anchor="middle"
         font-family="Inter,Segoe UI,Arial,sans-serif" fill="white" opacity="0.97"
-        filter="url(#shadow)">Auckland Bound</text>
+        filter="url(#shadow)">Riley Visit</text>
 
   <!-- Subtitle / route -->
   <text x="600" y="260" font-size="32" font-weight="600" text-anchor="middle"
