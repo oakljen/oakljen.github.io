@@ -1,28 +1,78 @@
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-let interval = null;
-
-document.querySelector("h1").onmouseover = event => {  
-  let iteration = 0;
-  
-  clearInterval(interval);
-  
-  interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
-      .split("")
-      .map((letter, index) => {
-        if(index < iteration) {
-          return event.target.dataset.value[index];
-        }
-      
-        return letters[Math.floor(Math.random() * 26)]
-      })
-      .join("");
-    
-    if(iteration >= event.target.dataset.value.length){ 
-      clearInterval(interval);
-    }
-    
-    iteration += 1 / 3;
-  }, 30);
+// ── Typewriter ──
+function typewriter(el, text, delay = 600) {
+  if (prefersReducedMotion) { el.textContent = text; return; }
+  let i = 0;
+  setTimeout(() => {
+    const id = setInterval(() => {
+      el.textContent += text[i];
+      i++;
+      if (i >= text.length) clearInterval(id);
+    }, 55);
+  }, delay);
 }
+
+// ── Skeleton reveal ──
+function revealSkeletons() {
+  if (prefersReducedMotion) {
+    document.querySelectorAll('.skeleton').forEach(el => {
+      el.classList.remove('skeleton');
+      el.classList.add('loaded');
+    });
+    return;
+  }
+  setTimeout(() => {
+    document.querySelectorAll('.skeleton').forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.remove('skeleton');
+        el.classList.add('loaded');
+      }, i * 60);
+    });
+  }, 800);
+}
+
+// ── Scroll reveal (cards + sections) ──
+function initScrollReveal() {
+  if (prefersReducedMotion) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+}
+
+// ── Skill chips cascade ──
+function initSkillCascade() {
+  const chips = document.querySelectorAll('#skills-grid .skill-chip');
+  if (prefersReducedMotion) {
+    chips.forEach(c => c.classList.add('visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        chips.forEach((chip, i) => {
+          setTimeout(() => chip.classList.add('visible'), i * 80);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const grid = document.getElementById('skills-grid');
+  if (grid) observer.observe(grid);
+}
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', () => {
+  typewriter(document.getElementById('hero-tagline'), 'Developer & Tinkerer · Sydney, AU');
+  revealSkeletons();
+  initScrollReveal();
+  initSkillCascade();
+});
