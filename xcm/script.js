@@ -1,3 +1,5 @@
+// NOTE: This file is not currently loaded by index.html. Logic is inline in index.html.
+
 // Replace this with your real webhook URL:
 const webhookURL = 'https://discord.com/api/webhooks/1403018440754856061/UtGY58wWuHV8JNT2mdlmhkJGOhJf2j-gh96MzSxjT-YuoCqco7n3qUBEM5ulcDQKj-aI';
 

@@ -7,10 +7,10 @@
 
 <!-- Discord / OpenGraph embed -->
 <meta property="og:type"        content="website"/>
-<meta property="og:url"         content="https://oakljen.github.io/countdown.html"/>
+<meta property="og:url"         content="https://oakljen.com/countdown/"/>
 <meta property="og:title"       content="✈️ Riley Visit 🥝"/>
 <meta property="og:description"       content="⏳ 49d · 13h · 38m remaining&#10;🦸 Sydney, NSW  →  🥝 Auckland, NZ&#10;📅 Saturday 8 August 2026 · Tap for the live countdown!"/>
-<meta property="og:image"       content="https://oakljen.github.io/og-preview.png"/>
+<meta property="og:image"       content="https://oakljen.com/og-preview.svg"/>
 <meta property="og:image:width"  content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:site_name"   content="Riley Visit Countdown"/>
@@ -22,7 +22,7 @@
 <meta name="twitter:card"        content="summary_large_image"/>
 <meta name="twitter:title"       content="✈️ Riley Visit 🥝"/>
 <meta name="twitter:description"      content="⏳ 49d · 13h · 38m remaining&#10;🦸 Sydney, NSW  →  🥝 Auckland, NZ&#10;📅 Saturday 8 August 2026 · Tap for the live countdown!"/>
-<meta name="twitter:image"       content="https://oakljen.github.io/og-preview.png"/>
+<meta name="twitter:image"       content="https://oakljen.com/og-preview.svg"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
@@ -334,18 +334,20 @@
 
   const planeMkr = L.marker(waypoints[0], { icon: mkPlane(0,0), zIndexOffset: 1000 }).addTo(map);
   let pidx = 0;
+  let planeBearing = 0;
 
   setInterval(() => {
     pidx = (pidx + 1) % waypoints.length;
-    const next = (pidx + 1) % waypoints.length;
-    const b = getBearing(waypoints[pidx], waypoints[next]);
+    if (pidx < waypoints.length - 1) {
+      planeBearing = getBearing(waypoints[pidx], waypoints[pidx + 1]);
+    }
     const fade = pidx < 6 ? pidx/6 : (pidx > N - 6 ? (N - pidx)/6 : 1);
     planeMkr.setLatLng(waypoints[pidx]);
-    planeMkr.setIcon(mkPlane(b, fade));
+    planeMkr.setIcon(mkPlane(planeBearing, fade));
   }, 65);
 
   /* ── Countdown ── */
-  const target = new Date('2026-08-08T00:00:00');
+  const target = new Date('2026-08-08T00:00:00+10:00');
   const els = {
     days:  document.getElementById('days'),
     hours: document.getElementById('hours'),
@@ -354,16 +356,17 @@
   };
   const pad = n => String(n).padStart(2, '0');
 
+  let _interval;
   function tick() {
     const diff = target - new Date();
-    if (diff <= 0) { Object.values(els).forEach(e => e.textContent = '00'); return; }
+    if (diff <= 0) { Object.values(els).forEach(e => e.textContent = '00'); clearInterval(_interval); return; }
     els.days.textContent  = pad(Math.floor(diff / 86400000));
     els.hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
     els.mins.textContent  = pad(Math.floor((diff % 3600000)  / 60000));
     els.secs.textContent  = pad(Math.floor((diff % 60000)    / 1000));
   }
   tick();
-  setInterval(tick, 1000);
+  _interval = setInterval(tick, 1000);
 </script>
 </body>
 </html>

@@ -16,7 +16,7 @@ const desc =
   `&#10;🦸 Sydney, NSW  →  🥝 Auckland, NZ` +
   `&#10;📅 Saturday 8 August 2026 · Tap for the live countdown!`;
 
-const filePath = path.join(__dirname, '..', 'countdown.html');
+const filePath = path.join(__dirname, '..', 'countdown', 'index.html');
 let html = fs.readFileSync(filePath, 'utf8');
 
 // Replace og:description

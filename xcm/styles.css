@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
 /* ─────────────────────────────────────────────────────────────────────────────
    THEME VARIABLES
    ───────────────────────────────────────────────────────────────────────────── */
@@ -5,11 +7,6 @@
   /* Dark gray accent instead of red */
   --accent: #5e5e5e;       /* primary accent color (dark gray) */
   --accent-dark: #4a4a4a;  /* darker shade for hovers */
-}
-
-@font-face {
-    font-family: "Playfair Display";
-    src: url("C:/Users/Desktop/Website/fonts/Harlow_Solid_Italic.ttf");
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -78,28 +75,12 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   MAIN CONTENT (if any)
-   ───────────────────────────────────────────────────────────────────────────── */
-.content {
-  text-align: center;
-  color: white;
-  padding: 2em 1em;
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
    CONTACT SECTION
    ───────────────────────────────────────────────────────────────────────────── */
 .contactme {
   background-color: rgb(22, 22, 22);
   padding: 2em 1em;
   text-align: center;
-}
-
-/* Reset heading margins and apply dark-gray accent */
-.contactme .topHeader {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  color: var(--accent);
 }
 
 .contactme-topHeader {
@@ -196,7 +177,7 @@ body {
   color: white;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
-  scale: 2;
+  scale: 1;
 }
 
 .submit-button:hover {

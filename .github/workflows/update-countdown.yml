@@ -24,7 +24,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet && echo "No change" || (
-            git add countdown.html
+            git add countdown/index.html
             git commit -m "chore: refresh countdown embed [skip ci]"
             git push
           )

@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="description" content="Riley's Farm — a little pixel farm game.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Riley's Farm">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oakljen.com/riley/">
 <title>Riley's Farm 🐄</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -59,7 +64,7 @@ body {
 <script>
 const CONFIG = {
   mateName: 'Riley',
-  facePath: 'images/faces/',
+  facePath: '../media/faces/',
   wandererCount: 14,  // ← change this number to add more
 };
 
@@ -90,7 +95,7 @@ function assignFaces() {
   for (let i = 0; i < wanderers.length; i++) {
     wanderers[i].face = loadedFaces.length > 0 ? loadedFaces[i % loadedFaces.length] : null;
   }
-  player.face = loadedFaces.length > 0 ? loadedFaces[0] : null;
+  player.face = loadedFaces.length > 0 ? (loadedFaces.length > 1 ? loadedFaces[1] : loadedFaces[0]) : null;
 }
 
 const canvas = document.getElementById('gameCanvas');
@@ -190,9 +195,6 @@ const wanderers = Array.from({length: CONFIG.wandererCount}, (_, i) => ({
   moveTimer: 80 + Math.floor(Math.random() * 180),
   color: RING_COLORS[i % RING_COLORS.length],
   face: null,
-  squish: 1, squishV: 0,
-  bobPhase: Math.random() * Math.PI * 2,
-  legPhase: Math.random() * Math.PI * 2,
 }));
 
 const player = {
@@ -316,17 +318,8 @@ function drawSign(x,y,text,sub) {
 }
 
 function drawWanderer(w) {
-  const size = w.r * 2;
-  if (w.face) {
-    ctx.drawImage(w.face, w.x - w.r, w.y - w.r, size, size);
-  } else {
-    ctx.fillStyle = w.color;
-    ctx.fillRect(w.x - w.r, w.y - w.r, size, size);
-    ctx.fillStyle = '#fff';
-    ctx.font = `bold ${Math.floor(w.r * 0.9)}px Arial`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    ctx.fillText('?', w.x, w.y);
-  }
+  const fc = getFaceCanvas(w.face, w.r, w.color);
+  ctx.drawImage(fc, w.x - w.r, w.y - w.r, w.r * 2, w.r * 2);
 }
 
 function drawPlayer() {
@@ -387,7 +380,6 @@ function updatePlayer() {
   if (keys['ArrowDown']  || keys['s']) { dy= 1; player.dir='down';  }
   if (dx && dy) { dx *= 0.707; dy *= 0.707; }
   player.moving = (dx !== 0 || dy !== 0);
-  if (player.moving) player.animFrame += 0.15;
   const nx = player.x + dx * player.speed;
   const ny = player.y + dy * player.speed;
   if (nx > 12 && nx < WORLD_W - 36) player.x = nx;
@@ -413,9 +405,8 @@ function updateWanderers() {
     const nx = w.x + w.dx * w.speed;
     const ny = w.y + w.dy * w.speed;
     const margin = w.r + 2;
-    if (nx >= B.x + margin && nx <= B.x + B.w - margin) { w.x = nx; } else { w.dx *= -1; w.squishV = 0.08; }
-    if (ny >= B.y + margin && ny <= B.y + B.h - margin) { w.y = ny; } else { w.dy *= -1; w.squishV = 0.08; }
-    w.moving = (w.dx !== 0 || w.dy !== 0);
+    if (nx >= B.x + margin && nx <= B.x + B.w - margin) { w.x = nx; } else { w.dx *= -1; }
+    if (ny >= B.y + margin && ny <= B.y + B.h - margin) { w.y = ny; } else { w.dy *= -1; }
   }
 }
 
