@@ -1,137 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oakley Jenke</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <meta name="description" content="Oakley Jenke — links to GitHub, Instagram, Snapchat and more.">
-    <meta property="og:title" content="Oakley Jenke">
-    <meta property="og:description" content="Links to GitHub, Instagram, Snapchat and more.">
-    <meta property="og:url" content="https://oakljen.com/linktree/">
-    <meta property="og:type" content="website">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(90deg, #02002e, #004726);
-            background-size: 200% 200%;
-            animation: gradientShift 8s infinite alternate ease-in-out;
-            margin: 0;
-            padding: 20px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oakley — oakljen.com</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="description" content="Oakley — automating the boring stuff, self-hosting the rest. Sydney, AU.">
+<meta property="og:title" content="Oakley — oakljen.com">
+<meta property="og:description" content="Automating the boring stuff, self-hosting the rest.">
+<meta property="og:url" content="https://oakljen.com/linktree/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #0a0d0c;
+    color: #c9d4cf;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: #4ade80; color: #06120a; }
 
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-        }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.35;} }
 
-        .container {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: rgb(0, 0, 0);
-        }
+  .bg-grid {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(#11181544 1px, transparent 1px),
+      linear-gradient(90deg, #11181544 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at 70% 0%, #000 0%, transparent 70%);
+  }
+  .bg-glow {
+    position: fixed; top: -200px; right: -150px;
+    width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, #4ade8022, transparent 65%);
+    pointer-events: none; z-index: 0;
+  }
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border: 3px solid #a7a7a7;
-        }
+  .page {
+    position: relative; z-index: 1;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 56px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
 
-        .tile-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-top: 20px;
-        }
+  /* ── Profile ── */
+  .profile { display: flex; flex-direction: column; align-items: center; gap: 16px; }
 
-        .tile {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 350px;
-            height: 60px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+  .avatar-wrap {
+    position: relative;
+    width: 100px; height: 100px;
+  }
+  .avatar-wrap::before {
+    content: '';
+    position: absolute; inset: -3px;
+    border-radius: 50%;
+    background: conic-gradient(#4ade80, #4ade8033, #4ade80);
+    animation: spin 6s linear infinite;
+    z-index: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .avatar-wrap::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 24px #4ade8033;
+  }
+  .avatar {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0a0d0c;
+    display: block;
+  }
 
-        .tile img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+    color: #4ade80; padding: 5px 12px;
+    border: 1px solid #1f3a2b; border-radius: 999px; background: #0e1a13;
+  }
+  .status-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #4ade80; box-shadow: 0 0 8px #4ade80;
+    animation: pulse 2s ease-in-out infinite;
+    flex: none;
+  }
 
-        .tile:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+  .profile-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800; font-size: 30px;
+    color: #eef4f1; letter-spacing: -1px;
+    margin: 0;
+  }
 
-        /* Specific styles for each platform */
-        #snapchat {
-            background-color: #fffc00;
-            color: black;
-        }
+  .profile-tagline {
+    font-size: 14.5px; color: #9aa7a1;
+    text-align: center; margin: 0;
+    line-height: 1.55; max-width: 28ch;
+  }
+  .profile-tagline em {
+    font-style: normal; color: #eef4f1;
+  }
 
-        #github {
-            background-color: #000;
-            color: white;
-        }
+  .profile-loc {
+    display: flex; align-items: center; gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px; color: #5d6b65;
+  }
 
-        #whatsapp {
-            background-color: #25d366;
-        }
+  /* ── Links ── */
+  .links { display: flex; flex-direction: column; gap: 10px; width: 100%; }
 
-        #instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-        #email {
-            background-color: #2562d3;
-        }
-    </style>
+  .link-card {
+    display: flex; align-items: center; gap: 14px;
+    width: 100%; padding: 15px 18px;
+    background: #0c110f; border: 1px solid #1f2a26;
+    border-radius: 14px; text-decoration: none;
+    color: #eef4f1;
+    transition: border-color 0.15s, transform 0.15s, background 0.15s;
+  }
+  .link-card:hover { transform: translateY(-2px); background: #0e1512; }
+
+  .link-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: grid; place-items: center; flex: none;
+    border: 1px solid transparent;
+  }
+  .link-text { flex: 1; min-width: 0; }
+  .link-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13.5px; font-weight: 600; color: #eef4f1;
+    display: block;
+  }
+  .link-sub {
+    font-size: 12px; color: #6f7e78;
+    font-family: 'JetBrains Mono', monospace;
+    display: block; margin-top: 2px;
+  }
+  .link-arrow { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #2c3b35; flex: none; transition: color 0.15s; }
+
+  .link-home:hover { border-color: #4ade80; }
+  .link-home .link-icon { background: #0e1a13; border-color: #1f3a2b; color: #4ade80; }
+  .link-home:hover .link-arrow { color: #4ade80; }
+
+  .link-github:hover { border-color: #4a5751; }
+  .link-github .link-icon { background: #0f1210; border-color: #252e2a; color: #c9d4cf; }
+  .link-github:hover .link-arrow { color: #c9d4cf; }
+
+  .link-trainy:hover { border-color: #ffc2d1; }
+  .link-trainy .link-icon { background: #160f12; border-color: #3a2a30; color: #ffc2d1; }
+  .link-trainy:hover .link-arrow { color: #ffc2d1; }
+
+  .link-snap:hover { border-color: #fffc00; }
+  .link-snap .link-icon { background: #141400; border-color: #2e2b00; color: #fffc00; }
+  .link-snap:hover .link-arrow { color: #fffc00; }
+
+  .link-insta:hover { border-color: #e6683c; }
+  .link-insta .link-icon {
+    background-image: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border: none; color: #fff;
+  }
+  .link-insta:hover .link-arrow { color: #e6683c; }
+
+  .link-email:hover { border-color: #60a5fa; }
+  .link-email .link-icon { background: #0b1120; border-color: #1d2a44; color: #60a5fa; }
+  .link-email:hover .link-arrow { color: #60a5fa; }
+
+  /* ── Footer ── */
+  .footer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #2c3b35;
+    text-align: center;
+  }
+  .footer a { color: #2c3b35; text-decoration: none; transition: color 0.15s; }
+  .footer a:hover { color: #4ade80; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <img src="../media/profile.jpg" alt="Oakley Jenke" class="profile-img">
-        <h1>Oakley Jenke</h1>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
 
-        <div class="tile-container">
-            <a class="tile" id="snapchat" href="https://www.snapchat.com/add/oakleyjenke" target="_blank" rel="noopener noreferrer">
-                <img src="../media/Snapchat_logo.svg.png" alt="Snapchat"> Snapchat
-            </a>
-            <a class="tile" id="github" href="https://github.com/oakljen" target="_blank" rel="noopener noreferrer">
-                <img src="../media/github.png" alt="GitHub"> GitHub
-            </a>
-            <!--
-            <a class="tile" id="whatsapp" href="https://oakljen.com/whatsapp" target="_blank">
-                <img src="../media/WhatsApp.webp" alt="WhatsApp"> WhatsApp
-            </a>
-            -->
-            <a class="tile" id="instagram" href="https://www.instagram.com/oakleyjenke/" target="_blank" rel="noopener noreferrer">
-                <img src="../media/Instagram_Glyph_White.png" alt="Instagram"> Instagram
-            </a>
-            <a class="tile" id="email" href="mailto:enquirys@oakljen.com">
-                <img src="../media/email.png" alt="Email"> Email
-            </a>
-        </div>
+<div class="page">
 
+  <div class="profile">
+    <div class="avatar-wrap">
+      <img class="avatar" src="../media/profile.jpg" alt="Oakley">
     </div>
-</body>
 
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      Sydney, AU
+    </div>
+
+    <h1 class="profile-name">Oakley<span style="color:#4ade80;">_</span></h1>
+
+    <p class="profile-tagline">
+      automating the boring stuff &middot; <em>self-hosting the rest</em>
+    </p>
+
+    <div class="profile-loc">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Western Sydney · oakljen.com
+    </div>
+  </div>
+
+  <div class="links">
+
+    <a class="link-card link-home" href="https://oakljen.com" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      </span>
+      <span class="link-text">
+        <span class="link-label">oakljen.com</span>
+        <span class="link-sub">portfolio · projects · homelab</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a class="link-card link-github" href="https://github.com/oakljen" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg width="17" height="17" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.71 1.23 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      </span>
+      <span class="link-text">
+        <span class="link-label">GitHub</span>
+        <span class="link-sub">@oakljen</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a class="link-card link-trainy" href="https://trainytracker.com" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M4 11h16"/><circle cx="8" cy="13.5" r="1"/><circle cx="16" cy="13.5" r="1"/><path d="m6 20 2-3M18 20l-2-3M9 8h6"/></svg>
+      </span>
+      <span class="link-text">
+        <span class="link-label">TrainyTracker</span>
+        <span class="link-sub">live NSW &amp; VIC train times · my project</span>
+      </span>
+      <span class="link-arrow" style="color:#ffc2d144;">→</span>
+    </a>
+
+    <a class="link-card link-snap" href="https://www.snapchat.com/add/oakleyjenke" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.166 2c1.456 0 4.429.4 5.962 3.522.522 1.05.398 2.838.307 4.12l-.012.172c-.004.052-.007.104-.01.155.285-.065.607-.178.882-.39a.9.9 0 0 1 .552-.183c.21 0 .413.059.573.165.32.21.456.53.364.852-.18.63-.932.983-1.55 1.27a3.3 3.3 0 0 0-.456.237c.05.137.152.378.332.717.501.956 1.378 2.166 2.889 2.608.203.06.34.249.34.46 0 .03-.004.06-.01.09-.126.593-1.223.993-3.38 1.26-.06.082-.123.364-.163.545-.067.3-.14.608-.318.82a.73.73 0 0 1-.558.255c-.17 0-.347-.05-.528-.1a4.9 4.9 0 0 0-1.335-.213c-.312 0-.618.046-.96.15-.64.194-1.204.768-2.116.768-.873 0-1.461-.574-2.066-.758a4.6 4.6 0 0 0-1.005-.16 5 5 0 0 0-1.334.213c-.184.05-.363.1-.535.1a.73.73 0 0 1-.556-.256c-.178-.211-.25-.52-.317-.82-.04-.18-.103-.463-.163-.544-2.157-.268-3.254-.668-3.38-1.261a.47.47 0 0 1-.01-.089c0-.211.137-.4.34-.46 1.511-.443 2.387-1.653 2.888-2.608.18-.34.282-.58.33-.717a3.3 3.3 0 0 0-.455-.237c-.618-.287-1.37-.64-1.55-1.27-.093-.322.043-.641.363-.852a.97.97 0 0 1 .573-.165.9.9 0 0 1 .553.183c.274.212.596.325.881.39l-.01-.155-.011-.173C5.405 6.52 5.28 4.573 5.872 3.522 7.406 2.4 10.71 2 12.166 2Z"/></svg>
+      </span>
+      <span class="link-text">
+        <span class="link-label">Snapchat</span>
+        <span class="link-sub">oakleyjenke</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a class="link-card link-insta" href="https://www.instagram.com/oakleyjenke/" target="_blank" rel="noopener">
+      <span class="link-icon">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </span>
+      <span class="link-text">
+        <span class="link-label">Instagram</span>
+        <span class="link-sub">@oakleyjenke</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a class="link-card link-email" href="mailto:enquirys@oakljen.com">
+      <span class="link-icon">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+      </span>
+      <span class="link-text">
+        <span class="link-label">Email</span>
+        <span class="link-sub">enquirys@oakljen.com</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+  </div>
+
+  <p class="footer">© 2026 <a href="https://oakljen.com">oakljen.com</a> · self-hosted &amp; over-engineered</p>
+
+</div>
+</body>
 </html>
