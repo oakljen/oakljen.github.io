@@ -1,103 +1,379 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oakley Jenke</title>
-  <style>
-    body {
-      font-family: 'Space Mono', monospace;
-      margin: 0;
-      color: #e0e0e0;
-      background: linear-gradient(120deg, #02002e, #004726);
-      background-size: 200% 200%;
-      animation: gradientShift 8s infinite alternate ease-in-out;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    .hero {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 3px solid #00ffcc;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
-      margin: 0.5rem 0;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-    nav a {
-      color: #00ffcc;
-      text-decoration: none;
-      font-size: 1.25rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
-    footer {
-      margin-top: auto;
-      padding: 1rem;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-  <div class="hero">
-    <img src="media/profile.jpg" alt="Oakley Jenke">
-    <h1 id="hacked-text" data-value="Oakley Jenke">Oakley Jenke</h1>
-    <p>A place for my projects and experiments.</p>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="bingo/">Bingo</a></li>
-      <li><a href="onshot/">Onshot</a></li>
-      <li><a href="location-game/">Location Game</a></li>
-    </ul>
-  </nav>
-  <footer>
-    <p>&copy; 2025 Oakley. All rights reserved.</p>
-  </footer>
-  <script>
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let iteration = 0;
-    let textElement = document.querySelector("#hacked-text");
-    let originalText = textElement.dataset.value;
-    let interval = setInterval(() => {
-      textElement.innerText = originalText
-        .split("")
-        .map((letter, index) => {
-          if (index < iteration) {
-            return originalText[index];
-          }
-          return letters[Math.floor(Math.random() * 26)];
-        })
-        .join("");
-      if (iteration >= originalText.length) {
-        clearInterval(interval);
-      }
-      iteration += 1 / 3;
-    }, 30);
-  </script>
+<x-dc>
+<helmet>
+<title>Oakley — Compliance Automation Engineer &amp; Self-Hosted Infrastructure · Sydney</title>
+<meta name="description" content="Oakley is a Sydney-based compliance automation engineer and self-hosted infrastructure tinkerer. Projects spanning VoIP telephony, home automation, Minecraft servers, and TrainyTracker — real-time NSW &amp; Victoria train tracking." />
+<meta name="author" content="Oakley" />
+<meta name="keywords" content="Oakley, oakljen, Sydney developer, compliance automation, self-hosted infrastructure, homelab, Asterisk VoIP, Power BI, Cloudflare Workers, TrainyTracker, Home Assistant" />
+<link rel="canonical" href="https://oakljen.com/" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Oakley — Compliance Automation Engineer &amp; Self-Hosted Infrastructure" />
+<meta property="og:description" content="Sydney-based compliance automation engineer &amp; homelab tinkerer. Site360, TrainyTracker, VoIP, home automation and more." />
+<meta property="og:url" content="https://oakljen.com/" />
+<meta property="og:site_name" content="oakljen.com" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Oakley — Compliance Automation Engineer &amp; Self-Hosted Infrastructure" />
+<meta name="twitter:description" content="Sydney-based compliance automation engineer &amp; homelab tinkerer." />
+<meta name="theme-color" content="#0a0d0c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Oakley",
+  "alternateName": "oakljen",
+  "url": "https://oakljen.com/",
+  "email": "mailto:enquirys@oakljen.com",
+  "jobTitle": "Compliance Automation Engineer",
+  "address": { "@type": "PostalAddress", "addressLocality": "Sydney", "addressRegion": "NSW", "addressCountry": "AU" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Western Sydney University" },
+  "knowsAbout": ["Workplace compliance automation", "Power BI", "Self-hosted infrastructure", "VoIP / Asterisk", "Home automation", "Cloudflare Workers", "Python"],
+  "sameAs": ["https://github.com/oakljen", "https://trainytracker.com"]
+}
+</script>
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:#0a0d0c; }
+  ::selection{ background:#4ade80; color:#06120a; }
+  @keyframes blink{ 0%,49%{opacity:1;} 50%,100%{opacity:0;} }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
+  @keyframes sheen{ 0%{transform:translateX(-120%);} 100%{transform:translateX(220%);} }
+  a{ text-decoration:none; color:inherit; }
+</style>
+</helmet>
+
+<div style="background:#0a0d0c; color:#c9d4cf; font-family:'Space Grotesk',sans-serif; min-height:100vh; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <!-- background grid + glow -->
+  <div style="position:fixed; inset:0; pointer-events:none; background-image:linear-gradient(#11181544 1px,transparent 1px),linear-gradient(90deg,#11181544 1px,transparent 1px); background-size:64px 64px; mask-image:radial-gradient(circle at 70% 0%,#000 0%,transparent 70%); z-index:0;"></div>
+  <div style="position:fixed; top:-200px; right:-150px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle,#4ade8022,transparent 65%); pointer-events:none; z-index:0;"></div>
+
+  <!-- ===== top bar ===== -->
+  <header style="position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; padding:16px 28px; backdrop-filter:blur(10px); background:#0a0d0ccc; border-bottom:1px solid #1a221e;">
+    <a href="#top" style="display:flex; align-items:center; gap:10px; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:15px; color:#eef4f1;">
+      <span>oakljen<span style="color:#4ade80;">.com</span></span>
+    </a>
+    <nav style="display:flex; align-items:center; gap:4px; font-family:'JetBrains Mono',monospace; font-size:13px;">
+      <a href="#work" style="padding:8px 12px; color:#8a978f; border-radius:7px;" style-hover="color:#eef4f1; background:#12191600;">work</a>
+      <a href="#projects" style="padding:8px 12px; color:#8a978f; border-radius:7px;" style-hover="color:#eef4f1;">projects</a>
+      <a href="#stack" style="padding:8px 12px; color:#8a978f; border-radius:7px;" style-hover="color:#eef4f1;">stack</a>
+      <a href="https://github.com/oakljen" target="_blank" rel="noopener" style="margin-left:8px; display:inline-flex; align-items:center; gap:8px; padding:8px 14px; color:#06120a; background:#4ade80; border-radius:7px; font-weight:600;" style-hover="background:#6ff09a;">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.71 1.23 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        github
+      </a>
+    </nav>
+  </header>
+
+  <main id="top" style="position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:0 28px;">
+
+    <!-- ===== hero ===== -->
+    <section style="display:grid; grid-template-columns:1.15fr 1fr; gap:36px; align-items:center; padding:74px 0 64px;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:12.5px; color:#4ade80; padding:6px 12px; border:1px solid #1f3a2b; border-radius:999px; background:#0e1a13; margin-bottom:24px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:#4ade80; box-shadow:0 0 10px #4ade80; animation:pulse 2s ease-in-out infinite;"></span>
+          available for interesting problems
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:13px; color:#6f7e78; margin-bottom:10px;">oakley@sydney:~$ <span style="color:#c9d4cf;">whoami</span></div>
+        <h1 style="font-family:'JetBrains Mono',monospace; font-weight:800; font-size:62px; line-height:0.98; letter-spacing:-2px; color:#eef4f1; margin:0 0 8px;">Oakley<span style="color:#4ade80; animation:blink 1.1s step-end infinite;">_</span></h1>
+        <p style="font-size:20px; line-height:1.5; color:#aab6b0; max-width:30ch; margin:0 0 14px; font-weight:500;">Compliance &amp; automation engineer who can't stop <span style="color:#eef4f1;">self-hosting things</span>.</p>
+        <p style="font-size:15.5px; line-height:1.6; color:#7e8c87; max-width:42ch; margin:0 0 28px;">Sydney-based. I build internal tooling and reporting by day, and run a sprawling homelab — VoIP, automation, game servers — by night.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button onClick="{{ copyEmail }}" style="display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:13.5px; font-weight:600; padding:12px 18px; border-radius:9px; border:1px solid #2c3b35; background:#101513; color:#eef4f1; cursor:pointer;" style-hover="border-color:#4ade80; color:#4ade80;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 5L2 7"></path></svg>
+            {{ emailLabel }}
+          </button>
+          <a href="#projects" style="display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:13.5px; font-weight:600; padding:12px 18px; border-radius:9px; background:#4ade80; color:#06120a;" style-hover="background:#6ff09a;">
+            view projects →
+          </a>
+        </div>
+      </div>
+
+      <!-- neofetch card -->
+      <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; overflow:hidden; box-shadow:0 30px 60px -30px #000;">
+        <div style="display:flex; align-items:center; gap:7px; padding:11px 14px; border-bottom:1px solid #1a221e; background:#0e1412;">
+          <span style="width:11px; height:11px; border-radius:50%; background:#ff5f57;"></span>
+          <span style="width:11px; height:11px; border-radius:50%; background:#febc2e;"></span>
+          <span style="width:11px; height:11px; border-radius:50%; background:#28c840;"></span>
+          <span style="margin-left:8px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#5d6b65;">~ neofetch</span>
+        </div>
+        <div style="display:flex; gap:18px; padding:22px 20px;">
+          <div style="flex:none; width:96px; height:96px; border-radius:12px; background:#0a0f0d; border:1px solid #243029; display:grid; place-items:center; position:relative; overflow:hidden;">
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg,transparent,#4ade8011);"></div>
+            <span style="font-family:'JetBrains Mono',monospace; font-weight:800; font-size:40px; color:#4ade80; letter-spacing:-2px; position:relative;">OJ</span>
+            <div style="position:absolute; inset:0; background:repeating-linear-gradient(0deg,#0000 0 3px,#0000000d 3px 4px);"></div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12.5px; line-height:1.85; min-width:0;">
+            <div style="color:#4ade80; font-weight:700;">oakley<span style="color:#5d6b65;">@</span>oakljen.com</div>
+            <div style="color:#283831;">─────────────</div>
+            <div><span style="color:#f5b54a;">role</span><span style="color:#5d6b65;">: </span>compliance + automation</div>
+            <div><span style="color:#f5b54a;">loc</span><span style="color:#5d6b65;">:  </span>Sydney, AU</div>
+            <div><span style="color:#f5b54a;">uni</span><span style="color:#5d6b65;">:  </span>Western Sydney U.</div>
+            <div><span style="color:#f5b54a;">shell</span><span style="color:#5d6b65;">: </span>python · C · linux</div>
+            <div><span style="color:#f5b54a;">time</span><span style="color:#5d6b65;">: </span><span style="color:#c9d4cf;">{{ sydneyTime }}</span> AEST</div>
+            <div style="margin-top:4px; display:flex; gap:6px;">
+              <span style="width:13px; height:13px; border-radius:3px; background:#4ade80;"></span>
+              <span style="width:13px; height:13px; border-radius:3px; background:#f5b54a;"></span>
+              <span style="width:13px; height:13px; border-radius:3px; background:#ffc2d1;"></span>
+              <span style="width:13px; height:13px; border-radius:3px; background:#60a5fa;"></span>
+              <span style="width:13px; height:13px; border-radius:3px; background:#2c3b35;"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== work ===== -->
+    <section id="work" style="padding:34px 0 18px; scroll-margin-top:80px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:26px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:#4ade80;">01</span>
+        <h2 style="font-family:'JetBrains Mono',monospace; font-weight:700; font-size:28px; letter-spacing:-1px; color:#eef4f1; margin:0;">// work</h2>
+        <div style="flex:1; height:1px; background:#1a221e;"></div>
+      </div>
+
+      <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:16px; padding:30px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:0; left:0; width:3px; height:100%; background:#4ade80;"></div>
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:8px;">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#6f7e78; margin-bottom:6px;">current role</div>
+            <h3 style="font-size:25px; font-weight:700; color:#eef4f1; margin:0;">Workplace Compliance Platform</h3>
+            <p style="font-size:14.5px; color:#8a978f; margin:6px 0 0; max-width:54ch;">Compliance &amp; induction platform serving <span style="color:#c9d4cf;">enterprise clients</span>.</p>
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#4ade80; padding:6px 11px; border:1px solid #1f3a2b; border-radius:999px; background:#0e1a13; white-space:nowrap;">● active</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:22px;">
+          <div style="background:#0a0f0d; border:1px solid #18211d; border-radius:11px; padding:16px;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#f5b54a; margin-bottom:7px;">data &amp; reporting</div>
+            <p style="font-size:13.5px; line-height:1.55; color:#9aa7a1; margin:0;">Power BI dashboards from support &amp; telephony data — DST-aware AEST handling and Erlang C staffing models for call-centre metrics.</p>
+          </div>
+          <div style="background:#0a0f0d; border:1px solid #18211d; border-radius:11px; padding:16px;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#f5b54a; margin-bottom:7px;">tooling &amp; automation</div>
+            <p style="font-size:13.5px; line-height:1.55; color:#9aa7a1; margin:0;">Cloudflare Workers, Power Automate &amp; Python sync scripts piping support data into SharePoint-hosted Excel for reporting.</p>
+          </div>
+          <div style="background:#0a0f0d; border:1px solid #18211d; border-radius:11px; padding:16px;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#f5b54a; margin-bottom:7px;">customer support</div>
+            <p style="font-size:13.5px; line-height:1.55; color:#9aa7a1; margin:0;">Front-line support tickets and drafting clear client communications.</p>
+          </div>
+          <div style="background:#0a0f0d; border:1px solid #18211d; border-radius:11px; padding:16px;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#f5b54a; margin-bottom:7px;">chrome extension</div>
+            <p style="font-size:13.5px; line-height:1.55; color:#9aa7a1; margin:0;">Built an internal browser extension served via a Cloudflare Worker to streamline support workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== projects ===== -->
+    <section id="projects" style="padding:46px 0 18px; scroll-margin-top:80px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:26px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:#4ade80;">02</span>
+        <h2 style="font-family:'JetBrains Mono',monospace; font-weight:700; font-size:28px; letter-spacing:-1px; color:#eef4f1; margin:0;">// projects</h2>
+        <div style="flex:1; height:1px; background:#1a221e;"></div>
+      </div>
+
+      <!-- TrainyTracker feature -->
+      <a href="https://trainytracker.com" target="_blank" rel="noopener" style="display:block; background:#0c110f; border:1px solid #2b2026; border-radius:16px; padding:30px; position:relative; overflow:hidden; margin-bottom:18px;" style-hover="border-color:#ffc2d1;">
+        <div style="position:absolute; top:-80px; right:-60px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle,#ffc2d122,transparent 65%); pointer-events:none;"></div>
+        <div style="display:flex; gap:26px; align-items:center; flex-wrap:wrap; position:relative;">
+          <div style="flex:none; width:84px; height:84px; border-radius:18px; background:#ffc2d1; display:grid; place-items:center; box-shadow:0 16px 30px -12px #ffc2d155;">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1a0e12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="13" rx="2"></rect><path d="M4 11h16"></path><circle cx="8" cy="13.5" r="1"></circle><circle cx="16" cy="13.5" r="1"></circle><path d="m6 20 2-3M18 20l-2-3M9 8h6"></path></svg>
+          </div>
+          <div style="flex:1; min-width:240px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#ffc2d1; padding:4px 10px; border:1px solid #3a2a30; border-radius:999px; background:#16101280;">featured · live</span>
+            </div>
+            <h3 style="font-size:24px; font-weight:700; color:#eef4f1; margin:0 0 6px;">TrainyTracker</h3>
+            <p style="font-size:14.5px; line-height:1.6; color:#9aa7a1; margin:0; max-width:58ch;">An installable PWA for <span style="color:#ffd5df;">real-time train tracking across NSW &amp; Victoria</span> — live positions and timings in a fast, mobile-first interface.</p>
+          </div>
+          <div style="flex:none; align-self:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:#ffc2d1; display:flex; align-items:center; gap:7px;">trainytracker.com →</div>
+        </div>
+      </a>
+
+      <!-- project grid -->
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px;">
+
+        <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; padding:24px;" style-hover="border-color:#2c3b35;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <span style="width:38px; height:38px; border-radius:10px; background:#0e1a13; border:1px solid #1f3a2b; display:grid; place-items:center; color:#4ade80;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="5" rx="1"></rect><rect x="2" y="10" width="20" height="5" rx="1"></rect><path d="M6 5.5h.01M6 12.5h.01M6 19.5h.01"></path><rect x="2" y="17" width="20" height="5" rx="1"></rect></svg>
+            </span>
+            <h3 style="font-size:17px; font-weight:700; color:#eef4f1; margin:0;">Self-hosted infra</h3>
+          </div>
+          <p style="font-size:13.5px; line-height:1.6; color:#8a978f; margin:0 0 14px;"><span style="font-family:'JetBrains Mono',monospace; color:#c9d4cf;">oakljen.com</span> on Cloudflare, fronting Oracle Cloud instances — status page, services and more.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:11px;">
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Cloudflare</span>
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">OCI</span>
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Linux</span>
+          </div>
+        </div>
+
+        <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; padding:24px;" style-hover="border-color:#2c3b35;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <span style="width:38px; height:38px; border-radius:10px; background:#1a1410; border:1px solid #3a2c1a; display:grid; place-items:center; color:#f5b54a;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><path d="M9 18h6"></path><circle cx="12" cy="6" r="1"></circle></svg>
+            </span>
+            <h3 style="font-size:17px; font-weight:700; color:#eef4f1; margin:0;">Rotary-Pi &amp; VoIP</h3>
+          </div>
+          <p style="font-size:13.5px; line-height:1.6; color:#8a978f; margin:0 0 14px;">A personal Asterisk PBX turning vintage GPO 746 rotary phones into SIP extensions — baresip, GPIO bell drivers &amp; a Discord audio bridge.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:11px;">
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Asterisk</span>
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Raspberry Pi</span>
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">SIP</span>
+          </div>
+        </div>
+
+        <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; padding:24px;" style-hover="border-color:#2c3b35;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <span style="width:38px; height:38px; border-radius:10px; background:#101a13; border:1px solid #1f3a2b; display:grid; place-items:center; color:#4ade80;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M8 5v14"></path></svg>
+            </span>
+            <h3 style="font-size:17px; font-weight:700; color:#eef4f1; margin:0;">OakleyNuk · Minecraft</h3>
+          </div>
+          <p style="font-size:13.5px; line-height:1.6; color:#8a978f; margin:0 0 14px;">A Paper server with Geyser/Floodgate crossplay — plus a ScreenBlock plugin rendering live webcam video as in-game multiblock screens.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:11px;">
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Paper</span>
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Geyser</span>
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Java</span>
+          </div>
+        </div>
+
+        <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; padding:24px;" style-hover="border-color:#2c3b35;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <span style="width:38px; height:38px; border-radius:10px; background:#101522; border:1px solid #1d2a44; display:grid; place-items:center; color:#60a5fa;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>
+            </span>
+            <h3 style="font-size:17px; font-weight:700; color:#eef4f1; margin:0;">Home automation</h3>
+          </div>
+          <p style="font-size:13.5px; line-height:1.6; color:#8a978f; margin:0 0 14px;">Home Assistant integrated with Amazon Alexa through a custom AWS Lambda smart-home skill.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:11px;">
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">Home Assistant</span>
+            <span style="padding:4px 9px; background:#0a0f0d; border:1px solid #1a221e; border-radius:6px; color:#7e8c87;">AWS Lambda</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== condensed: study / personal / stack ===== -->
+    <section id="stack" style="padding:46px 0 18px; scroll-margin-top:80px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:26px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:13px; color:#4ade80;">03</span>
+        <h2 style="font-family:'JetBrains Mono',monospace; font-weight:700; font-size:28px; letter-spacing:-1px; color:#eef4f1; margin:0;">// the rest</h2>
+        <div style="flex:1; height:1px; background:#1a221e;"></div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;">
+        <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; padding:24px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#4ade80; margin-bottom:14px;">~/study</div>
+          <h3 style="font-size:16px; font-weight:700; color:#eef4f1; margin:0 0 14px;">Western Sydney University</h3>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#f5b54a; flex:none;">MATH1006</span><span style="font-size:13.5px; color:#9aa7a1;">Discrete Mathematics — graph theory, combinatorics, logic.</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#f5b54a; flex:none;">COMP2019</span><span style="font-size:13.5px; color:#9aa7a1;">Systems Programming — C, Unix syscalls, low-level I/O.</span></div>
+            <div style="display:flex; gap:10px; align-items:baseline;"><span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#f5b54a; flex:none;">MATH1028</span><span style="font-size:13.5px; color:#9aa7a1;">Statistical Decision Making.</span></div>
+          </div>
+        </div>
+
+        <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; padding:24px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#4ade80; margin-bottom:14px;">~/offline</div>
+          <h3 style="font-size:16px; font-weight:700; color:#eef4f1; margin:0 0 14px;">Outside the terminal</h3>
+          <div style="display:flex; flex-direction:column; gap:11px; font-size:13.5px; color:#9aa7a1;">
+            <div style="display:flex; gap:10px; align-items:center;"><span style="color:#4ade80;">▹</span> Drives a BYD Shark ute.</div>
+            <div style="display:flex; gap:10px; align-items:center;"><span style="color:#4ade80;">▹</span> Tight friend group on a shared Discord.</div>
+            <div style="display:flex; gap:10px; align-items:center;"><span style="color:#4ade80;">▹</span> Gaming &amp; going out around Sydney.</div>
+            <div style="display:flex; gap:10px; align-items:center;"><span style="color:#4ade80;">▹</span> Vintage hardware collecting &amp; modding.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#0c110f; border:1px solid #1f2a26; border-radius:14px; padding:24px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#4ade80; margin-bottom:16px;">~/stack <span style="color:#5d6b65;">$ cat tools.txt</span></div>
+        <div style="display:flex; gap:9px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:12.5px;">
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">Python</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">C</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">R</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">SQL / DAX</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">HTML / CSS / JS</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">Flask</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">Kotlin</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">Cloudflare Workers</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">Power Automate</span>
+          <span style="padding:7px 13px; background:#0a0f0d; border:1px solid #1f2a26; border-radius:8px; color:#c9d4cf;">Linux CLI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== footer / contact ===== -->
+    <footer style="padding:60px 0 70px; margin-top:30px; border-top:1px solid #1a221e;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:13px; color:#6f7e78; margin-bottom:8px;">oakley@sydney:~$ <span style="color:#c9d4cf;">./contact.sh</span></div>
+          <h2 style="font-family:'JetBrains Mono',monospace; font-weight:800; font-size:34px; letter-spacing:-1px; color:#eef4f1; margin:0 0 6px;">Let's build something.</h2>
+          <p style="font-size:14.5px; color:#7e8c87; margin:0;">Always up for a good infrastructure problem or an automation challenge.</p>
+        </div>
+        <div style="display:flex; gap:11px;">
+          <button onClick="{{ copyEmail }}" style="display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:600; padding:12px 17px; border-radius:9px; border:1px solid #2c3b35; background:#101513; color:#eef4f1; cursor:pointer;" style-hover="border-color:#4ade80; color:#4ade80;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 5L2 7"></path></svg>
+            {{ emailLabel }}
+          </button>
+          <a href="https://github.com/oakljen" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:600; padding:12px 17px; border-radius:9px; background:#4ade80; color:#06120a;" style-hover="background:#6ff09a;">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.71 1.23 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            github
+          </a>
+        </div>
+      </div>
+      <div style="margin-top:40px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:#4a5751;">
+        <span>© 2026 Oakley · oakljen.com</span>
+        <span>self-hosted &amp; over-engineered with care</span>
+      </div>
+    </footer>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sydneyTime: this.now(), copied: false };
+
+  now() {
+    try {
+      return new Intl.DateTimeFormat('en-AU', {
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false, timeZone: 'Australia/Sydney'
+      }).format(new Date());
+    } catch (e) { return '--:--:--'; }
+  }
+
+  componentDidMount() {
+    this._t = setInterval(() => this.setState({ sydneyTime: this.now() }), 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
+
+  copyEmail = () => {
+    const email = 'enquirys@oakljen.com';
+    try {
+      if (navigator.clipboard) navigator.clipboard.writeText(email);
+    } catch (e) {}
+    this.setState({ copied: true });
+    clearTimeout(this._c);
+    this._c = setTimeout(() => this.setState({ copied: false }), 1800);
+  };
+
+  renderVals() {
+    return {
+      sydneyTime: this.state.sydneyTime,
+      emailLabel: this.state.copied ? 'copied ✓' : 'enquirys@oakljen.com',
+      copyEmail: this.copyEmail
+    };
+  }
+}
+</script>
 </body>
 </html>
