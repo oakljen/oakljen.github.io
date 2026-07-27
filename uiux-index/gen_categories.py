@@ -35,4 +35,11 @@ for cat in sorted(by_cat):
 (ROOT / "categories" / "README.md").unlink(missing_ok=True)
 (ROOT / "CATEGORIES.md").write_text("\n".join(index_lines) + "\n", encoding="utf-8")
 
-print(f"{len(sites)} sites across {len(by_cat)} categories -> categories/*.md + CATEGORIES.md")
+# flat grep-friendly text dump — one line per site, for `curl ... | grep` with no JSON parsing
+flat = []
+for e in sorted(sites, key=lambda e: (e["category"], e["name"].lower())):
+    tags = ",".join(e.get("tags", []))
+    flat.append(f"{e['name']} | {e['category']} | {tags} | {e['url']} | {e.get('note', '')}")
+(ROOT / "all.txt").write_text("\n".join(flat) + "\n", encoding="utf-8")
+
+print(f"{len(sites)} sites across {len(by_cat)} categories -> categories/*.md + CATEGORIES.md + all.txt")

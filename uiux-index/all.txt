@@ -1,0 +1,139 @@
+The A11Y Project | accessibility | checklist,reference,wcag | https://www.a11yproject.com/ | community-driven accessibility checklist and pattern reference
+WebAIM | accessibility | contrast-checker,wcag,reference | https://webaim.org/ | accessibility reference + the standard contrast-ratio checker tool
+Who Can Use | accessibility | contrast-simulator,vision-conditions | https://whocanuse.com/ | simulates a color combo under different vision conditions, not just a pass/fail ratio
+Animejs | animation-engine | js,timeline,svg-morph,stagger | https://animejs.com/ | npm animejs v4; timeline API, SVG line-draw/morph, motion-path, draggable. Vendored: component-source/js-animation-engines/anime.min.js
+Animista | animation-engine | css-keyframes,generator | https://animista.net/ | pure-CSS keyframe animation generator, copy-paste classes
+Cubic-bezier.com | animation-engine | easing-curve,tool | https://cubic-bezier.com/ | visual custom cubic-bezier easing curve editor
+Easings.net | animation-engine | easing-reference,cheatsheet | https://easings.net/ | named easing function reference with visual + CSS/JS snippets
+GSAP | animation-engine | js,timeline,scrolltrigger,industry-standard | https://gsap.com/ | industry-standard JS animation engine, ScrollTrigger plugin for scroll-driven sequencing
+Lenis | animation-engine | smooth-scroll,js | https://lenis.darkroom.engineering/ | Studio Freight's smooth-scroll library, pairs with GSAP ScrollTrigger for scroll choreography
+LottieFiles | animation-engine | after-effects,json-animation,lottie-player | https://lottiefiles.com/ | After-Effects-exported JSON animations played via lottie-web/lottie-player
+Motion (Framer Motion) | animation-engine | js,react,spring-physics,layout-animation | https://motion.dev | npm `motion` (wraps framer-motion); spring transforms, layout animation, scroll-linked motion, gestures. Vendored: component-source/js-animation-engines/motion.js
+Principle | animation-engine | mac-app,paid,interaction-prototyping | https://principleformac.com/ | paid Mac app for timeline/state-based interaction prototyping, common for handoff-quality motion specs
+ProtoPie | animation-engine | no-code,sensor-input,interaction-prototyping | https://www.protopie.io/ | no-code interaction prototyping tool, supports sensor/device input triggers beyond click/hover
+Rive | animation-engine | interactive,state-machine,runtime,design-tool | https://rive.app/ | design tool + lightweight runtime for interactive vector animations with state machines (hover/drag-reactive, not just timeline playback)
+Spline | animation-engine | 3d,webgl,design-tool,real-time | https://spline.design/ | real-time 3D design tool for building interactive WebGL scenes without hand-writing Three.js
+Splitting.js | animation-engine | text-split,css-vars,kinetic-type | https://splitting.js.org/ | splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects
+Theatre.js | animation-engine | js,visual-editor,precise-keyframing | https://www.theatrejs.com/ | JS animation library with a visual timeline editor for precisely keyframing complex sequences
+0to255 | color-tool | tint-shade-generator | https://0to255.com/ | quick tint/shade ramp for one color, useful for hover/active state variants
+Accessible Colors | color-tool | wcag-contrast,suggest-fix | https://accessible-colors.com/ | checks a foreground/background pair against WCAG and suggests the nearest passing adjustment
+Adobe Color | color-tool | color-wheel,extract-from-image,harmony-rules | https://color.adobe.com/ | color wheel + harmony-rule palette builder, can extract a palette from an uploaded image
+Color Hunt | color-tool | palette-gallery,trending | https://colorhunt.co/ | trending community-submitted 4-color palettes
+Colorable | color-tool | contrast-grid,palette-wide-check | https://colorable.jxnblk.com/ | contrast-ratio grid across an entire palette at once, not just one pair at a time
+ColorBox | color-tool | lyft,systematic-scale,export | https://colorbox.io/ | Lyft's systematic color-scale builder for multi-hue design-system palettes, exports as data/CSS
+Colormind | color-tool | ai-generator,photo-extraction | http://colormind.io/ | AI-trained palette generator, can also extract a palette from a photo
+ColorSpace | color-tool | single-color-input,palette-generator | https://mycolor.space/ | generates full palettes (gradient, scale, shades) from one input color
+Coolors | color-tool | palette-generator | https://coolors.co/ | fast palette generation tool, not a codebase
+Huemint | color-tool | ai-generator,brand-palette | https://huemint.com/ | generative palette tool for brand/UI/print combos, weighted role sliders
+Khroma | color-tool | ai-personalized,trained-on-picks | https://www.khroma.co/ | AI trained on 50 of your color picks, then generates endless palettes matching your taste
+Leonardo | color-tool | contrast,accessible-scale,adobe | https://leonardocolor.io/ | Adobe's contrast-based accessible color scale generator, outputs perceptually-tuned ramps
+Paletton | color-tool | color-wheel,scheme-designer | https://paletton.com/ | color-wheel scheme designer (mono/complementary/triad/tetrad) with live mock-UI preview
+Radix Colors | color-tool | 12-step-scale,accessible,generator | https://www.radix-ui.com/colors | 12-step accessible color scale generator/model; all 30 hues vendored at component-source/radix-colors
+Realtime Colors | color-tool | live-preview,palette-on-ui | https://www.realtimecolors.com/ | preview a palette live on a mock UI (text/bg/accent) before committing
+Tints.dev | color-tool | tailwind-scale,shade-generator | https://www.tints.dev/ | generate a Tailwind-style 50-950 shade ramp from one base color
+21st.dev | component-library | marketplace,shadcn-registry,react | https://21st.dev/ | marketplace of many authors' shadcn-registry components, discovery/inspiration only
+Aceternity UI | component-library | react,tailwind,framer-motion,decorative | https://ui.aceternity.com/ | copy-paste snippets/shadcn-registry entries, no single clonable repo — inspiration-only
+Ark UI | component-library | headless,state-machines,multi-framework | https://ark-ui.com/ | headless component library built on statecharts (Zag.js), framework-agnostic logic
+Chakra UI | component-library | react,accessible,theming | https://www.chakra-ui.com/ | accessible React component library with a style-prop theming system
+daisyUI | component-library | tailwind,css-only,themeable | https://daisyui.com/ | CSS-class component library on top of Tailwind, no JS required, many built-in themes
+Flowbite | component-library | tailwind,react,vue,svelte | https://flowbite.com/ | open-source Tailwind component library + Figma UI kit
+Headless UI | component-library | react,vue,unstyled,tailwind-team | https://headlessui.com/ | unstyled accessible components from the Tailwind team, pairs with Tailwind CSS
+HeroUI (NextUI) | component-library | react,tailwind,modern | https://www.heroui.com/ | formerly NextUI; modern React + Tailwind component library
+KokonutUI | component-library | react,tailwind,motion,shadcn-cli | https://kokonutui.com | MIT (kokonut-labs/kokonutui). Vendored: action-search-bar, attract-button, bento-grid, card-flip, file-upload, glitch-text, liquid-glass-card, mouse-effect-card
+Magic UI | component-library | react,tailwind,motion,marketing | https://magicui.design | MIT (magicuidesign/magicui). Vendored: border-beam, marquee, shimmer-button, dock
+Mantine | component-library | react,hooks,forms,dates | https://mantine.dev/ | full React component + hooks library, strong forms/dates/notifications modules
+OriginKit | component-library | react,decorative-effects,glass,glow,tilt,bento | https://www.originkit.dev | free animated component library; MCP plugin fetches source via API + key. Vendored: blackhole.tsx, smokytext.tsx
+Park UI | component-library | ark-ui,tailwind,panda-css,multi-framework | https://park-ui.com/ | components built on Ark UI, ships for React/Vue/Solid with Tailwind or Panda CSS styling
+Radix UI | component-library | primitives,accessible,aria,unstyled,react | https://www.radix-ui.com | unstyled accessible primitives + Themes 12-step color scale + Icons; the rigor reference for keyboard/ARIA contracts. Vendored: component-source/radix-primitives, component-source/radix-colors
+React Bits | component-library | react,animation,decorative | https://www.reactbits.dev/ | real repo DavidHDev/react-bits, MIT + Commons Clause — do NOT vendor/bundle, read+adapt per-project only
+shadcn/ui | component-library | react,tailwind,radix,copy-paste | https://ui.shadcn.com/ | MIT, Tailwind-styled wrappers around Radix primitives; copy-paste CLI-installed components
+Tailwind UI | component-library | tailwind,paid,marketing,application-ui | https://tailwindui.com/ | official paid Tailwind component/template set from Tailwind Labs
+Uiverse | component-library | css,tailwind,community,snippets | https://uiverse.io/ | huge community library of copy-paste CSS/Tailwind buttons, cards, loaders, checkboxes
+Clippy | css-effect-generator | clip-path,generator | https://bennettfeely.com/clippy/ | visual CSS clip-path shape generator
+CSS Grid Generator | css-effect-generator | css-grid,visual-editor | https://grid.layoutit.com/ | visual drag-based CSS Grid layout generator
+CSS Scan | css-effect-generator | extension,inspect-styles | https://getcssscan.com/ | browser extension for one-click copying any element's computed CSS from a live site
+Hover.css | css-effect-generator | hover-effects,css-classes | https://ianlunn.github.io/Hover/ | library of ready-made CSS hover-state effect classes
+Magic Pattern | css-effect-generator | pattern-generator,svg,noise | https://magicpattern.design/ | suite of pattern/noise/blob/gradient generators for backgrounds
+SVG Backgrounds | css-effect-generator | svg-pattern,generator | https://www.svgbackgrounds.com/ | tileable SVG background pattern generator
+Cuberto | cursor-interaction | agency,showcase,cursor-effects | https://cuberto.com/ | agency showcase site, reference for cursor/magnetic/scroll-choreography-heavy interaction craft
+ApexCharts | dataviz-charts | js,interactive,free | https://apexcharts.com/ | free interactive JS charting library, wide chart-type coverage
+bklit | dataviz-charts | react,charts,monochrome-accent | https://bklit.com/ | design-engineered chart set (17+ types), restrained neutral+one-accent palette model. Vendored: component-source/bklit-ui (technique reference, not standalone-runnable)
+Chart.js | dataviz-charts | js,canvas,lightweight | https://www.chartjs.org/ | lightweight canvas-based charting library, the common default
+Nivo | dataviz-charts | react,d3,svg-canvas-webgl | https://nivo.rocks/ | React data-viz components with SVG/Canvas/WebGL render targets
+Observable Plot | dataviz-charts | js,grammar-of-graphics,concise | https://observablehq.com/plot/ | concise grammar-of-graphics charting library from the D3 team
+Recharts | dataviz-charts | react,d3-based,composable | https://recharts.org/ | composable React charting library built on D3 primitives
+Tremor | dataviz-charts | react,dashboard,tailwind,charts | https://tremor.so/ | React library specifically for dashboards/charts, Tailwind-based
+visx | dataviz-charts | react,d3,low-level,airbnb | https://airbnb.io/visx/ | Airbnb's low-level React viz primitives built on D3, for fully custom charts
+Ant Design | design-system | react,enterprise,components | https://ant.design/ | enterprise-focused React design system + component library, huge component surface
+Apple HIG | design-system | apple,platform-conventions | https://developer.apple.com/design/human-interface-guidelines/ | Apple's platform interaction/visual convention reference (iOS/macOS/watchOS/visionOS)
+Atlassian Design System | design-system | enterprise,tokens,components | https://atlassian.design/ | Atlassian's public design system reference, good enterprise-density precedent
+Base Web | design-system | uber,react,modular | https://baseweb.design/ | Uber's modular React design system
+Carbon Design System | design-system | ibm,enterprise,open-source | https://carbondesignsystem.com/ | IBM's open-source enterprise design system, strong data-density/accessibility precedent
+Fluent 2 | design-system | microsoft,tokens,components | https://fluent2.microsoft.design/ | Microsoft's current design system reference
+Material Design 3 | design-system | google,reference,tokens | https://m3.material.io/ | Google's full design system reference: tokens, components, motion, accessibility specs
+Polaris | design-system | shopify,commerce,components | https://polaris.shopify.com/ | Shopify's design system, strong for admin/commerce-dashboard patterns
+Blobmaker | gradient-background | svg-blob,organic-shape | https://www.blobmaker.app/ | organic SVG blob shape generator
+Coolbackgrounds | gradient-background | generator,patterns,gradients | https://coolbackgrounds.io/ | background pattern + gradient + gif generator
+CSS Gradient | gradient-background | gradient-generator,css | https://cssgradient.io/ | linear/radial gradient generator with copy-paste CSS
+Get Waves | gradient-background | svg-waves,section-divider | https://getwaves.io/ | SVG wave-shape generator for section dividers
+Glassmorphism.com | gradient-background | glassmorphism,css-generator | https://glassmorphism.com/ | glassmorphism CSS generator (blur/opacity/border)
+Haikei | gradient-background | svg-generator,blobs,waves | https://haikei.app/ | generator for SVG blobs, waves, layered shape backgrounds
+Hypercolor | gradient-background | tailwind,gradient-gallery | https://hypercolor.dev/ | gradient gallery with Tailwind class output
+Mesher | gradient-background | mesh-gradient,css-generator | https://mesher.dev/ | mesh gradient generator, output as CSS
+Neumorphism.io | gradient-background | neumorphism,soft-ui,css-generator | https://neumorphism.io/ | soft-UI/neumorphic shadow-pair CSS generator
+Shadows Brumm | gradient-background | box-shadow,layered-shadow | https://shadows.brumm.af/ | layered box-shadow generator for realistic elevation
+uiGradients | gradient-background | gradient-gallery,hex-pairs | https://uigradients.com/ | curated named gradient pairs, copy hex codes or CSS
+Feather Icons | icons | svg,minimal,mit | https://feathericons.com/ | minimal open-source icon set, predecessor lineage to Lucide
+Font Awesome | icons | icon-font,svg,freemium | https://fontawesome.com/ | long-standing icon font/SVG set, free tier + paid pro set
+Heroicons | icons | svg,tailwind-team,mit | https://heroicons.com/ | MIT icon set by the Tailwind team. Vendored: component-source/icons/heroicons
+Iconoir | icons | svg,mit,open-source | https://iconoir.com/ | open-source icon library, react/vue/svelte packages available
+Lucide | icons | svg,open-source,react | https://lucide.dev/ | ISC-licensed icon set, fork of Feather. Vendored: component-source/icons/lucide
+Phosphor Icons | icons | svg,6-weights,mit | https://phosphoricons.com/ | MIT (@phosphor-icons/core), 6 style variants x ~1500 icons — fetch per-icon rather than pre-vendoring the whole set
+Remix Icon | icons | svg,neutral-style | https://remixicon.com/ | neutral-style open-source icon set
+Simple Icons | icons | brand-logos,svg | https://simpleicons.org/ | free SVG brand/logo icons for popular products and services
+Tabler Icons | icons | svg,large-set,mit | https://tabler.io/icons | large free MIT icon set (5000+), consistent stroke style
+Blush | illustration-imagery | customizable,mixed-styles | https://blush.design/ | customizable illustration compositions from multiple artists/styles
+DrawKit | illustration-imagery | illustration-packs,freemium | https://www.drawkit.com/ | illustration packs by style/theme, free + paid tiers
+Humaaans | illustration-imagery | people-illustration,mix-and-match | https://www.humaaans.com/ | mix-and-match human figure illustration library
+Open Doodles | illustration-imagery | hand-drawn,free,cc0 | https://www.opendoodles.com/ | free hand-drawn doodle-style illustrations, CC0
+Storyset | illustration-imagery | freepik,animated-svg,customizable | https://storyset.com/ | Freepik's customizable/animatable illustration sets
+unDraw | illustration-imagery | svg,recolorable,free | https://undraw.co/ | free recolorable SVG illustration set, open license
+Awwwards | inspiration-gallery | awards,agency,experimental,motion | https://www.awwwards.com/ | the long-running award-site benchmark, best for experimental/agency-tier craft
+Behance | inspiration-gallery | case-study,branding,ux-process | https://www.behance.net/ | full case studies incl. process/branding, good for narrative and system-level thinking
+CollectUI | inspiration-gallery | daily-ui,component-shots | https://collectui.com/ | Daily UI challenge submissions, good for isolated component ideas
+Curated.design | inspiration-gallery | tools,resources,aggregator | https://curated.design/ | aggregator of design tools and resources across categories
+Dribbble | inspiration-gallery | shots,concept,visual-design | https://dribbble.com/ | concept-level visual design shots, not shipped code — inspiration only, expect over-polish vs reality
+Footer Design | inspiration-gallery | footer,section-pattern | https://footer.design/ | footer-specific pattern gallery
+Godly | inspiration-gallery | landing-page,interactions,awwwards-tier | https://www.godly.website/ | hand-picked best-of-the-web landing pages, strong on interaction/motion
+Httpster | inspiration-gallery | web-design,gallery | https://httpster.net/ | long-running curated web design gallery
+Land-book | inspiration-gallery | landing-page,screenshots,saas,filter-by-industry | https://land-book.com/ | curated landing page screenshots, filterable by industry/style/color
+Landingfolio | inspiration-gallery | landing-page,by-section,saas | https://www.landingfolio.com/ | landing pages broken down by section (hero, pricing, footer...) for pattern reuse
+Lapa Ninja | inspiration-gallery | landing-page,by-industry,by-style | https://www.lapa.ninja | breadth-of-craft landing page gallery, minimal to maximal, categorized by industry/style
+Minimal Gallery | inspiration-gallery | minimal,clean | https://minimal.gallery/ | minimalist web design showcase
+Mobbin | inspiration-gallery | mobile,app-ui,flows,screenshots | https://www.mobbin.com/ | real shipped mobile & web app screens organized by flow (onboarding, checkout, settings...)
+Muzli | inspiration-gallery | feed,aggregator,dribbble,behance | https://muz.li/ | design feed aggregating Dribbble/Behance/Awwwards/blogs into one stream
+One Page Love | inspiration-gallery | one-page,landing-page | https://onepagelove.com/ | single-page site gallery, good for landing/launch patterns
+Page Flows | inspiration-gallery | flows,video,onboarding,checkout | https://pageflows.com/ | screen-recorded real product flows (onboarding, checkout, signup) — the flow equivalent of Mobbin
+Screenlane | inspiration-gallery | mobile,web,screenshots | https://screenlane.com/ | curated app/web screenshots by category
+Siteinspire | inspiration-gallery | portfolio,agency,minimal | https://www.siteinspire.com/ | curated showcase, strong filter by type/style/subject
+UI Garage | inspiration-gallery | ui-patterns,mobile,web | https://uigarage.net/ | pattern-level UI screenshots (specific components, not full pages)
+UI Movement | inspiration-gallery | motion,micro-interaction,gif | https://uimovement.com/ | micro-interaction and motion pattern gallery (gifs of real UI motion)
+Figma | prototyping-tool | design-tool,prototyping,dev-mode | https://www.figma.com/ | canonical design/prototyping tool; Dev Mode for inspecting real spacing/tokens from a handoff file
+Framer | prototyping-tool | site-builder,no-code,motion | https://www.framer.com/ | no-code site builder with strong native motion/interaction primitives
+Webflow | prototyping-tool | site-builder,cms,visual-css | https://webflow.com/ | visual CSS site builder with CMS, common client-delivery target
+Pexels | stock-photo | free,photography,video | https://www.pexels.com/ | free stock photo and video library
+Unsplash | stock-photo | free,photography | https://unsplash.com/ | free high-quality stock photography
+Font Pair | typography | pairing,google-fonts | https://www.fontpair.co/ | pre-matched Google Fonts heading/body pairings
+Fontjoy | typography | ai-pairing,generator | https://fontjoy.com/ | deep-learning-assisted font pairing generator
+Fonts In Use | typography | gallery,print-and-web | https://fontsinuse.com/ | real-world font usage archive across print and web
+Google Fonts | typography | free,web-fonts,source | https://fonts.google.com/ | canonical free/open web font source, use before any paid alternative
+Type Scale | typography | modular-scale,css-vars | https://typescale.com/ | generates a modular type scale with copy-paste CSS variables
+Typewolf | typography | gallery,font-in-use | https://www.typewolf.com/ | typography-in-the-wild gallery, not a codebase
+CSS-Tricks | ux-reference | css,reference,snippets | https://css-tricks.com/ | long-standing CSS technique reference and snippet archive (Guide to Flexbox/Grid, almanac)
+Growth.design | ux-reference | case-study,comic-format,behavioral-design | https://growth.design/ | comic-style case studies breaking down behavioral-design decisions in real shipped products
+Interaction Design Foundation | ux-reference | courses,glossary,foundational | https://www.interaction-design.org/ | foundational UX courses + glossary, good for grounding terminology and process
+Laws of UX | ux-reference | principles,cheatsheet,psychology | https://lawsofux.com/ | named UX/psychology principles (Fitts's Law, Hick's Law, Jakob's Law...) as a quick-reference cheatsheet
+Nielsen Norman Group | ux-reference | research,usability,authoritative | https://www.nngroup.com/ | the authoritative UX research body — usability heuristics, research-backed pattern guidance
+Refactoring UI | ux-reference | book,practical-tips,visual-design | https://www.refactoringui.com/ | Adam Wathan & Steve Schoger's practical visual-design tips (spacing, contrast, hierarchy) for developers without a design background
+Smashing Magazine | ux-reference | articles,css,ux,front-end | https://www.smashingmagazine.com/ | long-running deep-dive articles on UX, CSS techniques, and front-end craft
+UX Collective | ux-reference | articles,case-studies,medium | https://uxdesign.cc/ | large UX-practitioner article/case-study publication
