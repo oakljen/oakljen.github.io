@@ -47,6 +47,15 @@
   {"name":"Huemint","url":"https://huemint.com/","category":"color-tool","tags":["ai-generator","brand-palette"],"note":"generative palette tool for brand/UI/print combos, weighted role sliders"},
   {"name":"Leonardo","url":"https://leonardocolor.io/","category":"color-tool","tags":["contrast","accessible-scale","adobe"],"note":"Adobe's contrast-based accessible color scale generator, outputs perceptually-tuned ramps"},
   {"name":"Tints.dev","url":"https://www.tints.dev/","category":"color-tool","tags":["tailwind-scale","shade-generator"],"note":"generate a Tailwind-style 50-950 shade ramp from one base color"},
+  {"name":"Adobe Color","url":"https://color.adobe.com/","category":"color-tool","tags":["color-wheel","extract-from-image","harmony-rules"],"note":"color wheel + harmony-rule palette builder, can extract a palette from an uploaded image"},
+  {"name":"Paletton","url":"https://paletton.com/","category":"color-tool","tags":["color-wheel","scheme-designer"],"note":"color-wheel scheme designer (mono/complementary/triad/tetrad) with live mock-UI preview"},
+  {"name":"ColorSpace","url":"https://mycolor.space/","category":"color-tool","tags":["single-color-input","palette-generator"],"note":"generates full palettes (gradient, scale, shades) from one input color"},
+  {"name":"Colormind","url":"http://colormind.io/","category":"color-tool","tags":["ai-generator","photo-extraction"],"note":"AI-trained palette generator, can also extract a palette from a photo"},
+  {"name":"Khroma","url":"https://www.khroma.co/","category":"color-tool","tags":["ai-personalized","trained-on-picks"],"note":"AI trained on 50 of your color picks, then generates endless palettes matching your taste"},
+  {"name":"0to255","url":"https://0to255.com/","category":"color-tool","tags":["tint-shade-generator"],"note":"quick tint/shade ramp for one color, useful for hover/active state variants"},
+  {"name":"ColorBox","url":"https://colorbox.io/","category":"color-tool","tags":["lyft","systematic-scale","export"],"note":"Lyft's systematic color-scale builder for multi-hue design-system palettes, exports as data/CSS"},
+  {"name":"Accessible Colors","url":"https://accessible-colors.com/","category":"color-tool","tags":["wcag-contrast","suggest-fix"],"note":"checks a foreground/background pair against WCAG and suggests the nearest passing adjustment"},
+  {"name":"Colorable","url":"https://colorable.jxnblk.com/","category":"color-tool","tags":["contrast-grid","palette-wide-check"],"note":"contrast-ratio grid across an entire palette at once, not just one pair at a time"},
 
   {"name":"Typewolf","url":"https://www.typewolf.com/","category":"typography","tags":["gallery","font-in-use"],"note":"typography-in-the-wild gallery, not a codebase"},
   {"name":"Fonts In Use","url":"https://fontsinuse.com/","category":"typography","tags":["gallery","print-and-web"],"note":"real-world font usage archive across print and web"},
@@ -75,6 +84,12 @@
   {"name":"Easings.net","url":"https://easings.net/","category":"animation-engine","tags":["easing-reference","cheatsheet"],"note":"named easing function reference with visual + CSS/JS snippets"},
   {"name":"Animista","url":"https://animista.net/","category":"animation-engine","tags":["css-keyframes","generator"],"note":"pure-CSS keyframe animation generator, copy-paste classes"},
   {"name":"Lenis","url":"https://lenis.darkroom.engineering/","category":"animation-engine","tags":["smooth-scroll","js"],"note":"Studio Freight's smooth-scroll library, pairs with GSAP ScrollTrigger for scroll choreography"},
+  {"name":"Rive","url":"https://rive.app/","category":"animation-engine","tags":["interactive","state-machine","runtime","design-tool"],"note":"design tool + lightweight runtime for interactive vector animations with state machines (hover/drag-reactive, not just timeline playback)"},
+  {"name":"Spline","url":"https://spline.design/","category":"animation-engine","tags":["3d","webgl","design-tool","real-time"],"note":"real-time 3D design tool for building interactive WebGL scenes without hand-writing Three.js"},
+  {"name":"Theatre.js","url":"https://www.theatrejs.com/","category":"animation-engine","tags":["js","visual-editor","precise-keyframing"],"note":"JS animation library with a visual timeline editor for precisely keyframing complex sequences"},
+  {"name":"Splitting.js","url":"https://splitting.js.org/","category":"animation-engine","tags":["text-split","css-vars","kinetic-type"],"note":"splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects"},
+  {"name":"Principle","url":"https://principleformac.com/","category":"animation-engine","tags":["mac-app","paid","interaction-prototyping"],"note":"paid Mac app for timeline/state-based interaction prototyping, common for handoff-quality motion specs"},
+  {"name":"ProtoPie","url":"https://www.protopie.io/","category":"animation-engine","tags":["no-code","sensor-input","interaction-prototyping"],"note":"no-code interaction prototyping tool, supports sensor/device input triggers beyond click/hover"},
 
   {"name":"Lucide","url":"https://lucide.dev/","category":"icons","tags":["svg","open-source","react"],"note":"ISC-licensed icon set, fork of Feather. Vendored: component-source/icons/lucide"},
   {"name":"Heroicons","url":"https://heroicons.com/","category":"icons","tags":["svg","tailwind-team","mit"],"note":"MIT icon set by the Tailwind team. Vendored: component-source/icons/heroicons"},
@@ -127,5 +142,14 @@
   {"name":"SVG Backgrounds","url":"https://www.svgbackgrounds.com/","category":"css-effect-generator","tags":["svg-pattern","generator"],"note":"tileable SVG background pattern generator"},
   {"name":"Magic Pattern","url":"https://magicpattern.design/","category":"css-effect-generator","tags":["pattern-generator","svg","noise"],"note":"suite of pattern/noise/blob/gradient generators for backgrounds"},
 
-  {"name":"Cuberto","url":"https://cuberto.com/","category":"cursor-interaction","tags":["agency","showcase","cursor-effects"],"note":"agency showcase site, reference for cursor/magnetic/scroll-choreography-heavy interaction craft"}
+  {"name":"Cuberto","url":"https://cuberto.com/","category":"cursor-interaction","tags":["agency","showcase","cursor-effects"],"note":"agency showcase site, reference for cursor/magnetic/scroll-choreography-heavy interaction craft"},
+
+  {"name":"Laws of UX","url":"https://lawsofux.com/","category":"ux-reference","tags":["principles","cheatsheet","psychology"],"note":"named UX/psychology principles (Fitts's Law, Hick's Law, Jakob's Law...) as a quick-reference cheatsheet"},
+  {"name":"Nielsen Norman Group","url":"https://www.nngroup.com/","category":"ux-reference","tags":["research","usability","authoritative"],"note":"the authoritative UX research body — usability heuristics, research-backed pattern guidance"},
+  {"name":"Refactoring UI","url":"https://www.refactoringui.com/","category":"ux-reference","tags":["book","practical-tips","visual-design"],"note":"Adam Wathan & Steve Schoger's practical visual-design tips (spacing, contrast, hierarchy) for developers without a design background"},
+  {"name":"Smashing Magazine","url":"https://www.smashingmagazine.com/","category":"ux-reference","tags":["articles","css","ux","front-end"],"note":"long-running deep-dive articles on UX, CSS techniques, and front-end craft"},
+  {"name":"CSS-Tricks","url":"https://css-tricks.com/","category":"ux-reference","tags":["css","reference","snippets"],"note":"long-standing CSS technique reference and snippet archive (Guide to Flexbox/Grid, almanac)"},
+  {"name":"UX Collective","url":"https://uxdesign.cc/","category":"ux-reference","tags":["articles","case-studies","medium"],"note":"large UX-practitioner article/case-study publication"},
+  {"name":"Growth.design","url":"https://growth.design/","category":"ux-reference","tags":["case-study","comic-format","behavioral-design"],"note":"comic-style case studies breaking down behavioral-design decisions in real shipped products"},
+  {"name":"Interaction Design Foundation","url":"https://www.interaction-design.org/","category":"ux-reference","tags":["courses","glossary","foundational"],"note":"foundational UX courses + glossary, good for grounding terminology and process"}
 ]
