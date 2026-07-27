@@ -49,8 +49,8 @@
 - real-time 3D design tool for building interactive WebGL scenes without hand-writing Three.js
 
 ### [Splitting.js](https://splitting.js.org/)
-- tags: text-split, css-vars, kinetic-type
-- splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects
+- tags: text-split, css-vars, kinetic-type, vendored
+- splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects — MIT, vendored at component-source/splitting/
 
 ### [Theatre.js](https://www.theatrejs.com/)
 - tags: js, visual-editor, precise-keyframing

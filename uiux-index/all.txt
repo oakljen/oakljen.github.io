@@ -13,7 +13,7 @@ Principle | animation-engine | mac-app,paid,interaction-prototyping | https://pr
 ProtoPie | animation-engine | no-code,sensor-input,interaction-prototyping | https://www.protopie.io/ | no-code interaction prototyping tool, supports sensor/device input triggers beyond click/hover
 Rive | animation-engine | interactive,state-machine,runtime,design-tool | https://rive.app/ | design tool + lightweight runtime for interactive vector animations with state machines (hover/drag-reactive, not just timeline playback)
 Spline | animation-engine | 3d,webgl,design-tool,real-time | https://spline.design/ | real-time 3D design tool for building interactive WebGL scenes without hand-writing Three.js
-Splitting.js | animation-engine | text-split,css-vars,kinetic-type | https://splitting.js.org/ | splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects
+Splitting.js | animation-engine | text-split,css-vars,kinetic-type,vendored | https://splitting.js.org/ | splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects — MIT, vendored at component-source/splitting/
 Theatre.js | animation-engine | js,visual-editor,precise-keyframing | https://www.theatrejs.com/ | JS animation library with a visual timeline editor for precisely keyframing complex sequences
 0to255 | color-tool | tint-shade-generator | https://0to255.com/ | quick tint/shade ramp for one color, useful for hover/active state variants
 Accessible Colors | color-tool | wcag-contrast,suggest-fix | https://accessible-colors.com/ | checks a foreground/background pair against WCAG and suggests the nearest passing adjustment
@@ -35,10 +35,11 @@ Tints.dev | color-tool | tailwind-scale,shade-generator | https://www.tints.dev/
 Aceternity UI | component-library | react,tailwind,framer-motion,decorative | https://ui.aceternity.com/ | copy-paste snippets/shadcn-registry entries, no single clonable repo — inspiration-only
 Ark UI | component-library | headless,state-machines,multi-framework | https://ark-ui.com/ | headless component library built on statecharts (Zag.js), framework-agnostic logic
 Chakra UI | component-library | react,accessible,theming | https://www.chakra-ui.com/ | accessible React component library with a style-prop theming system
+Cult UI | component-library | react,tailwind,motion,shadcn-cli,set-piece | https://cult-ui.com | niche animated shadcn-CLI components (Dynamic Island widget, direction-aware tabs) not covered by kokonutui/magicui — MIT, vendored
 daisyUI | component-library | tailwind,css-only,themeable | https://daisyui.com/ | CSS-class component library on top of Tailwind, no JS required, many built-in themes
 Flowbite | component-library | tailwind,react,vue,svelte | https://flowbite.com/ | open-source Tailwind component library + Figma UI kit
 Headless UI | component-library | react,vue,unstyled,tailwind-team | https://headlessui.com/ | unstyled accessible components from the Tailwind team, pairs with Tailwind CSS
-HeroUI (NextUI) | component-library | react,tailwind,modern | https://www.heroui.com/ | formerly NextUI; modern React + Tailwind component library
+HeroUI (NextUI) | component-library | react,tailwind,react-aria,apache-2.0 | https://www.heroui.com/ | Apache-2.0 (not MIT despite site claims), React-Aria-based a11y patterns — reference only, not vendored (npm-only, no copy-paste files)
 KokonutUI | component-library | react,tailwind,motion,shadcn-cli | https://kokonutui.com | MIT (kokonut-labs/kokonutui). Vendored: action-search-bar, attract-button, bento-grid, card-flip, file-upload, glitch-text, liquid-glass-card, mouse-effect-card
 Magic UI | component-library | react,tailwind,motion,marketing | https://magicui.design | MIT (magicuidesign/magicui). Vendored: border-beam, marquee, shimmer-button, dock
 Mantine | component-library | react,hooks,forms,dates | https://mantine.dev/ | full React component + hooks library, strong forms/dates/notifications modules
@@ -47,6 +48,7 @@ Park UI | component-library | ark-ui,tailwind,panda-css,multi-framework | https:
 Radix UI | component-library | primitives,accessible,aria,unstyled,react | https://www.radix-ui.com | unstyled accessible primitives + Themes 12-step color scale + Icons; the rigor reference for keyboard/ARIA contracts. Vendored: component-source/radix-primitives, component-source/radix-colors
 React Bits | component-library | react,animation,decorative | https://www.reactbits.dev/ | real repo DavidHDev/react-bits, MIT + Commons Clause — do NOT vendor/bundle, read+adapt per-project only
 shadcn/ui | component-library | react,tailwind,radix,copy-paste | https://ui.shadcn.com/ | MIT, Tailwind-styled wrappers around Radix primitives; copy-paste CLI-installed components
+shadcn/ui MCP | component-library | mcp,registry-search,ai-tool | https://ui.shadcn.com/docs/mcp | official MCP server to search/install shadcn-registry components via natural language — documented in uimaxing/mcp-servers.md
 Tailwind UI | component-library | tailwind,paid,marketing,application-ui | https://tailwindui.com/ | official paid Tailwind component/template set from Tailwind Labs
 Uiverse | component-library | css,tailwind,community,snippets | https://uiverse.io/ | huge community library of copy-paste CSS/Tailwind buttons, cards, loaders, checkboxes
 Clippy | css-effect-generator | clip-path,generator | https://bennettfeely.com/clippy/ | visual CSS clip-path shape generator
@@ -83,6 +85,7 @@ Mesher | gradient-background | mesh-gradient,css-generator | https://mesher.dev/
 Neumorphism.io | gradient-background | neumorphism,soft-ui,css-generator | https://neumorphism.io/ | soft-UI/neumorphic shadow-pair CSS generator
 Shadows Brumm | gradient-background | box-shadow,layered-shadow | https://shadows.brumm.af/ | layered box-shadow generator for realistic elevation
 uiGradients | gradient-background | gradient-gallery,hex-pairs | https://uigradients.com/ | curated named gradient pairs, copy hex codes or CSS
+Vanta.js | gradient-background | webgl,three.js,animated-background,3d | https://www.vantajs.com | turnkey animated WebGL backgrounds (net, waves, fog, birds...) — new category vs CSS-only aurora/mesh recipes, MIT, two effects vendored (net, waves)
 Feather Icons | icons | svg,minimal,mit | https://feathericons.com/ | minimal open-source icon set, predecessor lineage to Lucide
 Font Awesome | icons | icon-font,svg,freemium | https://fontawesome.com/ | long-standing icon font/SVG set, free tier + paid pro set
 Heroicons | icons | svg,tailwind-team,mit | https://heroicons.com/ | MIT icon set by the Tailwind team. Vendored: component-source/icons/heroicons
@@ -119,6 +122,7 @@ Siteinspire | inspiration-gallery | portfolio,agency,minimal | https://www.sitei
 UI Garage | inspiration-gallery | ui-patterns,mobile,web | https://uigarage.net/ | pattern-level UI screenshots (specific components, not full pages)
 UI Movement | inspiration-gallery | motion,micro-interaction,gif | https://uimovement.com/ | micro-interaction and motion pattern gallery (gifs of real UI motion)
 Figma | prototyping-tool | design-tool,prototyping,dev-mode | https://www.figma.com/ | canonical design/prototyping tool; Dev Mode for inspecting real spacing/tokens from a handoff file
+Framelink Figma MCP | prototyping-tool | mcp,figma,design-tokens,ai-tool | https://github.com/GLips/Figma-Context-MCP | MIT community MCP reading Figma file layout/variables/components as structured tokens — documented in uimaxing/mcp-servers.md
 Framer | prototyping-tool | site-builder,no-code,motion | https://www.framer.com/ | no-code site builder with strong native motion/interaction primitives
 Webflow | prototyping-tool | site-builder,cms,visual-css | https://webflow.com/ | visual CSS site builder with CMS, common client-delivery target
 Pexels | stock-photo | free,photography,video | https://www.pexels.com/ | free stock photo and video library

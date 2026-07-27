@@ -43,3 +43,7 @@
 ### [uiGradients](https://uigradients.com/)
 - tags: gradient-gallery, hex-pairs
 - curated named gradient pairs, copy hex codes or CSS
+
+### [Vanta.js](https://www.vantajs.com)
+- tags: webgl, three.js, animated-background, 3d
+- turnkey animated WebGL backgrounds (net, waves, fog, birds...) — new category vs CSS-only aurora/mesh recipes, MIT, two effects vendored (net, waves)

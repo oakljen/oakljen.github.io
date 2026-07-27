@@ -16,6 +16,10 @@
 - tags: react, accessible, theming
 - accessible React component library with a style-prop theming system
 
+### [Cult UI](https://cult-ui.com)
+- tags: react, tailwind, motion, shadcn-cli, set-piece
+- niche animated shadcn-CLI components (Dynamic Island widget, direction-aware tabs) not covered by kokonutui/magicui — MIT, vendored
+
 ### [daisyUI](https://daisyui.com/)
 - tags: tailwind, css-only, themeable
 - CSS-class component library on top of Tailwind, no JS required, many built-in themes
@@ -29,8 +33,8 @@
 - unstyled accessible components from the Tailwind team, pairs with Tailwind CSS
 
 ### [HeroUI (NextUI)](https://www.heroui.com/)
-- tags: react, tailwind, modern
-- formerly NextUI; modern React + Tailwind component library
+- tags: react, tailwind, react-aria, apache-2.0
+- Apache-2.0 (not MIT despite site claims), React-Aria-based a11y patterns — reference only, not vendored (npm-only, no copy-paste files)
 
 ### [KokonutUI](https://kokonutui.com)
 - tags: react, tailwind, motion, shadcn-cli
@@ -63,6 +67,10 @@
 ### [shadcn/ui](https://ui.shadcn.com/)
 - tags: react, tailwind, radix, copy-paste
 - MIT, Tailwind-styled wrappers around Radix primitives; copy-paste CLI-installed components
+
+### [shadcn/ui MCP](https://ui.shadcn.com/docs/mcp)
+- tags: mcp, registry-search, ai-tool
+- official MCP server to search/install shadcn-registry components via natural language — documented in uimaxing/mcp-servers.md
 
 ### [Tailwind UI](https://tailwindui.com/)
 - tags: tailwind, paid, marketing, application-ui

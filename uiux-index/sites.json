@@ -1,155 +1,1560 @@
 [
-  {"name":"Land-book","url":"https://land-book.com/","category":"inspiration-gallery","tags":["landing-page","screenshots","saas","filter-by-industry"],"note":"curated landing page screenshots, filterable by industry/style/color"},
-  {"name":"Godly","url":"https://www.godly.website/","category":"inspiration-gallery","tags":["landing-page","interactions","awwwards-tier"],"note":"hand-picked best-of-the-web landing pages, strong on interaction/motion"},
-  {"name":"Awwwards","url":"https://www.awwwards.com/","category":"inspiration-gallery","tags":["awards","agency","experimental","motion"],"note":"the long-running award-site benchmark, best for experimental/agency-tier craft"},
-  {"name":"Siteinspire","url":"https://www.siteinspire.com/","category":"inspiration-gallery","tags":["portfolio","agency","minimal"],"note":"curated showcase, strong filter by type/style/subject"},
-  {"name":"One Page Love","url":"https://onepagelove.com/","category":"inspiration-gallery","tags":["one-page","landing-page"],"note":"single-page site gallery, good for landing/launch patterns"},
-  {"name":"Mobbin","url":"https://www.mobbin.com/","category":"inspiration-gallery","tags":["mobile","app-ui","flows","screenshots"],"note":"real shipped mobile & web app screens organized by flow (onboarding, checkout, settings...)"},
-  {"name":"Lapa Ninja","url":"https://www.lapa.ninja","category":"inspiration-gallery","tags":["landing-page","by-industry","by-style"],"note":"breadth-of-craft landing page gallery, minimal to maximal, categorized by industry/style"},
-  {"name":"Muzli","url":"https://muz.li/","category":"inspiration-gallery","tags":["feed","aggregator","dribbble","behance"],"note":"design feed aggregating Dribbble/Behance/Awwwards/blogs into one stream"},
-  {"name":"Curated.design","url":"https://curated.design/","category":"inspiration-gallery","tags":["tools","resources","aggregator"],"note":"aggregator of design tools and resources across categories"},
-  {"name":"UI Garage","url":"https://uigarage.net/","category":"inspiration-gallery","tags":["ui-patterns","mobile","web"],"note":"pattern-level UI screenshots (specific components, not full pages)"},
-  {"name":"Screenlane","url":"https://screenlane.com/","category":"inspiration-gallery","tags":["mobile","web","screenshots"],"note":"curated app/web screenshots by category"},
-  {"name":"Dribbble","url":"https://dribbble.com/","category":"inspiration-gallery","tags":["shots","concept","visual-design"],"note":"concept-level visual design shots, not shipped code — inspiration only, expect over-polish vs reality"},
-  {"name":"Behance","url":"https://www.behance.net/","category":"inspiration-gallery","tags":["case-study","branding","ux-process"],"note":"full case studies incl. process/branding, good for narrative and system-level thinking"},
-  {"name":"Landingfolio","url":"https://www.landingfolio.com/","category":"inspiration-gallery","tags":["landing-page","by-section","saas"],"note":"landing pages broken down by section (hero, pricing, footer...) for pattern reuse"},
-  {"name":"Page Flows","url":"https://pageflows.com/","category":"inspiration-gallery","tags":["flows","video","onboarding","checkout"],"note":"screen-recorded real product flows (onboarding, checkout, signup) — the flow equivalent of Mobbin"},
-  {"name":"Httpster","url":"https://httpster.net/","category":"inspiration-gallery","tags":["web-design","gallery"],"note":"long-running curated web design gallery"},
-  {"name":"Minimal Gallery","url":"https://minimal.gallery/","category":"inspiration-gallery","tags":["minimal","clean"],"note":"minimalist web design showcase"},
-  {"name":"Footer Design","url":"https://footer.design/","category":"inspiration-gallery","tags":["footer","section-pattern"],"note":"footer-specific pattern gallery"},
-  {"name":"CollectUI","url":"https://collectui.com/","category":"inspiration-gallery","tags":["daily-ui","component-shots"],"note":"Daily UI challenge submissions, good for isolated component ideas"},
-  {"name":"UI Movement","url":"https://uimovement.com/","category":"inspiration-gallery","tags":["motion","micro-interaction","gif"],"note":"micro-interaction and motion pattern gallery (gifs of real UI motion)"},
-
-  {"name":"Radix UI","url":"https://www.radix-ui.com","category":"component-library","tags":["primitives","accessible","aria","unstyled","react"],"note":"unstyled accessible primitives + Themes 12-step color scale + Icons; the rigor reference for keyboard/ARIA contracts. Vendored: component-source/radix-primitives, component-source/radix-colors"},
-  {"name":"shadcn/ui","url":"https://ui.shadcn.com/","category":"component-library","tags":["react","tailwind","radix","copy-paste"],"note":"MIT, Tailwind-styled wrappers around Radix primitives; copy-paste CLI-installed components"},
-  {"name":"Magic UI","url":"https://magicui.design","category":"component-library","tags":["react","tailwind","motion","marketing"],"note":"MIT (magicuidesign/magicui). Vendored: border-beam, marquee, shimmer-button, dock"},
-  {"name":"Aceternity UI","url":"https://ui.aceternity.com/","category":"component-library","tags":["react","tailwind","framer-motion","decorative"],"note":"copy-paste snippets/shadcn-registry entries, no single clonable repo — inspiration-only"},
-  {"name":"OriginKit","url":"https://www.originkit.dev","category":"component-library","tags":["react","decorative-effects","glass","glow","tilt","bento"],"note":"free animated component library; MCP plugin fetches source via API + key. Vendored: blackhole.tsx, smokytext.tsx"},
-  {"name":"KokonutUI","url":"https://kokonutui.com","category":"component-library","tags":["react","tailwind","motion","shadcn-cli"],"note":"MIT (kokonut-labs/kokonutui). Vendored: action-search-bar, attract-button, bento-grid, card-flip, file-upload, glitch-text, liquid-glass-card, mouse-effect-card"},
-  {"name":"React Bits","url":"https://www.reactbits.dev/","category":"component-library","tags":["react","animation","decorative"],"note":"real repo DavidHDev/react-bits, MIT + Commons Clause — do NOT vendor/bundle, read+adapt per-project only"},
-  {"name":"21st.dev","url":"https://21st.dev/","category":"component-library","tags":["marketplace","shadcn-registry","react"],"note":"marketplace of many authors' shadcn-registry components, discovery/inspiration only"},
-  {"name":"Tailwind UI","url":"https://tailwindui.com/","category":"component-library","tags":["tailwind","paid","marketing","application-ui"],"note":"official paid Tailwind component/template set from Tailwind Labs"},
-  {"name":"daisyUI","url":"https://daisyui.com/","category":"component-library","tags":["tailwind","css-only","themeable"],"note":"CSS-class component library on top of Tailwind, no JS required, many built-in themes"},
-  {"name":"Flowbite","url":"https://flowbite.com/","category":"component-library","tags":["tailwind","react","vue","svelte"],"note":"open-source Tailwind component library + Figma UI kit"},
-  {"name":"Chakra UI","url":"https://www.chakra-ui.com/","category":"component-library","tags":["react","accessible","theming"],"note":"accessible React component library with a style-prop theming system"},
-  {"name":"Mantine","url":"https://mantine.dev/","category":"component-library","tags":["react","hooks","forms","dates"],"note":"full React component + hooks library, strong forms/dates/notifications modules"},
-  {"name":"Headless UI","url":"https://headlessui.com/","category":"component-library","tags":["react","vue","unstyled","tailwind-team"],"note":"unstyled accessible components from the Tailwind team, pairs with Tailwind CSS"},
-  {"name":"HeroUI (NextUI)","url":"https://www.heroui.com/","category":"component-library","tags":["react","tailwind","modern"],"note":"formerly NextUI; modern React + Tailwind component library"},
-  {"name":"Park UI","url":"https://park-ui.com/","category":"component-library","tags":["ark-ui","tailwind","panda-css","multi-framework"],"note":"components built on Ark UI, ships for React/Vue/Solid with Tailwind or Panda CSS styling"},
-  {"name":"Tremor","url":"https://tremor.so/","category":"dataviz-charts","tags":["react","dashboard","tailwind","charts"],"note":"React library specifically for dashboards/charts, Tailwind-based"},
-  {"name":"Ark UI","url":"https://ark-ui.com/","category":"component-library","tags":["headless","state-machines","multi-framework"],"note":"headless component library built on statecharts (Zag.js), framework-agnostic logic"},
-  {"name":"Uiverse","url":"https://uiverse.io/","category":"component-library","tags":["css","tailwind","community","snippets"],"note":"huge community library of copy-paste CSS/Tailwind buttons, cards, loaders, checkboxes"},
-
-  {"name":"Coolors","url":"https://coolors.co/","category":"color-tool","tags":["palette-generator"],"note":"fast palette generation tool, not a codebase"},
-  {"name":"Radix Colors","url":"https://www.radix-ui.com/colors","category":"color-tool","tags":["12-step-scale","accessible","generator"],"note":"12-step accessible color scale generator/model; all 30 hues vendored at component-source/radix-colors"},
-  {"name":"Color Hunt","url":"https://colorhunt.co/","category":"color-tool","tags":["palette-gallery","trending"],"note":"trending community-submitted 4-color palettes"},
-  {"name":"Realtime Colors","url":"https://www.realtimecolors.com/","category":"color-tool","tags":["live-preview","palette-on-ui"],"note":"preview a palette live on a mock UI (text/bg/accent) before committing"},
-  {"name":"Huemint","url":"https://huemint.com/","category":"color-tool","tags":["ai-generator","brand-palette"],"note":"generative palette tool for brand/UI/print combos, weighted role sliders"},
-  {"name":"Leonardo","url":"https://leonardocolor.io/","category":"color-tool","tags":["contrast","accessible-scale","adobe"],"note":"Adobe's contrast-based accessible color scale generator, outputs perceptually-tuned ramps"},
-  {"name":"Tints.dev","url":"https://www.tints.dev/","category":"color-tool","tags":["tailwind-scale","shade-generator"],"note":"generate a Tailwind-style 50-950 shade ramp from one base color"},
-  {"name":"Adobe Color","url":"https://color.adobe.com/","category":"color-tool","tags":["color-wheel","extract-from-image","harmony-rules"],"note":"color wheel + harmony-rule palette builder, can extract a palette from an uploaded image"},
-  {"name":"Paletton","url":"https://paletton.com/","category":"color-tool","tags":["color-wheel","scheme-designer"],"note":"color-wheel scheme designer (mono/complementary/triad/tetrad) with live mock-UI preview"},
-  {"name":"ColorSpace","url":"https://mycolor.space/","category":"color-tool","tags":["single-color-input","palette-generator"],"note":"generates full palettes (gradient, scale, shades) from one input color"},
-  {"name":"Colormind","url":"http://colormind.io/","category":"color-tool","tags":["ai-generator","photo-extraction"],"note":"AI-trained palette generator, can also extract a palette from a photo"},
-  {"name":"Khroma","url":"https://www.khroma.co/","category":"color-tool","tags":["ai-personalized","trained-on-picks"],"note":"AI trained on 50 of your color picks, then generates endless palettes matching your taste"},
-  {"name":"0to255","url":"https://0to255.com/","category":"color-tool","tags":["tint-shade-generator"],"note":"quick tint/shade ramp for one color, useful for hover/active state variants"},
-  {"name":"ColorBox","url":"https://colorbox.io/","category":"color-tool","tags":["lyft","systematic-scale","export"],"note":"Lyft's systematic color-scale builder for multi-hue design-system palettes, exports as data/CSS"},
-  {"name":"Accessible Colors","url":"https://accessible-colors.com/","category":"color-tool","tags":["wcag-contrast","suggest-fix"],"note":"checks a foreground/background pair against WCAG and suggests the nearest passing adjustment"},
-  {"name":"Colorable","url":"https://colorable.jxnblk.com/","category":"color-tool","tags":["contrast-grid","palette-wide-check"],"note":"contrast-ratio grid across an entire palette at once, not just one pair at a time"},
-
-  {"name":"Typewolf","url":"https://www.typewolf.com/","category":"typography","tags":["gallery","font-in-use"],"note":"typography-in-the-wild gallery, not a codebase"},
-  {"name":"Fonts In Use","url":"https://fontsinuse.com/","category":"typography","tags":["gallery","print-and-web"],"note":"real-world font usage archive across print and web"},
-  {"name":"Font Pair","url":"https://www.fontpair.co/","category":"typography","tags":["pairing","google-fonts"],"note":"pre-matched Google Fonts heading/body pairings"},
-  {"name":"Fontjoy","url":"https://fontjoy.com/","category":"typography","tags":["ai-pairing","generator"],"note":"deep-learning-assisted font pairing generator"},
-  {"name":"Type Scale","url":"https://typescale.com/","category":"typography","tags":["modular-scale","css-vars"],"note":"generates a modular type scale with copy-paste CSS variables"},
-  {"name":"Google Fonts","url":"https://fonts.google.com/","category":"typography","tags":["free","web-fonts","source"],"note":"canonical free/open web font source, use before any paid alternative"},
-
-  {"name":"CSS Gradient","url":"https://cssgradient.io/","category":"gradient-background","tags":["gradient-generator","css"],"note":"linear/radial gradient generator with copy-paste CSS"},
-  {"name":"uiGradients","url":"https://uigradients.com/","category":"gradient-background","tags":["gradient-gallery","hex-pairs"],"note":"curated named gradient pairs, copy hex codes or CSS"},
-  {"name":"Hypercolor","url":"https://hypercolor.dev/","category":"gradient-background","tags":["tailwind","gradient-gallery"],"note":"gradient gallery with Tailwind class output"},
-  {"name":"Mesher","url":"https://mesher.dev/","category":"gradient-background","tags":["mesh-gradient","css-generator"],"note":"mesh gradient generator, output as CSS"},
-  {"name":"Coolbackgrounds","url":"https://coolbackgrounds.io/","category":"gradient-background","tags":["generator","patterns","gradients"],"note":"background pattern + gradient + gif generator"},
-  {"name":"Haikei","url":"https://haikei.app/","category":"gradient-background","tags":["svg-generator","blobs","waves"],"note":"generator for SVG blobs, waves, layered shape backgrounds"},
-  {"name":"Blobmaker","url":"https://www.blobmaker.app/","category":"gradient-background","tags":["svg-blob","organic-shape"],"note":"organic SVG blob shape generator"},
-  {"name":"Glassmorphism.com","url":"https://glassmorphism.com/","category":"gradient-background","tags":["glassmorphism","css-generator"],"note":"glassmorphism CSS generator (blur/opacity/border)"},
-  {"name":"Neumorphism.io","url":"https://neumorphism.io/","category":"gradient-background","tags":["neumorphism","soft-ui","css-generator"],"note":"soft-UI/neumorphic shadow-pair CSS generator"},
-  {"name":"Get Waves","url":"https://getwaves.io/","category":"gradient-background","tags":["svg-waves","section-divider"],"note":"SVG wave-shape generator for section dividers"},
-  {"name":"Shadows Brumm","url":"https://shadows.brumm.af/","category":"gradient-background","tags":["box-shadow","layered-shadow"],"note":"layered box-shadow generator for realistic elevation"},
-
-  {"name":"Animejs","url":"https://animejs.com/","category":"animation-engine","tags":["js","timeline","svg-morph","stagger"],"note":"npm animejs v4; timeline API, SVG line-draw/morph, motion-path, draggable. Vendored: component-source/js-animation-engines/anime.min.js"},
-  {"name":"Motion (Framer Motion)","url":"https://motion.dev","category":"animation-engine","tags":["js","react","spring-physics","layout-animation"],"note":"npm `motion` (wraps framer-motion); spring transforms, layout animation, scroll-linked motion, gestures. Vendored: component-source/js-animation-engines/motion.js"},
-  {"name":"GSAP","url":"https://gsap.com/","category":"animation-engine","tags":["js","timeline","scrolltrigger","industry-standard"],"note":"industry-standard JS animation engine, ScrollTrigger plugin for scroll-driven sequencing"},
-  {"name":"LottieFiles","url":"https://lottiefiles.com/","category":"animation-engine","tags":["after-effects","json-animation","lottie-player"],"note":"After-Effects-exported JSON animations played via lottie-web/lottie-player"},
-  {"name":"Cubic-bezier.com","url":"https://cubic-bezier.com/","category":"animation-engine","tags":["easing-curve","tool"],"note":"visual custom cubic-bezier easing curve editor"},
-  {"name":"Easings.net","url":"https://easings.net/","category":"animation-engine","tags":["easing-reference","cheatsheet"],"note":"named easing function reference with visual + CSS/JS snippets"},
-  {"name":"Animista","url":"https://animista.net/","category":"animation-engine","tags":["css-keyframes","generator"],"note":"pure-CSS keyframe animation generator, copy-paste classes"},
-  {"name":"Lenis","url":"https://lenis.darkroom.engineering/","category":"animation-engine","tags":["smooth-scroll","js"],"note":"Studio Freight's smooth-scroll library, pairs with GSAP ScrollTrigger for scroll choreography"},
-  {"name":"Rive","url":"https://rive.app/","category":"animation-engine","tags":["interactive","state-machine","runtime","design-tool"],"note":"design tool + lightweight runtime for interactive vector animations with state machines (hover/drag-reactive, not just timeline playback)"},
-  {"name":"Spline","url":"https://spline.design/","category":"animation-engine","tags":["3d","webgl","design-tool","real-time"],"note":"real-time 3D design tool for building interactive WebGL scenes without hand-writing Three.js"},
-  {"name":"Theatre.js","url":"https://www.theatrejs.com/","category":"animation-engine","tags":["js","visual-editor","precise-keyframing"],"note":"JS animation library with a visual timeline editor for precisely keyframing complex sequences"},
-  {"name":"Splitting.js","url":"https://splitting.js.org/","category":"animation-engine","tags":["text-split","css-vars","kinetic-type"],"note":"splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects"},
-  {"name":"Principle","url":"https://principleformac.com/","category":"animation-engine","tags":["mac-app","paid","interaction-prototyping"],"note":"paid Mac app for timeline/state-based interaction prototyping, common for handoff-quality motion specs"},
-  {"name":"ProtoPie","url":"https://www.protopie.io/","category":"animation-engine","tags":["no-code","sensor-input","interaction-prototyping"],"note":"no-code interaction prototyping tool, supports sensor/device input triggers beyond click/hover"},
-
-  {"name":"Lucide","url":"https://lucide.dev/","category":"icons","tags":["svg","open-source","react"],"note":"ISC-licensed icon set, fork of Feather. Vendored: component-source/icons/lucide"},
-  {"name":"Heroicons","url":"https://heroicons.com/","category":"icons","tags":["svg","tailwind-team","mit"],"note":"MIT icon set by the Tailwind team. Vendored: component-source/icons/heroicons"},
-  {"name":"Phosphor Icons","url":"https://phosphoricons.com/","category":"icons","tags":["svg","6-weights","mit"],"note":"MIT (@phosphor-icons/core), 6 style variants x ~1500 icons — fetch per-icon rather than pre-vendoring the whole set"},
-  {"name":"Feather Icons","url":"https://feathericons.com/","category":"icons","tags":["svg","minimal","mit"],"note":"minimal open-source icon set, predecessor lineage to Lucide"},
-  {"name":"Tabler Icons","url":"https://tabler.io/icons","category":"icons","tags":["svg","large-set","mit"],"note":"large free MIT icon set (5000+), consistent stroke style"},
-  {"name":"Iconoir","url":"https://iconoir.com/","category":"icons","tags":["svg","mit","open-source"],"note":"open-source icon library, react/vue/svelte packages available"},
-  {"name":"Remix Icon","url":"https://remixicon.com/","category":"icons","tags":["svg","neutral-style"],"note":"neutral-style open-source icon set"},
-  {"name":"Simple Icons","url":"https://simpleicons.org/","category":"icons","tags":["brand-logos","svg"],"note":"free SVG brand/logo icons for popular products and services"},
-  {"name":"Font Awesome","url":"https://fontawesome.com/","category":"icons","tags":["icon-font","svg","freemium"],"note":"long-standing icon font/SVG set, free tier + paid pro set"},
-
-  {"name":"unDraw","url":"https://undraw.co/","category":"illustration-imagery","tags":["svg","recolorable","free"],"note":"free recolorable SVG illustration set, open license"},
-  {"name":"Blush","url":"https://blush.design/","category":"illustration-imagery","tags":["customizable","mixed-styles"],"note":"customizable illustration compositions from multiple artists/styles"},
-  {"name":"Humaaans","url":"https://www.humaaans.com/","category":"illustration-imagery","tags":["people-illustration","mix-and-match"],"note":"mix-and-match human figure illustration library"},
-  {"name":"Open Doodles","url":"https://www.opendoodles.com/","category":"illustration-imagery","tags":["hand-drawn","free","cc0"],"note":"free hand-drawn doodle-style illustrations, CC0"},
-  {"name":"DrawKit","url":"https://www.drawkit.com/","category":"illustration-imagery","tags":["illustration-packs","freemium"],"note":"illustration packs by style/theme, free + paid tiers"},
-  {"name":"Storyset","url":"https://storyset.com/","category":"illustration-imagery","tags":["freepik","animated-svg","customizable"],"note":"Freepik's customizable/animatable illustration sets"},
-  {"name":"Unsplash","url":"https://unsplash.com/","category":"stock-photo","tags":["free","photography"],"note":"free high-quality stock photography"},
-  {"name":"Pexels","url":"https://www.pexels.com/","category":"stock-photo","tags":["free","photography","video"],"note":"free stock photo and video library"},
-
-  {"name":"bklit","url":"https://bklit.com/","category":"dataviz-charts","tags":["react","charts","monochrome-accent"],"note":"design-engineered chart set (17+ types), restrained neutral+one-accent palette model. Vendored: component-source/bklit-ui (technique reference, not standalone-runnable)"},
-  {"name":"Recharts","url":"https://recharts.org/","category":"dataviz-charts","tags":["react","d3-based","composable"],"note":"composable React charting library built on D3 primitives"},
-  {"name":"visx","url":"https://airbnb.io/visx/","category":"dataviz-charts","tags":["react","d3","low-level","airbnb"],"note":"Airbnb's low-level React viz primitives built on D3, for fully custom charts"},
-  {"name":"Observable Plot","url":"https://observablehq.com/plot/","category":"dataviz-charts","tags":["js","grammar-of-graphics","concise"],"note":"concise grammar-of-graphics charting library from the D3 team"},
-  {"name":"ApexCharts","url":"https://apexcharts.com/","category":"dataviz-charts","tags":["js","interactive","free"],"note":"free interactive JS charting library, wide chart-type coverage"},
-  {"name":"Chart.js","url":"https://www.chartjs.org/","category":"dataviz-charts","tags":["js","canvas","lightweight"],"note":"lightweight canvas-based charting library, the common default"},
-  {"name":"Nivo","url":"https://nivo.rocks/","category":"dataviz-charts","tags":["react","d3","svg-canvas-webgl"],"note":"React data-viz components with SVG/Canvas/WebGL render targets"},
-
-  {"name":"Material Design 3","url":"https://m3.material.io/","category":"design-system","tags":["google","reference","tokens"],"note":"Google's full design system reference: tokens, components, motion, accessibility specs"},
-  {"name":"Apple HIG","url":"https://developer.apple.com/design/human-interface-guidelines/","category":"design-system","tags":["apple","platform-conventions"],"note":"Apple's platform interaction/visual convention reference (iOS/macOS/watchOS/visionOS)"},
-  {"name":"Carbon Design System","url":"https://carbondesignsystem.com/","category":"design-system","tags":["ibm","enterprise","open-source"],"note":"IBM's open-source enterprise design system, strong data-density/accessibility precedent"},
-  {"name":"Atlassian Design System","url":"https://atlassian.design/","category":"design-system","tags":["enterprise","tokens","components"],"note":"Atlassian's public design system reference, good enterprise-density precedent"},
-  {"name":"Polaris","url":"https://polaris.shopify.com/","category":"design-system","tags":["shopify","commerce","components"],"note":"Shopify's design system, strong for admin/commerce-dashboard patterns"},
-  {"name":"Fluent 2","url":"https://fluent2.microsoft.design/","category":"design-system","tags":["microsoft","tokens","components"],"note":"Microsoft's current design system reference"},
-  {"name":"Ant Design","url":"https://ant.design/","category":"design-system","tags":["react","enterprise","components"],"note":"enterprise-focused React design system + component library, huge component surface"},
-  {"name":"Base Web","url":"https://baseweb.design/","category":"design-system","tags":["uber","react","modular"],"note":"Uber's modular React design system"},
-
-  {"name":"The A11Y Project","url":"https://www.a11yproject.com/","category":"accessibility","tags":["checklist","reference","wcag"],"note":"community-driven accessibility checklist and pattern reference"},
-  {"name":"WebAIM","url":"https://webaim.org/","category":"accessibility","tags":["contrast-checker","wcag","reference"],"note":"accessibility reference + the standard contrast-ratio checker tool"},
-  {"name":"Who Can Use","url":"https://whocanuse.com/","category":"accessibility","tags":["contrast-simulator","vision-conditions"],"note":"simulates a color combo under different vision conditions, not just a pass/fail ratio"},
-
-  {"name":"Figma","url":"https://www.figma.com/","category":"prototyping-tool","tags":["design-tool","prototyping","dev-mode"],"note":"canonical design/prototyping tool; Dev Mode for inspecting real spacing/tokens from a handoff file"},
-  {"name":"Framer","url":"https://www.framer.com/","category":"prototyping-tool","tags":["site-builder","no-code","motion"],"note":"no-code site builder with strong native motion/interaction primitives"},
-  {"name":"Webflow","url":"https://webflow.com/","category":"prototyping-tool","tags":["site-builder","cms","visual-css"],"note":"visual CSS site builder with CMS, common client-delivery target"},
-
-  {"name":"Clippy","url":"https://bennettfeely.com/clippy/","category":"css-effect-generator","tags":["clip-path","generator"],"note":"visual CSS clip-path shape generator"},
-  {"name":"CSS Grid Generator","url":"https://grid.layoutit.com/","category":"css-effect-generator","tags":["css-grid","visual-editor"],"note":"visual drag-based CSS Grid layout generator"},
-  {"name":"CSS Scan","url":"https://getcssscan.com/","category":"css-effect-generator","tags":["extension","inspect-styles"],"note":"browser extension for one-click copying any element's computed CSS from a live site"},
-  {"name":"Hover.css","url":"https://ianlunn.github.io/Hover/","category":"css-effect-generator","tags":["hover-effects","css-classes"],"note":"library of ready-made CSS hover-state effect classes"},
-  {"name":"SVG Backgrounds","url":"https://www.svgbackgrounds.com/","category":"css-effect-generator","tags":["svg-pattern","generator"],"note":"tileable SVG background pattern generator"},
-  {"name":"Magic Pattern","url":"https://magicpattern.design/","category":"css-effect-generator","tags":["pattern-generator","svg","noise"],"note":"suite of pattern/noise/blob/gradient generators for backgrounds"},
-
-  {"name":"Cuberto","url":"https://cuberto.com/","category":"cursor-interaction","tags":["agency","showcase","cursor-effects"],"note":"agency showcase site, reference for cursor/magnetic/scroll-choreography-heavy interaction craft"},
-
-  {"name":"Laws of UX","url":"https://lawsofux.com/","category":"ux-reference","tags":["principles","cheatsheet","psychology"],"note":"named UX/psychology principles (Fitts's Law, Hick's Law, Jakob's Law...) as a quick-reference cheatsheet"},
-  {"name":"Nielsen Norman Group","url":"https://www.nngroup.com/","category":"ux-reference","tags":["research","usability","authoritative"],"note":"the authoritative UX research body — usability heuristics, research-backed pattern guidance"},
-  {"name":"Refactoring UI","url":"https://www.refactoringui.com/","category":"ux-reference","tags":["book","practical-tips","visual-design"],"note":"Adam Wathan & Steve Schoger's practical visual-design tips (spacing, contrast, hierarchy) for developers without a design background"},
-  {"name":"Smashing Magazine","url":"https://www.smashingmagazine.com/","category":"ux-reference","tags":["articles","css","ux","front-end"],"note":"long-running deep-dive articles on UX, CSS techniques, and front-end craft"},
-  {"name":"CSS-Tricks","url":"https://css-tricks.com/","category":"ux-reference","tags":["css","reference","snippets"],"note":"long-standing CSS technique reference and snippet archive (Guide to Flexbox/Grid, almanac)"},
-  {"name":"UX Collective","url":"https://uxdesign.cc/","category":"ux-reference","tags":["articles","case-studies","medium"],"note":"large UX-practitioner article/case-study publication"},
-  {"name":"Growth.design","url":"https://growth.design/","category":"ux-reference","tags":["case-study","comic-format","behavioral-design"],"note":"comic-style case studies breaking down behavioral-design decisions in real shipped products"},
-  {"name":"Interaction Design Foundation","url":"https://www.interaction-design.org/","category":"ux-reference","tags":["courses","glossary","foundational"],"note":"foundational UX courses + glossary, good for grounding terminology and process"}
+  {
+    "name": "Land-book",
+    "url": "https://land-book.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "landing-page",
+      "screenshots",
+      "saas",
+      "filter-by-industry"
+    ],
+    "note": "curated landing page screenshots, filterable by industry/style/color"
+  },
+  {
+    "name": "Godly",
+    "url": "https://www.godly.website/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "landing-page",
+      "interactions",
+      "awwwards-tier"
+    ],
+    "note": "hand-picked best-of-the-web landing pages, strong on interaction/motion"
+  },
+  {
+    "name": "Awwwards",
+    "url": "https://www.awwwards.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "awards",
+      "agency",
+      "experimental",
+      "motion"
+    ],
+    "note": "the long-running award-site benchmark, best for experimental/agency-tier craft"
+  },
+  {
+    "name": "Siteinspire",
+    "url": "https://www.siteinspire.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "portfolio",
+      "agency",
+      "minimal"
+    ],
+    "note": "curated showcase, strong filter by type/style/subject"
+  },
+  {
+    "name": "One Page Love",
+    "url": "https://onepagelove.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "one-page",
+      "landing-page"
+    ],
+    "note": "single-page site gallery, good for landing/launch patterns"
+  },
+  {
+    "name": "Mobbin",
+    "url": "https://www.mobbin.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "mobile",
+      "app-ui",
+      "flows",
+      "screenshots"
+    ],
+    "note": "real shipped mobile & web app screens organized by flow (onboarding, checkout, settings...)"
+  },
+  {
+    "name": "Lapa Ninja",
+    "url": "https://www.lapa.ninja",
+    "category": "inspiration-gallery",
+    "tags": [
+      "landing-page",
+      "by-industry",
+      "by-style"
+    ],
+    "note": "breadth-of-craft landing page gallery, minimal to maximal, categorized by industry/style"
+  },
+  {
+    "name": "Muzli",
+    "url": "https://muz.li/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "feed",
+      "aggregator",
+      "dribbble",
+      "behance"
+    ],
+    "note": "design feed aggregating Dribbble/Behance/Awwwards/blogs into one stream"
+  },
+  {
+    "name": "Curated.design",
+    "url": "https://curated.design/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "tools",
+      "resources",
+      "aggregator"
+    ],
+    "note": "aggregator of design tools and resources across categories"
+  },
+  {
+    "name": "UI Garage",
+    "url": "https://uigarage.net/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "ui-patterns",
+      "mobile",
+      "web"
+    ],
+    "note": "pattern-level UI screenshots (specific components, not full pages)"
+  },
+  {
+    "name": "Screenlane",
+    "url": "https://screenlane.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "mobile",
+      "web",
+      "screenshots"
+    ],
+    "note": "curated app/web screenshots by category"
+  },
+  {
+    "name": "Dribbble",
+    "url": "https://dribbble.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "shots",
+      "concept",
+      "visual-design"
+    ],
+    "note": "concept-level visual design shots, not shipped code — inspiration only, expect over-polish vs reality"
+  },
+  {
+    "name": "Behance",
+    "url": "https://www.behance.net/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "case-study",
+      "branding",
+      "ux-process"
+    ],
+    "note": "full case studies incl. process/branding, good for narrative and system-level thinking"
+  },
+  {
+    "name": "Landingfolio",
+    "url": "https://www.landingfolio.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "landing-page",
+      "by-section",
+      "saas"
+    ],
+    "note": "landing pages broken down by section (hero, pricing, footer...) for pattern reuse"
+  },
+  {
+    "name": "Page Flows",
+    "url": "https://pageflows.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "flows",
+      "video",
+      "onboarding",
+      "checkout"
+    ],
+    "note": "screen-recorded real product flows (onboarding, checkout, signup) — the flow equivalent of Mobbin"
+  },
+  {
+    "name": "Httpster",
+    "url": "https://httpster.net/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "web-design",
+      "gallery"
+    ],
+    "note": "long-running curated web design gallery"
+  },
+  {
+    "name": "Minimal Gallery",
+    "url": "https://minimal.gallery/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "minimal",
+      "clean"
+    ],
+    "note": "minimalist web design showcase"
+  },
+  {
+    "name": "Footer Design",
+    "url": "https://footer.design/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "footer",
+      "section-pattern"
+    ],
+    "note": "footer-specific pattern gallery"
+  },
+  {
+    "name": "CollectUI",
+    "url": "https://collectui.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "daily-ui",
+      "component-shots"
+    ],
+    "note": "Daily UI challenge submissions, good for isolated component ideas"
+  },
+  {
+    "name": "UI Movement",
+    "url": "https://uimovement.com/",
+    "category": "inspiration-gallery",
+    "tags": [
+      "motion",
+      "micro-interaction",
+      "gif"
+    ],
+    "note": "micro-interaction and motion pattern gallery (gifs of real UI motion)"
+  },
+  {
+    "name": "Radix UI",
+    "url": "https://www.radix-ui.com",
+    "category": "component-library",
+    "tags": [
+      "primitives",
+      "accessible",
+      "aria",
+      "unstyled",
+      "react"
+    ],
+    "note": "unstyled accessible primitives + Themes 12-step color scale + Icons; the rigor reference for keyboard/ARIA contracts. Vendored: component-source/radix-primitives, component-source/radix-colors"
+  },
+  {
+    "name": "shadcn/ui",
+    "url": "https://ui.shadcn.com/",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "tailwind",
+      "radix",
+      "copy-paste"
+    ],
+    "note": "MIT, Tailwind-styled wrappers around Radix primitives; copy-paste CLI-installed components"
+  },
+  {
+    "name": "Magic UI",
+    "url": "https://magicui.design",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "tailwind",
+      "motion",
+      "marketing"
+    ],
+    "note": "MIT (magicuidesign/magicui). Vendored: border-beam, marquee, shimmer-button, dock"
+  },
+  {
+    "name": "Aceternity UI",
+    "url": "https://ui.aceternity.com/",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "tailwind",
+      "framer-motion",
+      "decorative"
+    ],
+    "note": "copy-paste snippets/shadcn-registry entries, no single clonable repo — inspiration-only"
+  },
+  {
+    "name": "OriginKit",
+    "url": "https://www.originkit.dev",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "decorative-effects",
+      "glass",
+      "glow",
+      "tilt",
+      "bento"
+    ],
+    "note": "free animated component library; MCP plugin fetches source via API + key. Vendored: blackhole.tsx, smokytext.tsx"
+  },
+  {
+    "name": "KokonutUI",
+    "url": "https://kokonutui.com",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "tailwind",
+      "motion",
+      "shadcn-cli"
+    ],
+    "note": "MIT (kokonut-labs/kokonutui). Vendored: action-search-bar, attract-button, bento-grid, card-flip, file-upload, glitch-text, liquid-glass-card, mouse-effect-card"
+  },
+  {
+    "name": "React Bits",
+    "url": "https://www.reactbits.dev/",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "animation",
+      "decorative"
+    ],
+    "note": "real repo DavidHDev/react-bits, MIT + Commons Clause — do NOT vendor/bundle, read+adapt per-project only"
+  },
+  {
+    "name": "21st.dev",
+    "url": "https://21st.dev/",
+    "category": "component-library",
+    "tags": [
+      "marketplace",
+      "shadcn-registry",
+      "react"
+    ],
+    "note": "marketplace of many authors' shadcn-registry components, discovery/inspiration only"
+  },
+  {
+    "name": "Tailwind UI",
+    "url": "https://tailwindui.com/",
+    "category": "component-library",
+    "tags": [
+      "tailwind",
+      "paid",
+      "marketing",
+      "application-ui"
+    ],
+    "note": "official paid Tailwind component/template set from Tailwind Labs"
+  },
+  {
+    "name": "daisyUI",
+    "url": "https://daisyui.com/",
+    "category": "component-library",
+    "tags": [
+      "tailwind",
+      "css-only",
+      "themeable"
+    ],
+    "note": "CSS-class component library on top of Tailwind, no JS required, many built-in themes"
+  },
+  {
+    "name": "Flowbite",
+    "url": "https://flowbite.com/",
+    "category": "component-library",
+    "tags": [
+      "tailwind",
+      "react",
+      "vue",
+      "svelte"
+    ],
+    "note": "open-source Tailwind component library + Figma UI kit"
+  },
+  {
+    "name": "Chakra UI",
+    "url": "https://www.chakra-ui.com/",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "accessible",
+      "theming"
+    ],
+    "note": "accessible React component library with a style-prop theming system"
+  },
+  {
+    "name": "Mantine",
+    "url": "https://mantine.dev/",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "hooks",
+      "forms",
+      "dates"
+    ],
+    "note": "full React component + hooks library, strong forms/dates/notifications modules"
+  },
+  {
+    "name": "Headless UI",
+    "url": "https://headlessui.com/",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "vue",
+      "unstyled",
+      "tailwind-team"
+    ],
+    "note": "unstyled accessible components from the Tailwind team, pairs with Tailwind CSS"
+  },
+  {
+    "name": "HeroUI (NextUI)",
+    "url": "https://www.heroui.com/",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "tailwind",
+      "react-aria",
+      "apache-2.0"
+    ],
+    "note": "Apache-2.0 (not MIT despite site claims), React-Aria-based a11y patterns — reference only, not vendored (npm-only, no copy-paste files)"
+  },
+  {
+    "name": "Park UI",
+    "url": "https://park-ui.com/",
+    "category": "component-library",
+    "tags": [
+      "ark-ui",
+      "tailwind",
+      "panda-css",
+      "multi-framework"
+    ],
+    "note": "components built on Ark UI, ships for React/Vue/Solid with Tailwind or Panda CSS styling"
+  },
+  {
+    "name": "Tremor",
+    "url": "https://tremor.so/",
+    "category": "dataviz-charts",
+    "tags": [
+      "react",
+      "dashboard",
+      "tailwind",
+      "charts"
+    ],
+    "note": "React library specifically for dashboards/charts, Tailwind-based"
+  },
+  {
+    "name": "Ark UI",
+    "url": "https://ark-ui.com/",
+    "category": "component-library",
+    "tags": [
+      "headless",
+      "state-machines",
+      "multi-framework"
+    ],
+    "note": "headless component library built on statecharts (Zag.js), framework-agnostic logic"
+  },
+  {
+    "name": "Uiverse",
+    "url": "https://uiverse.io/",
+    "category": "component-library",
+    "tags": [
+      "css",
+      "tailwind",
+      "community",
+      "snippets"
+    ],
+    "note": "huge community library of copy-paste CSS/Tailwind buttons, cards, loaders, checkboxes"
+  },
+  {
+    "name": "Coolors",
+    "url": "https://coolors.co/",
+    "category": "color-tool",
+    "tags": [
+      "palette-generator"
+    ],
+    "note": "fast palette generation tool, not a codebase"
+  },
+  {
+    "name": "Radix Colors",
+    "url": "https://www.radix-ui.com/colors",
+    "category": "color-tool",
+    "tags": [
+      "12-step-scale",
+      "accessible",
+      "generator"
+    ],
+    "note": "12-step accessible color scale generator/model; all 30 hues vendored at component-source/radix-colors"
+  },
+  {
+    "name": "Color Hunt",
+    "url": "https://colorhunt.co/",
+    "category": "color-tool",
+    "tags": [
+      "palette-gallery",
+      "trending"
+    ],
+    "note": "trending community-submitted 4-color palettes"
+  },
+  {
+    "name": "Realtime Colors",
+    "url": "https://www.realtimecolors.com/",
+    "category": "color-tool",
+    "tags": [
+      "live-preview",
+      "palette-on-ui"
+    ],
+    "note": "preview a palette live on a mock UI (text/bg/accent) before committing"
+  },
+  {
+    "name": "Huemint",
+    "url": "https://huemint.com/",
+    "category": "color-tool",
+    "tags": [
+      "ai-generator",
+      "brand-palette"
+    ],
+    "note": "generative palette tool for brand/UI/print combos, weighted role sliders"
+  },
+  {
+    "name": "Leonardo",
+    "url": "https://leonardocolor.io/",
+    "category": "color-tool",
+    "tags": [
+      "contrast",
+      "accessible-scale",
+      "adobe"
+    ],
+    "note": "Adobe's contrast-based accessible color scale generator, outputs perceptually-tuned ramps"
+  },
+  {
+    "name": "Tints.dev",
+    "url": "https://www.tints.dev/",
+    "category": "color-tool",
+    "tags": [
+      "tailwind-scale",
+      "shade-generator"
+    ],
+    "note": "generate a Tailwind-style 50-950 shade ramp from one base color"
+  },
+  {
+    "name": "Adobe Color",
+    "url": "https://color.adobe.com/",
+    "category": "color-tool",
+    "tags": [
+      "color-wheel",
+      "extract-from-image",
+      "harmony-rules"
+    ],
+    "note": "color wheel + harmony-rule palette builder, can extract a palette from an uploaded image"
+  },
+  {
+    "name": "Paletton",
+    "url": "https://paletton.com/",
+    "category": "color-tool",
+    "tags": [
+      "color-wheel",
+      "scheme-designer"
+    ],
+    "note": "color-wheel scheme designer (mono/complementary/triad/tetrad) with live mock-UI preview"
+  },
+  {
+    "name": "ColorSpace",
+    "url": "https://mycolor.space/",
+    "category": "color-tool",
+    "tags": [
+      "single-color-input",
+      "palette-generator"
+    ],
+    "note": "generates full palettes (gradient, scale, shades) from one input color"
+  },
+  {
+    "name": "Colormind",
+    "url": "http://colormind.io/",
+    "category": "color-tool",
+    "tags": [
+      "ai-generator",
+      "photo-extraction"
+    ],
+    "note": "AI-trained palette generator, can also extract a palette from a photo"
+  },
+  {
+    "name": "Khroma",
+    "url": "https://www.khroma.co/",
+    "category": "color-tool",
+    "tags": [
+      "ai-personalized",
+      "trained-on-picks"
+    ],
+    "note": "AI trained on 50 of your color picks, then generates endless palettes matching your taste"
+  },
+  {
+    "name": "0to255",
+    "url": "https://0to255.com/",
+    "category": "color-tool",
+    "tags": [
+      "tint-shade-generator"
+    ],
+    "note": "quick tint/shade ramp for one color, useful for hover/active state variants"
+  },
+  {
+    "name": "ColorBox",
+    "url": "https://colorbox.io/",
+    "category": "color-tool",
+    "tags": [
+      "lyft",
+      "systematic-scale",
+      "export"
+    ],
+    "note": "Lyft's systematic color-scale builder for multi-hue design-system palettes, exports as data/CSS"
+  },
+  {
+    "name": "Accessible Colors",
+    "url": "https://accessible-colors.com/",
+    "category": "color-tool",
+    "tags": [
+      "wcag-contrast",
+      "suggest-fix"
+    ],
+    "note": "checks a foreground/background pair against WCAG and suggests the nearest passing adjustment"
+  },
+  {
+    "name": "Colorable",
+    "url": "https://colorable.jxnblk.com/",
+    "category": "color-tool",
+    "tags": [
+      "contrast-grid",
+      "palette-wide-check"
+    ],
+    "note": "contrast-ratio grid across an entire palette at once, not just one pair at a time"
+  },
+  {
+    "name": "Typewolf",
+    "url": "https://www.typewolf.com/",
+    "category": "typography",
+    "tags": [
+      "gallery",
+      "font-in-use"
+    ],
+    "note": "typography-in-the-wild gallery, not a codebase"
+  },
+  {
+    "name": "Fonts In Use",
+    "url": "https://fontsinuse.com/",
+    "category": "typography",
+    "tags": [
+      "gallery",
+      "print-and-web"
+    ],
+    "note": "real-world font usage archive across print and web"
+  },
+  {
+    "name": "Font Pair",
+    "url": "https://www.fontpair.co/",
+    "category": "typography",
+    "tags": [
+      "pairing",
+      "google-fonts"
+    ],
+    "note": "pre-matched Google Fonts heading/body pairings"
+  },
+  {
+    "name": "Fontjoy",
+    "url": "https://fontjoy.com/",
+    "category": "typography",
+    "tags": [
+      "ai-pairing",
+      "generator"
+    ],
+    "note": "deep-learning-assisted font pairing generator"
+  },
+  {
+    "name": "Type Scale",
+    "url": "https://typescale.com/",
+    "category": "typography",
+    "tags": [
+      "modular-scale",
+      "css-vars"
+    ],
+    "note": "generates a modular type scale with copy-paste CSS variables"
+  },
+  {
+    "name": "Google Fonts",
+    "url": "https://fonts.google.com/",
+    "category": "typography",
+    "tags": [
+      "free",
+      "web-fonts",
+      "source"
+    ],
+    "note": "canonical free/open web font source, use before any paid alternative"
+  },
+  {
+    "name": "CSS Gradient",
+    "url": "https://cssgradient.io/",
+    "category": "gradient-background",
+    "tags": [
+      "gradient-generator",
+      "css"
+    ],
+    "note": "linear/radial gradient generator with copy-paste CSS"
+  },
+  {
+    "name": "uiGradients",
+    "url": "https://uigradients.com/",
+    "category": "gradient-background",
+    "tags": [
+      "gradient-gallery",
+      "hex-pairs"
+    ],
+    "note": "curated named gradient pairs, copy hex codes or CSS"
+  },
+  {
+    "name": "Hypercolor",
+    "url": "https://hypercolor.dev/",
+    "category": "gradient-background",
+    "tags": [
+      "tailwind",
+      "gradient-gallery"
+    ],
+    "note": "gradient gallery with Tailwind class output"
+  },
+  {
+    "name": "Mesher",
+    "url": "https://mesher.dev/",
+    "category": "gradient-background",
+    "tags": [
+      "mesh-gradient",
+      "css-generator"
+    ],
+    "note": "mesh gradient generator, output as CSS"
+  },
+  {
+    "name": "Coolbackgrounds",
+    "url": "https://coolbackgrounds.io/",
+    "category": "gradient-background",
+    "tags": [
+      "generator",
+      "patterns",
+      "gradients"
+    ],
+    "note": "background pattern + gradient + gif generator"
+  },
+  {
+    "name": "Haikei",
+    "url": "https://haikei.app/",
+    "category": "gradient-background",
+    "tags": [
+      "svg-generator",
+      "blobs",
+      "waves"
+    ],
+    "note": "generator for SVG blobs, waves, layered shape backgrounds"
+  },
+  {
+    "name": "Blobmaker",
+    "url": "https://www.blobmaker.app/",
+    "category": "gradient-background",
+    "tags": [
+      "svg-blob",
+      "organic-shape"
+    ],
+    "note": "organic SVG blob shape generator"
+  },
+  {
+    "name": "Glassmorphism.com",
+    "url": "https://glassmorphism.com/",
+    "category": "gradient-background",
+    "tags": [
+      "glassmorphism",
+      "css-generator"
+    ],
+    "note": "glassmorphism CSS generator (blur/opacity/border)"
+  },
+  {
+    "name": "Neumorphism.io",
+    "url": "https://neumorphism.io/",
+    "category": "gradient-background",
+    "tags": [
+      "neumorphism",
+      "soft-ui",
+      "css-generator"
+    ],
+    "note": "soft-UI/neumorphic shadow-pair CSS generator"
+  },
+  {
+    "name": "Get Waves",
+    "url": "https://getwaves.io/",
+    "category": "gradient-background",
+    "tags": [
+      "svg-waves",
+      "section-divider"
+    ],
+    "note": "SVG wave-shape generator for section dividers"
+  },
+  {
+    "name": "Shadows Brumm",
+    "url": "https://shadows.brumm.af/",
+    "category": "gradient-background",
+    "tags": [
+      "box-shadow",
+      "layered-shadow"
+    ],
+    "note": "layered box-shadow generator for realistic elevation"
+  },
+  {
+    "name": "Animejs",
+    "url": "https://animejs.com/",
+    "category": "animation-engine",
+    "tags": [
+      "js",
+      "timeline",
+      "svg-morph",
+      "stagger"
+    ],
+    "note": "npm animejs v4; timeline API, SVG line-draw/morph, motion-path, draggable. Vendored: component-source/js-animation-engines/anime.min.js"
+  },
+  {
+    "name": "Motion (Framer Motion)",
+    "url": "https://motion.dev",
+    "category": "animation-engine",
+    "tags": [
+      "js",
+      "react",
+      "spring-physics",
+      "layout-animation"
+    ],
+    "note": "npm `motion` (wraps framer-motion); spring transforms, layout animation, scroll-linked motion, gestures. Vendored: component-source/js-animation-engines/motion.js"
+  },
+  {
+    "name": "GSAP",
+    "url": "https://gsap.com/",
+    "category": "animation-engine",
+    "tags": [
+      "js",
+      "timeline",
+      "scrolltrigger",
+      "industry-standard"
+    ],
+    "note": "industry-standard JS animation engine, ScrollTrigger plugin for scroll-driven sequencing"
+  },
+  {
+    "name": "LottieFiles",
+    "url": "https://lottiefiles.com/",
+    "category": "animation-engine",
+    "tags": [
+      "after-effects",
+      "json-animation",
+      "lottie-player"
+    ],
+    "note": "After-Effects-exported JSON animations played via lottie-web/lottie-player"
+  },
+  {
+    "name": "Cubic-bezier.com",
+    "url": "https://cubic-bezier.com/",
+    "category": "animation-engine",
+    "tags": [
+      "easing-curve",
+      "tool"
+    ],
+    "note": "visual custom cubic-bezier easing curve editor"
+  },
+  {
+    "name": "Easings.net",
+    "url": "https://easings.net/",
+    "category": "animation-engine",
+    "tags": [
+      "easing-reference",
+      "cheatsheet"
+    ],
+    "note": "named easing function reference with visual + CSS/JS snippets"
+  },
+  {
+    "name": "Animista",
+    "url": "https://animista.net/",
+    "category": "animation-engine",
+    "tags": [
+      "css-keyframes",
+      "generator"
+    ],
+    "note": "pure-CSS keyframe animation generator, copy-paste classes"
+  },
+  {
+    "name": "Lenis",
+    "url": "https://lenis.darkroom.engineering/",
+    "category": "animation-engine",
+    "tags": [
+      "smooth-scroll",
+      "js"
+    ],
+    "note": "Studio Freight's smooth-scroll library, pairs with GSAP ScrollTrigger for scroll choreography"
+  },
+  {
+    "name": "Rive",
+    "url": "https://rive.app/",
+    "category": "animation-engine",
+    "tags": [
+      "interactive",
+      "state-machine",
+      "runtime",
+      "design-tool"
+    ],
+    "note": "design tool + lightweight runtime for interactive vector animations with state machines (hover/drag-reactive, not just timeline playback)"
+  },
+  {
+    "name": "Spline",
+    "url": "https://spline.design/",
+    "category": "animation-engine",
+    "tags": [
+      "3d",
+      "webgl",
+      "design-tool",
+      "real-time"
+    ],
+    "note": "real-time 3D design tool for building interactive WebGL scenes without hand-writing Three.js"
+  },
+  {
+    "name": "Theatre.js",
+    "url": "https://www.theatrejs.com/",
+    "category": "animation-engine",
+    "tags": [
+      "js",
+      "visual-editor",
+      "precise-keyframing"
+    ],
+    "note": "JS animation library with a visual timeline editor for precisely keyframing complex sequences"
+  },
+  {
+    "name": "Splitting.js",
+    "url": "https://splitting.js.org/",
+    "category": "animation-engine",
+    "tags": [
+      "text-split",
+      "css-vars",
+      "kinetic-type",
+      "vendored"
+    ],
+    "note": "splits text/grid DOM into per-character/word spans with CSS custom-property indices, for kinetic-type and stagger effects — MIT, vendored at component-source/splitting/"
+  },
+  {
+    "name": "Principle",
+    "url": "https://principleformac.com/",
+    "category": "animation-engine",
+    "tags": [
+      "mac-app",
+      "paid",
+      "interaction-prototyping"
+    ],
+    "note": "paid Mac app for timeline/state-based interaction prototyping, common for handoff-quality motion specs"
+  },
+  {
+    "name": "ProtoPie",
+    "url": "https://www.protopie.io/",
+    "category": "animation-engine",
+    "tags": [
+      "no-code",
+      "sensor-input",
+      "interaction-prototyping"
+    ],
+    "note": "no-code interaction prototyping tool, supports sensor/device input triggers beyond click/hover"
+  },
+  {
+    "name": "Lucide",
+    "url": "https://lucide.dev/",
+    "category": "icons",
+    "tags": [
+      "svg",
+      "open-source",
+      "react"
+    ],
+    "note": "ISC-licensed icon set, fork of Feather. Vendored: component-source/icons/lucide"
+  },
+  {
+    "name": "Heroicons",
+    "url": "https://heroicons.com/",
+    "category": "icons",
+    "tags": [
+      "svg",
+      "tailwind-team",
+      "mit"
+    ],
+    "note": "MIT icon set by the Tailwind team. Vendored: component-source/icons/heroicons"
+  },
+  {
+    "name": "Phosphor Icons",
+    "url": "https://phosphoricons.com/",
+    "category": "icons",
+    "tags": [
+      "svg",
+      "6-weights",
+      "mit"
+    ],
+    "note": "MIT (@phosphor-icons/core), 6 style variants x ~1500 icons — fetch per-icon rather than pre-vendoring the whole set"
+  },
+  {
+    "name": "Feather Icons",
+    "url": "https://feathericons.com/",
+    "category": "icons",
+    "tags": [
+      "svg",
+      "minimal",
+      "mit"
+    ],
+    "note": "minimal open-source icon set, predecessor lineage to Lucide"
+  },
+  {
+    "name": "Tabler Icons",
+    "url": "https://tabler.io/icons",
+    "category": "icons",
+    "tags": [
+      "svg",
+      "large-set",
+      "mit"
+    ],
+    "note": "large free MIT icon set (5000+), consistent stroke style"
+  },
+  {
+    "name": "Iconoir",
+    "url": "https://iconoir.com/",
+    "category": "icons",
+    "tags": [
+      "svg",
+      "mit",
+      "open-source"
+    ],
+    "note": "open-source icon library, react/vue/svelte packages available"
+  },
+  {
+    "name": "Remix Icon",
+    "url": "https://remixicon.com/",
+    "category": "icons",
+    "tags": [
+      "svg",
+      "neutral-style"
+    ],
+    "note": "neutral-style open-source icon set"
+  },
+  {
+    "name": "Simple Icons",
+    "url": "https://simpleicons.org/",
+    "category": "icons",
+    "tags": [
+      "brand-logos",
+      "svg"
+    ],
+    "note": "free SVG brand/logo icons for popular products and services"
+  },
+  {
+    "name": "Font Awesome",
+    "url": "https://fontawesome.com/",
+    "category": "icons",
+    "tags": [
+      "icon-font",
+      "svg",
+      "freemium"
+    ],
+    "note": "long-standing icon font/SVG set, free tier + paid pro set"
+  },
+  {
+    "name": "unDraw",
+    "url": "https://undraw.co/",
+    "category": "illustration-imagery",
+    "tags": [
+      "svg",
+      "recolorable",
+      "free"
+    ],
+    "note": "free recolorable SVG illustration set, open license"
+  },
+  {
+    "name": "Blush",
+    "url": "https://blush.design/",
+    "category": "illustration-imagery",
+    "tags": [
+      "customizable",
+      "mixed-styles"
+    ],
+    "note": "customizable illustration compositions from multiple artists/styles"
+  },
+  {
+    "name": "Humaaans",
+    "url": "https://www.humaaans.com/",
+    "category": "illustration-imagery",
+    "tags": [
+      "people-illustration",
+      "mix-and-match"
+    ],
+    "note": "mix-and-match human figure illustration library"
+  },
+  {
+    "name": "Open Doodles",
+    "url": "https://www.opendoodles.com/",
+    "category": "illustration-imagery",
+    "tags": [
+      "hand-drawn",
+      "free",
+      "cc0"
+    ],
+    "note": "free hand-drawn doodle-style illustrations, CC0"
+  },
+  {
+    "name": "DrawKit",
+    "url": "https://www.drawkit.com/",
+    "category": "illustration-imagery",
+    "tags": [
+      "illustration-packs",
+      "freemium"
+    ],
+    "note": "illustration packs by style/theme, free + paid tiers"
+  },
+  {
+    "name": "Storyset",
+    "url": "https://storyset.com/",
+    "category": "illustration-imagery",
+    "tags": [
+      "freepik",
+      "animated-svg",
+      "customizable"
+    ],
+    "note": "Freepik's customizable/animatable illustration sets"
+  },
+  {
+    "name": "Unsplash",
+    "url": "https://unsplash.com/",
+    "category": "stock-photo",
+    "tags": [
+      "free",
+      "photography"
+    ],
+    "note": "free high-quality stock photography"
+  },
+  {
+    "name": "Pexels",
+    "url": "https://www.pexels.com/",
+    "category": "stock-photo",
+    "tags": [
+      "free",
+      "photography",
+      "video"
+    ],
+    "note": "free stock photo and video library"
+  },
+  {
+    "name": "bklit",
+    "url": "https://bklit.com/",
+    "category": "dataviz-charts",
+    "tags": [
+      "react",
+      "charts",
+      "monochrome-accent"
+    ],
+    "note": "design-engineered chart set (17+ types), restrained neutral+one-accent palette model. Vendored: component-source/bklit-ui (technique reference, not standalone-runnable)"
+  },
+  {
+    "name": "Recharts",
+    "url": "https://recharts.org/",
+    "category": "dataviz-charts",
+    "tags": [
+      "react",
+      "d3-based",
+      "composable"
+    ],
+    "note": "composable React charting library built on D3 primitives"
+  },
+  {
+    "name": "visx",
+    "url": "https://airbnb.io/visx/",
+    "category": "dataviz-charts",
+    "tags": [
+      "react",
+      "d3",
+      "low-level",
+      "airbnb"
+    ],
+    "note": "Airbnb's low-level React viz primitives built on D3, for fully custom charts"
+  },
+  {
+    "name": "Observable Plot",
+    "url": "https://observablehq.com/plot/",
+    "category": "dataviz-charts",
+    "tags": [
+      "js",
+      "grammar-of-graphics",
+      "concise"
+    ],
+    "note": "concise grammar-of-graphics charting library from the D3 team"
+  },
+  {
+    "name": "ApexCharts",
+    "url": "https://apexcharts.com/",
+    "category": "dataviz-charts",
+    "tags": [
+      "js",
+      "interactive",
+      "free"
+    ],
+    "note": "free interactive JS charting library, wide chart-type coverage"
+  },
+  {
+    "name": "Chart.js",
+    "url": "https://www.chartjs.org/",
+    "category": "dataviz-charts",
+    "tags": [
+      "js",
+      "canvas",
+      "lightweight"
+    ],
+    "note": "lightweight canvas-based charting library, the common default"
+  },
+  {
+    "name": "Nivo",
+    "url": "https://nivo.rocks/",
+    "category": "dataviz-charts",
+    "tags": [
+      "react",
+      "d3",
+      "svg-canvas-webgl"
+    ],
+    "note": "React data-viz components with SVG/Canvas/WebGL render targets"
+  },
+  {
+    "name": "Material Design 3",
+    "url": "https://m3.material.io/",
+    "category": "design-system",
+    "tags": [
+      "google",
+      "reference",
+      "tokens"
+    ],
+    "note": "Google's full design system reference: tokens, components, motion, accessibility specs"
+  },
+  {
+    "name": "Apple HIG",
+    "url": "https://developer.apple.com/design/human-interface-guidelines/",
+    "category": "design-system",
+    "tags": [
+      "apple",
+      "platform-conventions"
+    ],
+    "note": "Apple's platform interaction/visual convention reference (iOS/macOS/watchOS/visionOS)"
+  },
+  {
+    "name": "Carbon Design System",
+    "url": "https://carbondesignsystem.com/",
+    "category": "design-system",
+    "tags": [
+      "ibm",
+      "enterprise",
+      "open-source"
+    ],
+    "note": "IBM's open-source enterprise design system, strong data-density/accessibility precedent"
+  },
+  {
+    "name": "Atlassian Design System",
+    "url": "https://atlassian.design/",
+    "category": "design-system",
+    "tags": [
+      "enterprise",
+      "tokens",
+      "components"
+    ],
+    "note": "Atlassian's public design system reference, good enterprise-density precedent"
+  },
+  {
+    "name": "Polaris",
+    "url": "https://polaris.shopify.com/",
+    "category": "design-system",
+    "tags": [
+      "shopify",
+      "commerce",
+      "components"
+    ],
+    "note": "Shopify's design system, strong for admin/commerce-dashboard patterns"
+  },
+  {
+    "name": "Fluent 2",
+    "url": "https://fluent2.microsoft.design/",
+    "category": "design-system",
+    "tags": [
+      "microsoft",
+      "tokens",
+      "components"
+    ],
+    "note": "Microsoft's current design system reference"
+  },
+  {
+    "name": "Ant Design",
+    "url": "https://ant.design/",
+    "category": "design-system",
+    "tags": [
+      "react",
+      "enterprise",
+      "components"
+    ],
+    "note": "enterprise-focused React design system + component library, huge component surface"
+  },
+  {
+    "name": "Base Web",
+    "url": "https://baseweb.design/",
+    "category": "design-system",
+    "tags": [
+      "uber",
+      "react",
+      "modular"
+    ],
+    "note": "Uber's modular React design system"
+  },
+  {
+    "name": "The A11Y Project",
+    "url": "https://www.a11yproject.com/",
+    "category": "accessibility",
+    "tags": [
+      "checklist",
+      "reference",
+      "wcag"
+    ],
+    "note": "community-driven accessibility checklist and pattern reference"
+  },
+  {
+    "name": "WebAIM",
+    "url": "https://webaim.org/",
+    "category": "accessibility",
+    "tags": [
+      "contrast-checker",
+      "wcag",
+      "reference"
+    ],
+    "note": "accessibility reference + the standard contrast-ratio checker tool"
+  },
+  {
+    "name": "Who Can Use",
+    "url": "https://whocanuse.com/",
+    "category": "accessibility",
+    "tags": [
+      "contrast-simulator",
+      "vision-conditions"
+    ],
+    "note": "simulates a color combo under different vision conditions, not just a pass/fail ratio"
+  },
+  {
+    "name": "Figma",
+    "url": "https://www.figma.com/",
+    "category": "prototyping-tool",
+    "tags": [
+      "design-tool",
+      "prototyping",
+      "dev-mode"
+    ],
+    "note": "canonical design/prototyping tool; Dev Mode for inspecting real spacing/tokens from a handoff file"
+  },
+  {
+    "name": "Framer",
+    "url": "https://www.framer.com/",
+    "category": "prototyping-tool",
+    "tags": [
+      "site-builder",
+      "no-code",
+      "motion"
+    ],
+    "note": "no-code site builder with strong native motion/interaction primitives"
+  },
+  {
+    "name": "Webflow",
+    "url": "https://webflow.com/",
+    "category": "prototyping-tool",
+    "tags": [
+      "site-builder",
+      "cms",
+      "visual-css"
+    ],
+    "note": "visual CSS site builder with CMS, common client-delivery target"
+  },
+  {
+    "name": "Clippy",
+    "url": "https://bennettfeely.com/clippy/",
+    "category": "css-effect-generator",
+    "tags": [
+      "clip-path",
+      "generator"
+    ],
+    "note": "visual CSS clip-path shape generator"
+  },
+  {
+    "name": "CSS Grid Generator",
+    "url": "https://grid.layoutit.com/",
+    "category": "css-effect-generator",
+    "tags": [
+      "css-grid",
+      "visual-editor"
+    ],
+    "note": "visual drag-based CSS Grid layout generator"
+  },
+  {
+    "name": "CSS Scan",
+    "url": "https://getcssscan.com/",
+    "category": "css-effect-generator",
+    "tags": [
+      "extension",
+      "inspect-styles"
+    ],
+    "note": "browser extension for one-click copying any element's computed CSS from a live site"
+  },
+  {
+    "name": "Hover.css",
+    "url": "https://ianlunn.github.io/Hover/",
+    "category": "css-effect-generator",
+    "tags": [
+      "hover-effects",
+      "css-classes"
+    ],
+    "note": "library of ready-made CSS hover-state effect classes"
+  },
+  {
+    "name": "SVG Backgrounds",
+    "url": "https://www.svgbackgrounds.com/",
+    "category": "css-effect-generator",
+    "tags": [
+      "svg-pattern",
+      "generator"
+    ],
+    "note": "tileable SVG background pattern generator"
+  },
+  {
+    "name": "Magic Pattern",
+    "url": "https://magicpattern.design/",
+    "category": "css-effect-generator",
+    "tags": [
+      "pattern-generator",
+      "svg",
+      "noise"
+    ],
+    "note": "suite of pattern/noise/blob/gradient generators for backgrounds"
+  },
+  {
+    "name": "Cuberto",
+    "url": "https://cuberto.com/",
+    "category": "cursor-interaction",
+    "tags": [
+      "agency",
+      "showcase",
+      "cursor-effects"
+    ],
+    "note": "agency showcase site, reference for cursor/magnetic/scroll-choreography-heavy interaction craft"
+  },
+  {
+    "name": "Laws of UX",
+    "url": "https://lawsofux.com/",
+    "category": "ux-reference",
+    "tags": [
+      "principles",
+      "cheatsheet",
+      "psychology"
+    ],
+    "note": "named UX/psychology principles (Fitts's Law, Hick's Law, Jakob's Law...) as a quick-reference cheatsheet"
+  },
+  {
+    "name": "Nielsen Norman Group",
+    "url": "https://www.nngroup.com/",
+    "category": "ux-reference",
+    "tags": [
+      "research",
+      "usability",
+      "authoritative"
+    ],
+    "note": "the authoritative UX research body — usability heuristics, research-backed pattern guidance"
+  },
+  {
+    "name": "Refactoring UI",
+    "url": "https://www.refactoringui.com/",
+    "category": "ux-reference",
+    "tags": [
+      "book",
+      "practical-tips",
+      "visual-design"
+    ],
+    "note": "Adam Wathan & Steve Schoger's practical visual-design tips (spacing, contrast, hierarchy) for developers without a design background"
+  },
+  {
+    "name": "Smashing Magazine",
+    "url": "https://www.smashingmagazine.com/",
+    "category": "ux-reference",
+    "tags": [
+      "articles",
+      "css",
+      "ux",
+      "front-end"
+    ],
+    "note": "long-running deep-dive articles on UX, CSS techniques, and front-end craft"
+  },
+  {
+    "name": "CSS-Tricks",
+    "url": "https://css-tricks.com/",
+    "category": "ux-reference",
+    "tags": [
+      "css",
+      "reference",
+      "snippets"
+    ],
+    "note": "long-standing CSS technique reference and snippet archive (Guide to Flexbox/Grid, almanac)"
+  },
+  {
+    "name": "UX Collective",
+    "url": "https://uxdesign.cc/",
+    "category": "ux-reference",
+    "tags": [
+      "articles",
+      "case-studies",
+      "medium"
+    ],
+    "note": "large UX-practitioner article/case-study publication"
+  },
+  {
+    "name": "Growth.design",
+    "url": "https://growth.design/",
+    "category": "ux-reference",
+    "tags": [
+      "case-study",
+      "comic-format",
+      "behavioral-design"
+    ],
+    "note": "comic-style case studies breaking down behavioral-design decisions in real shipped products"
+  },
+  {
+    "name": "Interaction Design Foundation",
+    "url": "https://www.interaction-design.org/",
+    "category": "ux-reference",
+    "tags": [
+      "courses",
+      "glossary",
+      "foundational"
+    ],
+    "note": "foundational UX courses + glossary, good for grounding terminology and process"
+  },
+  {
+    "name": "Cult UI",
+    "url": "https://cult-ui.com",
+    "category": "component-library",
+    "tags": [
+      "react",
+      "tailwind",
+      "motion",
+      "shadcn-cli",
+      "set-piece"
+    ],
+    "note": "niche animated shadcn-CLI components (Dynamic Island widget, direction-aware tabs) not covered by kokonutui/magicui — MIT, vendored"
+  },
+  {
+    "name": "Vanta.js",
+    "url": "https://www.vantajs.com",
+    "category": "gradient-background",
+    "tags": [
+      "webgl",
+      "three.js",
+      "animated-background",
+      "3d"
+    ],
+    "note": "turnkey animated WebGL backgrounds (net, waves, fog, birds...) — new category vs CSS-only aurora/mesh recipes, MIT, two effects vendored (net, waves)"
+  },
+  {
+    "name": "shadcn/ui MCP",
+    "url": "https://ui.shadcn.com/docs/mcp",
+    "category": "component-library",
+    "tags": [
+      "mcp",
+      "registry-search",
+      "ai-tool"
+    ],
+    "note": "official MCP server to search/install shadcn-registry components via natural language — documented in uimaxing/mcp-servers.md"
+  },
+  {
+    "name": "Framelink Figma MCP",
+    "url": "https://github.com/GLips/Figma-Context-MCP",
+    "category": "prototyping-tool",
+    "tags": [
+      "mcp",
+      "figma",
+      "design-tokens",
+      "ai-tool"
+    ],
+    "note": "MIT community MCP reading Figma file layout/variables/components as structured tokens — documented in uimaxing/mcp-servers.md"
+  }
 ]
