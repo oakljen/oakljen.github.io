@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI/UX Site Index</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 15px/1.5 system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.4rem; }
+  input, select { font: inherit; padding: .4rem .6rem; margin-bottom: 1rem; }
+  input { width: 60%; }
+  .entry { border-bottom: 1px solid rgba(128,128,128,.3); padding: .7rem 0; }
+  .entry a { font-weight: 600; text-decoration: none; }
+  .entry a:hover { text-decoration: underline; }
+  .cat { font-size: .75rem; opacity: .65; text-transform: uppercase; letter-spacing: .03em; }
+  .tags { font-size: .8rem; opacity: .7; }
+  .note { font-size: .9rem; margin-top: .2rem; }
+  #count { font-size: .85rem; opacity: .6; }
+</style>
+</head>
+<body>
+<h1>UI/UX Site Index</h1>
+<p>Curated list of UI/UX styling reference sites — searchable here, or via the CLI (<code>search.py</code>) in this same folder.</p>
+<div>
+  <input id="q" placeholder="search name, tag, category, note…" autofocus>
+  <select id="cat"><option value="">all categories</option></select>
+</div>
+<div id="count"></div>
+<div id="results"></div>
+<script>
+fetch('sites.json').then(r => r.json()).then(sites => {
+  const catSel = document.getElementById('cat');
+  [...new Set(sites.map(s => s.category))].sort().forEach(c => {
+    const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o);
+  });
+  const q = document.getElementById('q'), results = document.getElementById('results'), count = document.getElementById('count');
+  function render() {
+    const term = q.value.toLowerCase().trim();
+    const cat = catSel.value;
+    const filtered = sites.filter(s => {
+      if (cat && s.category !== cat) return false;
+      if (!term) return true;
+      const hay = [s.name, s.category, s.note, ...(s.tags||[])].join(' ').toLowerCase();
+      return term.split(/\s+/).every(t => hay.includes(t));
+    });
+    count.textContent = `${filtered.length} of ${sites.length}`;
+    results.innerHTML = filtered.map(s => `
+      <div class="entry">
+        <a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>
+        <span class="cat">${s.category}</span>
+        <div class="tags">${(s.tags||[]).join(', ')}</div>
+        <div class="note">${s.note || ''}</div>
+      </div>`).join('');
+  }
+  q.addEventListener('input', render);
+  catSel.addEventListener('change', render);
+  render();
+});
+</script>
+</body>
+</html>
