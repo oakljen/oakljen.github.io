@@ -25,8 +25,11 @@
 /* ─────────────────────────────────────────────────────────────
    OAKLJEN.COM / LINKTREE — TACTICAL TELEMETRY
    Same system as the homepage: dark substrate, Archivo 900 macro
-   type, IBM Plex Mono telemetry, one signal blue, no radius.
-   Links are an index of hairline rows, not rounded cards.
+   type, IBM Plex Mono telemetry, no radius. Links are an index of
+   hairline rows, not rounded cards.
+   Unlike the homepage this page runs a channel palette — one colour
+   per destination, the way a HUD or terminal colours its channels.
+   Structure stays monochrome; colour only marks which row is which.
    ───────────────────────────────────────────────────────────── */
 :root{
   --bg:      #0f1010;
@@ -38,6 +41,19 @@
   --line-2:  #3e413a;
   --signal:  #7fa6c9;
   --signal-d:#2f4a63;
+
+  /* Channel palette. One colour per destination, all tuned to roughly the
+     same saturation and lightness so they read as one calibrated set
+     rather than seven unrelated brand colours. Structure stays monochrome;
+     colour only ever marks which channel a row is. */
+  --ch-home:   #7fa6c9;
+  --ch-trainy: #d6a05e;
+  --ch-film:   #8fbc7a;
+  --ch-git:    #a89ac6;
+  --ch-insta:  #cb8a9f;
+  --ch-snap:   #d2c163;
+  --ch-mail:   #7cb8b5;
+
   --gut: clamp(1.15rem, 5vw, 2rem);
   --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --sans: 'Archivo', system-ui, -apple-system, sans-serif;
@@ -110,22 +126,54 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
   border-bottom:1px solid var(--line); text-decoration:none;
   transition:background .12s linear, padding-inline .14s cubic-bezier(.22,1,.36,1);
 }
-.row:hover, .row:focus-visible{ background:var(--panel); padding-inline:.6rem; }
+.row{ --ch:var(--signal); position:relative; }
+/* Channel bar: a flat colour stripe that grows from the top on hover. */
+.row::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
+  background:var(--ch); transform:scaleY(0); transform-origin:50% 0;
+  transition:transform .16s cubic-bezier(.22,1,.36,1);
+}
+.row:hover::before, .row:focus-visible::before{ transform:scaleY(1); }
+/* Each colour is stated as a plain fallback first, then re-stated as a
+   color-mix. Where color-mix is unsupported the mixed line is dropped and
+   the flat value stands — without the fallback, an invalid value inside a
+   `border` shorthand would take the whole border with it. */
+.row:hover, .row:focus-visible{
+  background:var(--panel);
+  background:color-mix(in srgb, var(--ch) 7%, var(--panel));
+  padding-inline:.6rem;
+}
 .row__ico{
   width:34px; height:34px; display:grid; place-items:center; flex:none;
-  border:1px solid var(--line-2); color:var(--muted);
-  transition:color .12s linear, border-color .12s linear;
+  border:1px solid var(--line-2);
+  border-color:color-mix(in srgb, var(--ch) 32%, var(--line-2));
+  color:var(--ch);
+  background:color-mix(in srgb, var(--ch) 7%, transparent);
+  transition:border-color .12s linear, background .12s linear;
 }
-.row:hover .row__ico{ color:var(--signal); border-color:var(--signal-d); }
+.row:hover .row__ico{
+  border-color:var(--ch);
+  background:color-mix(in srgb, var(--ch) 15%, transparent);
+}
 .row__lab{ font-family:var(--sans); font-weight:800; text-transform:uppercase; font-size:1rem; letter-spacing:-.01em; }
 .row__sub{ display:block; font-size:.7rem; letter-spacing:.06em; color:var(--dim); margin-top:.15rem; }
 .row__go{ font-size:.85rem; color:var(--line-2); transition:color .12s linear, transform .14s cubic-bezier(.22,1,.36,1); }
-.row:hover .row__go{ color:var(--signal); transform:translateX(3px); }
+.row:hover .row__go{ color:var(--ch); transform:translateX(3px); }
 .row__tag{
   grid-column:2 / -1; justify-self:start; margin-top:.35rem;
   font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
-  border:1px solid var(--signal-d); color:var(--signal); padding:.22rem .55rem;
+  border:1px solid var(--line-2);
+  border-color:color-mix(in srgb, var(--ch) 45%, var(--line-2));
+  color:var(--ch); padding:.22rem .55rem;
 }
+
+.row--home{   --ch:var(--ch-home); }
+.row--trainy{ --ch:var(--ch-trainy); }
+.row--film{   --ch:var(--ch-film); }
+.row--git{    --ch:var(--ch-git); }
+.row--insta{  --ch:var(--ch-insta); }
+.row--snap{   --ch:var(--ch-snap); }
+.row--mail{   --ch:var(--ch-mail); }
 
 /* ── Footer ────────────────────────────────────────────────── */
 .foot{ border-top:1px solid var(--line-2); padding-block:1.2rem; }
@@ -167,7 +215,7 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
   <p class="idx__lbl">[ Index ]</p>
   <nav class="idx" aria-label="Links">
 
-    <a class="row" href="https://oakljen.com">
+    <a class="row row--home" href="https://oakljen.com">
       <span class="row__ico" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
       </span>
@@ -175,7 +223,7 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
       <span class="row__go" aria-hidden="true">&rarr;</span>
     </a>
 
-    <a class="row" href="https://trainytracker.com" rel="noopener">
+    <a class="row row--trainy" href="https://trainytracker.com" rel="noopener">
       <span class="row__ico" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="13"/><path d="M4 11h16"/><path d="M8 13.5h.01M16 13.5h.01"/><path d="m6 20 2-3M18 20l-2-3M9 8h6"/></svg>
       </span>
@@ -184,7 +232,7 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
       <span class="row__tag">Live · my build</span>
     </a>
 
-    <a class="row" href="https://filmkit.studio" rel="noopener">
+    <a class="row row--film" href="https://filmkit.studio" rel="noopener">
       <span class="row__ico" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="14" height="14"/><path d="m16 10 6-3v10l-6-3z"/></svg>
       </span>
@@ -193,7 +241,7 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
       <span class="row__tag">Beta · my build</span>
     </a>
 
-    <a class="row" href="https://github.com/oakljen" rel="noopener">
+    <a class="row row--git" href="https://github.com/oakljen" rel="noopener">
       <span class="row__ico" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.71 1.23 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
       </span>
@@ -201,7 +249,7 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
       <span class="row__go" aria-hidden="true">&rarr;</span>
     </a>
 
-    <a class="row" href="https://www.instagram.com/oakleyjenke/" rel="noopener">
+    <a class="row row--insta" href="https://www.instagram.com/oakleyjenke/" rel="noopener">
       <span class="row__ico" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
       </span>
@@ -209,7 +257,7 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
       <span class="row__go" aria-hidden="true">&rarr;</span>
     </a>
 
-    <a class="row" href="https://www.snapchat.com/add/oakleyjenke" rel="noopener">
+    <a class="row row--snap" href="https://www.snapchat.com/add/oakleyjenke" rel="noopener">
       <span class="row__ico" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c2.5 0 4 1.7 4 4.2 0 .8-.1 1.5-.1 2 .6.3 1.2 0 1.6-.2.5-.2.9.5.4.9-.4.3-1.2.6-1.4 1 .3 1.3 1.6 2.9 3 3.3.3.1.3.5 0 .6-.8.3-1.7.4-2 .7-.2.2-.1.7-.5.8-.5.1-1.3-.3-2.3-.3-1.2 0-1.8.9-2.7.9s-1.5-.9-2.7-.9c-1 0-1.8.4-2.3.3-.4-.1-.3-.6-.5-.8-.3-.3-1.2-.4-2-.7-.3-.1-.3-.5 0-.6 1.4-.4 2.7-2 3-3.3-.2-.4-1-.7-1.4-1-.5-.4-.1-1.1.4-.9.4.2 1 .5 1.6.2 0-.5-.1-1.2-.1-2C8 4.7 9.5 3 12 3Z"/></svg>
       </span>
@@ -217,7 +265,7 @@ main{ flex:1; padding-block:clamp(1.75rem,7vw,3rem) 2rem; }
       <span class="row__go" aria-hidden="true">&rarr;</span>
     </a>
 
-    <a class="row" href="mailto:enquirys@oakljen.com">
+    <a class="row row--mail" href="mailto:enquirys@oakljen.com">
       <span class="row__ico" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16"/><path d="m22 7-10 5L2 7"/></svg>
       </span>
