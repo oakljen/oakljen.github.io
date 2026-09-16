@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — oakljen.com</title>
+<meta name="description" content="That page doesn't exist on oakljen.com.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0f1010">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:      #0f1010;
+  --fg:      #eaeae6;
+  --muted:   #9b9e94;
+  --dim:     #7d8177;
+  --line:    #2c2e29;
+  --line-2:  #3e413a;
+  --signal:  #7fa6c9;
+  --gut: clamp(1rem, 3.2vw, 2.75rem);
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: 'Archivo', system-ui, -apple-system, sans-serif;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--mono); font-size:.875rem; line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  display:flex; flex-direction:column;
+}
+h1{ font-family:var(--sans); margin:0; text-transform:uppercase; }
+p{ margin:0; }
+ul{ margin:0; padding:0; list-style:none; }
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--signal); outline-offset:2px; }
+.gut{ padding-inline:var(--gut); }
+
+.grain{
+  position:fixed; inset:0; pointer-events:none; z-index:90; opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.scan{
+  position:fixed; inset:0; pointer-events:none; z-index:91; opacity:.5;
+  background:repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.16) 2px, rgba(0,0,0,.16) 3px);
+}
+
+.hud{ border-bottom:1px solid var(--line-2); }
+.hud__in{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1.4rem; padding-block:.7rem;
+  font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+}
+.hud__id{ font-weight:600; text-decoration:none; }
+.hud__id sup{ color:var(--signal); font-size:.6em; }
+.hud__code{ margin-left:auto; color:var(--muted); }
+
+.wrap{ flex:1; display:flex; align-items:center; padding-block:clamp(3rem,10vw,7rem); }
+.panel{ max-width:64ch; }
+.lbl{ font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--signal); margin-bottom:clamp(1.2rem,3vw,2rem); }
+h1{ font-weight:900; font-size:clamp(2.6rem,11vw,7.5rem); line-height:.84; letter-spacing:-.045em; }
+.lede{ margin-top:clamp(1.3rem,3vw,2rem); color:var(--muted); line-height:1.8; max-width:56ch; }
+.links{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:clamp(1.6rem,3.5vw,2.4rem); }
+.btn{
+  display:inline-block; text-decoration:none; font-family:var(--mono);
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500;
+  padding:.85rem 1.4rem; border:1px solid var(--line-2); color:var(--fg);
+  transition:background .15s, color .15s, border-color .15s;
+}
+.btn:hover{ border-color:var(--fg); }
+.btn--solid{ background:var(--fg); color:var(--bg); border-color:var(--fg); font-weight:600; }
+.btn--solid:hover{ background:var(--signal); border-color:var(--signal); color:var(--bg); }
+
+.foot{ border-top:1px solid var(--line); padding-block:1.5rem; }
+.foot p{ font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{ animation:none !important; transition-duration:.01ms !important; }
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+
+<header class="hud">
+  <div class="gut hud__in">
+    <a class="hud__id" href="/">OAKLJEN.COM<sup>®</sup></a>
+    <span class="hud__code">HTTP 404 // no route matched</span>
+  </div>
+</header>
+
+<main class="gut wrap">
+  <div class="panel">
+    <p class="lbl">Signal lost</p>
+    <h1>No such<br>page</h1>
+    <p class="lede">Either the link was wrong, or I moved something and didn't leave a redirect behind. The second one is on me — the rest of the site is still where you left it.</p>
+    <ul class="links">
+      <li><a class="btn btn--solid" href="/">Back to the homepage</a></li>
+      <li><a class="btn" href="mailto:enquirys@oakljen.com">Tell me what broke</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer class="gut foot">
+  <p>© 2026 Oakley Jenke · oakljen.com</p>
+</footer>
+</body>
+</html>

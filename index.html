@@ -5,710 +5,755 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Oakley Jenke — IT support, automation and things that actually work</title>
 <meta name="description" content="Oakley Jenke, Sydney. IT &amp; customer support by day, automation and IT consulting on the side, self-hosting on weekends. FilmKit, TrainyTracker, and a rotary phone that runs on SIP.">
+<link rel="canonical" href="https://oakljen.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0f1010">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oakljen.com/">
+<meta property="og:site_name" content="oakljen.com">
+<meta property="og:locale" content="en_AU">
+<meta property="og:title" content="Oakley Jenke — IT support, automation and things that actually work">
+<meta property="og:description" content="Sydney-based IT support and automation. Power BI dashboards, networks that stay up, and side projects people actually use — FilmKit and TrainyTracker.">
+<meta property="og:image" content="https://oakljen.com/og-preview.svg">
+<meta property="og:image:alt" content="oakljen.com — Oakley Jenke, IT support and automation, Sydney.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oakley Jenke — IT support, automation and things that actually work">
+<meta name="twitter:description" content="Sydney-based IT support and automation. Power BI dashboards, networks that stay up, and side projects people actually use.">
+<meta name="twitter:image" content="https://oakljen.com/og-preview.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ─────────────────────────────────────────────────────────────
-   Register: Glass-Depth, light key (palettes.csv → frost-daylight,
-   used as a shape template; hex tuned from the real oakljen.com
-   indigo + trainytracker pink + robbowen pale-blue ground).
-   Type: Sora (display) / Manrope (body) / JetBrains Mono (technical).
-   Scale ratio 1.250. Motion: ambient + 3 scroll recipes.
+   OAKLJEN.COM — TACTICAL TELEMETRY
+   Archetype: dark substrate / CRT terminal. Committed, not mixed.
+   Macro type: Archivo 900. Micro type: IBM Plex Mono, uppercase.
+   Accent: one signal blue. No radius. No gradient. No glass.
    ───────────────────────────────────────────────────────────── */
 :root{
-  --ratio: 1.25;
-  --step--1: 0.8rem;
-  --step-0: 1rem;
-  --step-1: 1.25rem;
-  --step-2: 1.5625rem;
-  --step-3: 1.9531rem;
-  --step-4: 2.4414rem;
-  --step-5: 3.0518rem;
-  --step-6: 3.8147rem;
+  --bg:      #0f1010;
+  --panel:   #141614;
+  --fg:      #eaeae6;
+  --muted:   #9b9e94;
+  --dim:     #7d8177;
+  --line:    #2c2e29;
+  --line-2:  #3e413a;
+  --signal:  #7fa6c9;
+  --signal-d:#2f4a63;
 
-  --bg:        #eaeef4;
-  --bg-warm:   #f4f2ec;
-  --surface:   rgba(255,255,255,0.62);
-  --surface-solid: #ffffff;
-  --ink:       #12161d;
-  --ink-muted: #545d6c;
-  --accent:    #3f37c9;   /* oakljen.com's real indigo, darkened for AA on light */
-  --accent-2:  #00726f;   /* teal, second hue */
-  --accent-3:  #c2185b;   /* TrainyTracker's pink, one section only */
-  --border:    rgba(18,30,55,0.10);
-  --border-firm: rgba(18,30,55,0.18);
-  --ink-dark-bg: #0d1130;
-  --on-dark:   #eef1fb;
-  --on-dark-muted: #a6adcc;
-
-  --shell: min(1180px, 100% - 3rem);
-  --r: 18px;
+  --gut: clamp(1rem, 3.2vw, 2.75rem);
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: 'Archivo', system-ui, -apple-system, sans-serif;
 }
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; scroll-padding-top:6.5rem; -webkit-text-size-adjust:100%; }
+html{ scroll-behavior:smooth; scroll-padding-top:4.5rem; -webkit-text-size-adjust:100%; }
 body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font-family:'Manrope', system-ui, -apple-system, sans-serif;
-  font-size:var(--step-0); line-height:1.65; letter-spacing:0;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--mono); font-size:.875rem; line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
-h1,h2,h3,h4{ font-family:'Sora', system-ui, sans-serif; margin:0; text-wrap:balance; }
-h1{ letter-spacing:-0.035em; line-height:0.93; }
-h2{ letter-spacing:-0.025em; line-height:1.02; }
-h3{ letter-spacing:-0.015em; line-height:1.15; }
-p{ margin:0 0 1.1em; text-wrap:pretty; }
+h1,h2,h3,h4{ font-family:var(--sans); margin:0; text-transform:uppercase; }
+p{ margin:0; }
+ul,ol,dl{ margin:0; padding:0; list-style:none; }
 a{ color:inherit; }
 img{ max-width:100%; display:block; }
-:focus-visible{ outline:3px solid var(--accent); outline-offset:3px; border-radius:4px; }
-.shell{ width:var(--shell); margin-inline:auto; }
-.mono{ font-family:'JetBrains Mono', ui-monospace, monospace; }
-.measure{ max-width:64ch; }
+:focus-visible{ outline:2px solid var(--signal); outline-offset:2px; }
+.gut{ padding-inline:var(--gut); }
+
 .skip{
   position:absolute; left:-9999px; top:0; z-index:999;
-  background:var(--ink); color:#fff; padding:.75rem 1.25rem; border-radius:0 0 8px 0;
+  background:var(--fg); color:var(--bg); padding:.7rem 1.2rem;
+  font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600;
 }
 .skip:focus{ left:0; }
 
-/* ── Ambient layer 1: scroll progress ───────────────────────── */
-.progress{
-  position:fixed; top:0; left:0; height:3px; width:100%; z-index:60;
-  background:linear-gradient(90deg, var(--accent), var(--accent-2));
-  transform-origin:0 50%; transform:scaleX(0);
-}
-@supports (animation-timeline: scroll()){
-  .progress{ animation:prog linear both; animation-timeline:scroll(root block); }
-  @keyframes prog{ to{ transform:scaleX(1); } }
-}
-
-/* ── Nav (nav-standard, not a floating pill) ────────────────── */
-.nav{
-  position:sticky; top:0; z-index:50;
-  background:rgba(234,238,244,0.72);
-  backdrop-filter:blur(18px) saturate(170%);
-  -webkit-backdrop-filter:blur(18px) saturate(170%);
-  border-bottom:1px solid var(--border);
-}
-.nav__in{ display:flex; align-items:center; gap:2rem; padding:.9rem 0; }
-.brand{ display:flex; align-items:center; gap:.6rem; font-weight:700; text-decoration:none; font-size:var(--step-0); }
-.brand__mark{
-  width:30px; height:30px; border-radius:9px; display:grid; place-items:center;
-  background:var(--accent); color:#fff; font-size:.72rem; font-weight:700; letter-spacing:.04em;
-  font-family:'JetBrains Mono', monospace;
-}
-.nav__links{ display:flex; gap:1.6rem; margin-left:auto; list-style:none; padding:0; margin-block:0; }
-.nav__links a{
-  text-decoration:none; font-size:var(--step--1); letter-spacing:.06em; text-transform:uppercase;
-  font-weight:700; color:var(--ink-muted); padding:.35rem 0; position:relative;
-}
-.nav__links a::after{
-  content:''; position:absolute; left:0; right:0; bottom:0; height:2px;
-  background:var(--accent); transform:scaleX(0); transform-origin:left;
-  transition:transform .28s cubic-bezier(.22,1,.36,1);
-}
-.nav__links a:hover{ color:var(--ink); }
-.nav__links a:hover::after,
-.nav__links a[aria-current="true"]::after{ transform:scaleX(1); }
-.nav__links a[aria-current="true"]{ color:var(--ink); }
-@media (max-width:820px){ .nav__links{ display:none; } }
-
-.btn{
-  display:inline-flex; align-items:center; gap:.5rem; text-decoration:none;
-  font-weight:700; font-size:var(--step--1); letter-spacing:.02em;
-  padding:.7rem 1.15rem; border-radius:11px; border:1px solid transparent;
-  transition:transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s, background .2s, border-color .2s;
-}
-.btn--primary{ background:var(--accent); color:#fff; box-shadow:0 6px 18px rgba(63,55,201,.28); }
-.btn--primary:hover{ background:#332ba8; transform:translateY(-2px); box-shadow:0 12px 26px rgba(63,55,201,.34); }
-.btn--ghost{ border-color:var(--border-firm); color:var(--ink); background:rgba(255,255,255,.5); }
-.btn--ghost:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
-.btn--lg{ font-size:var(--step-0); padding:.95rem 1.6rem; }
-.nav .btn{ margin-left:auto; }
-@media (min-width:821px){ .nav .btn{ margin-left:0; } }
-
-/* ── Ambient layer 2: living mesh behind the hero ───────────── */
-@property --m1x{ syntax:'<percentage>'; initial-value:14%; inherits:false; }
-@property --m1y{ syntax:'<percentage>'; initial-value:22%; inherits:false; }
-@property --m2x{ syntax:'<percentage>'; initial-value:86%; inherits:false; }
-@property --m2y{ syntax:'<percentage>'; initial-value:6%; inherits:false; }
-@property --m3x{ syntax:'<percentage>'; initial-value:38%; inherits:false; }
-@property --m3y{ syntax:'<percentage>'; initial-value:92%; inherits:false; }
-.mesh{
-  position:absolute; inset:0; z-index:0; pointer-events:none;
-  background:
-    radial-gradient(at var(--m1x) var(--m1y), hsla(245,72%,66%,0.30) 0px, transparent 52%),
-    radial-gradient(at var(--m2x) var(--m2y), hsla(178,64%,54%,0.26) 0px, transparent 50%),
-    radial-gradient(at var(--m3x) var(--m3y), hsla(38,86%,68%,0.24) 0px, transparent 48%),
-    var(--bg);
-  animation:mesh-drift 30s ease-in-out infinite alternate;
-}
-@keyframes mesh-drift{
-  to{ --m1x:58%; --m1y:52%; --m2x:24%; --m2y:34%; --m3x:78%; --m3y:70%; }
-}
+/* ── Analog degradation: grain + scanlines ─────────────────── */
 .grain{
-  position:fixed; inset:0; pointer-events:none; z-index:55; opacity:.045; mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  position:fixed; inset:0; pointer-events:none; z-index:90; opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.scan{
+  position:fixed; inset:0; pointer-events:none; z-index:91; opacity:.5;
+  background:repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.16) 2px, rgba(0,0,0,.16) 3px);
 }
 
-/* ── Hero (hero-typographic-only) ───────────────────────────── */
-.hero{ position:relative; overflow:hidden; padding:clamp(4rem,10vw,8rem) 0 clamp(3.5rem,7vw,6rem); }
-.hero__in{ position:relative; z-index:2; }
-.status{
-  display:inline-flex; align-items:center; gap:.55rem;
-  font-family:'JetBrains Mono', monospace; font-size:var(--step--1); letter-spacing:.02em;
-  background:var(--surface); border:1px solid var(--border);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  padding:.45rem .95rem; border-radius:999px; color:var(--ink); margin-bottom:1.8rem;
+/* ── HUD bar ───────────────────────────────────────────────── */
+.hud{
+  position:sticky; top:0; z-index:80;
+  background:var(--bg); border-bottom:1px solid var(--line-2);
 }
-.status__dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-2); flex:none; }
+.hud__in{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1.4rem;
+  padding-block:.7rem;
+  font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+}
+.hud__id{ font-weight:600; color:var(--fg); text-decoration:none; }
+.hud__id sup{ color:var(--signal); font-size:.6em; }
+.hud__nav{ display:flex; flex-wrap:wrap; gap:1.1rem; margin-left:auto; }
+.hud__nav a{
+  text-decoration:none; color:var(--dim); position:relative; padding-block:.15rem;
+  transition:color .15s;
+}
+.hud__nav a:hover{ color:var(--fg); }
+.hud__nav a[aria-current="true"]{ color:var(--signal); }
+.hud__nav a[aria-current="true"]::before{ content:'> '; }
+@media (max-width:860px){ .hud__nav{ display:none; } }
+.hud__st{ display:flex; align-items:center; gap:.45rem; color:var(--muted); }
+.hud__dot{ width:7px; height:7px; background:var(--signal); flex:none; }
 @media (prefers-reduced-motion: no-preference){
-  .status__dot{ animation:pulse 2.6s ease-in-out infinite; }
-  @keyframes pulse{ 0%,100%{ opacity:1; transform:scale(1);} 50%{ opacity:.45; transform:scale(.78);} }
+  .hud__dot{ animation:blink 2.4s steps(1,end) infinite; }
+  @keyframes blink{ 0%,70%{opacity:1} 71%,100%{opacity:.25} }
+}
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero{ padding-block:clamp(2.5rem,7vw,6rem) clamp(2rem,4vw,3.5rem); }
+.lbl{
+  font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--signal);
+  margin-bottom:clamp(1.2rem,3vw,2rem);
 }
 .hero h1{
-  font-size:clamp(var(--step-5), 8.6vw, 7.1rem);
-  max-width:15ch; margin-bottom:1.6rem;
+  font-weight:900; font-size:clamp(3.2rem,15.5vw,13rem);
+  line-height:.82; letter-spacing:-.045em;
 }
-.hero h1 em{ font-style:normal; color:var(--accent); }
-.hero__sub{ font-size:clamp(var(--step-0), 1.55vw, var(--step-1)); color:var(--ink-muted); max-width:56ch; }
-.hero__sub strong{ color:var(--ink); font-weight:700; }
-.hero__cta{ display:flex; flex-wrap:wrap; gap:.85rem; margin-top:2.2rem; }
+/* Unconditional: the line break must survive reduced-motion, where the
+   animation block that also sets this never applies. */
+.hero h1 .w{ display:block; }
+.hero__lede{
+  margin-top:clamp(1.4rem,3.5vw,2.4rem); max-width:62ch;
+  color:var(--muted); font-size:clamp(.8rem,1.15vw,.92rem); line-height:1.75;
+}
+.hero__lede b{ color:var(--fg); font-weight:500; }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:clamp(1.6rem,3.5vw,2.4rem); }
+.btn{
+  display:inline-block; text-decoration:none; font-family:var(--mono);
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500;
+  padding:.85rem 1.4rem; border:1px solid var(--line-2); color:var(--fg);
+  transition:background .15s, color .15s, border-color .15s;
+}
+.btn:hover{ border-color:var(--fg); }
+.btn--solid{ background:var(--fg); color:var(--bg); border-color:var(--fg); font-weight:600; }
+.btn--solid:hover{ background:var(--signal); border-color:var(--signal); color:var(--bg); }
 
-.factrail{
-  position:relative; z-index:2; margin-top:clamp(3rem,6vw,5rem);
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1px;
-  background:var(--border-firm); border:1px solid var(--border-firm); border-radius:var(--r); overflow:hidden;
+/* ── Hero portrait ─────────────────────────────────────────── */
+.hero__grid{ display:grid; grid-template-columns:1.5fr .85fr; gap:clamp(1.5rem,4vw,3.5rem); align-items:end; }
+@media (max-width:900px){ .hero__grid{ grid-template-columns:1fr; } }
+.portrait{
+  margin:0; position:relative; border:1px solid var(--line-2);
+  align-self:end; max-width:100%;
 }
-.factrail div{ background:rgba(255,255,255,0.66); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); padding:1.35rem 1.5rem; }
-.factrail dt{ font-family:'JetBrains Mono', monospace; font-size:var(--step--1); letter-spacing:.09em; text-transform:uppercase; color:var(--accent); margin-bottom:.4rem; }
-.factrail dd{ margin:0; font-weight:500; line-height:1.45; }
+.portrait img{
+  display:block; width:100%; height:auto; aspect-ratio:3/4; object-fit:cover;
+  object-position:50% 22%; filter:grayscale(.18) contrast(1.06);
+}
+.portrait figcaption{
+  position:absolute; left:0; right:0; bottom:0;
+  display:flex; gap:.9rem; justify-content:space-between;
+  padding:.5rem .7rem; background:rgba(15,16,16,.86);
+  border-top:1px solid var(--line-2);
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+@media (max-width:900px){ .portrait{ max-width:340px; } }
 
-/* ── Sections ───────────────────────────────────────────────── */
-section{ position:relative; }
-.band{ padding:clamp(4rem,9vw,7.5rem) 0; }
-.band--warm{ background:var(--bg-warm); }
-.band--dark{ background:var(--ink-dark-bg); color:var(--on-dark); }
-.shead{ display:flex; align-items:baseline; gap:1rem; margin-bottom:.9rem; }
-.shead__n{ font-family:'JetBrains Mono', monospace; font-size:var(--step--1); font-weight:700; color:var(--accent); letter-spacing:.05em; }
-.shead h2{ font-size:clamp(var(--step-3), 4.4vw, var(--step-5)); }
-.shead__rule{ flex:1; height:1px; background:var(--border-firm); }
-.sintro{ color:var(--ink-muted); max-width:58ch; font-size:var(--step-1); margin-bottom:clamp(2rem,4vw,3.2rem); }
+/* ── Figure plate: a technical capture, framed and labelled ── */
+.plate{ border:1px solid var(--line-2); background:var(--panel); }
+.plate__bar{
+  display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; align-items:center;
+  padding:.5rem .8rem; border-bottom:1px solid var(--line-2);
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);
+}
+.plate__bar b{ color:var(--fg); font-weight:600; }
+.plate__bar span:last-child{ margin-left:auto; color:var(--signal); }
+.plate img{
+  display:block; width:100%; height:auto; max-width:100%;
+  aspect-ratio:16/9; object-fit:cover; object-position:50% 0;
+}
+.plate--tall img{ aspect-ratio:9/16; object-position:50% 0; }
 
-/* ── About ──────────────────────────────────────────────────── */
-.about{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(2rem,5vw,4.5rem); align-items:start; }
-@media (max-width:900px){ .about{ grid-template-columns:1fr; } }
-.about__body p{ font-size:var(--step-1); }
-.about__body p:first-child{ font-size:var(--step-2); line-height:1.4; letter-spacing:-0.012em; color:var(--ink); }
-.pillars{ list-style:none; margin:0; padding:0; display:grid; gap:1px; background:var(--border-firm); border:1px solid var(--border-firm); border-radius:var(--r); overflow:hidden; }
-.pillars li{ background:var(--surface-solid); padding:1.4rem 1.5rem; }
-.pillars h3{ font-size:var(--step-1); margin-bottom:.3rem; }
-.pillars p{ margin:0; color:var(--ink-muted); font-size:var(--step-0); }
+/* ── Work unit, image-led ──────────────────────────────────── */
+.proj{ padding-block:clamp(2rem,5vw,3.5rem); border-top:1px solid var(--line-2); }
+.proj:first-of-type{ border-top:0; padding-top:0; }
+.proj__meta{
+  display:grid; grid-template-columns:minmax(200px,.8fr) 1.9fr;
+  gap:1.2rem clamp(1.2rem,3.5vw,3rem); margin-top:1.5rem; align-items:start;
+}
+@media (max-width:880px){ .proj__meta{ grid-template-columns:1fr; gap:.9rem; } }
+.proj h3{ font-weight:800; font-size:clamp(1.5rem,4vw,2.6rem); letter-spacing:-.035em; line-height:.92; }
+.proj__id{ display:block; margin-top:.55rem; font-size:.7rem; letter-spacing:.16em; color:var(--dim); }
+.proj__side{ display:grid; gap:.9rem; justify-items:start; margin-top:1rem; }
+.proj__body{ display:grid; gap:.9rem; max-width:74ch; }
+.proj__body > p{ color:var(--muted); line-height:1.75; }
+.proj__body > p.lede{ color:var(--fg); font-size:clamp(.9rem,1.3vw,1.02rem); }
+.shots{ display:grid; grid-template-columns:1.62fr 1fr; gap:1px; background:var(--line); }
+@media (max-width:760px){ .shots{ grid-template-columns:1fr; } }
 
-/* ── Case studies (feature-alternating-rows) ────────────────── */
-.case{
-  display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4.5vw,4rem); align-items:center;
-  padding:clamp(2.4rem,5vw,4rem) 0; border-top:1px solid var(--border-firm);
+/* ── Telemetry strip ───────────────────────────────────────── */
+.tele{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(190px,1fr));
+  gap:1px; background:var(--line); border-block:1px solid var(--line-2);
 }
-.case:nth-of-type(even) .case__media{ order:-1; }
-@media (max-width:900px){
-  .case{ grid-template-columns:1fr; }
-  .case:nth-of-type(even) .case__media{ order:0; }
-}
-.case__tag{
-  display:inline-flex; gap:.5rem; align-items:center; font-family:'JetBrains Mono', monospace;
-  font-size:var(--step--1); letter-spacing:.06em; text-transform:uppercase; font-weight:700;
-  color:var(--accent); margin-bottom:.8rem;
-}
-.case--pink .case__tag{ color:var(--accent-3); }
-.case h3{ font-size:clamp(var(--step-3), 3.4vw, var(--step-4)); margin-bottom:.9rem; }
-.case p{ color:var(--ink-muted); }
-.case p.lede{ color:var(--ink); font-size:var(--step-1); }
-.case ul{ margin:0 0 1.4rem; padding-left:1.1rem; color:var(--ink-muted); }
-.case li{ margin-bottom:.45rem; }
-.case li strong{ color:var(--ink); font-weight:700; }
-.stack{ display:flex; flex-wrap:wrap; gap:.4rem; margin:0 0 1.4rem; padding:0; list-style:none; }
-.stack li{ margin:0; }
-.chip{
-  font-family:'JetBrains Mono', monospace; font-size:.72rem; letter-spacing:.03em;
-  background:rgba(255,255,255,.75); border:1px solid var(--border-firm);
-  padding:.25rem .6rem; border-radius:7px; color:var(--ink-muted);
-}
-/* glass mock panels — sized containers, never an unconstrained box */
-.mock{
-  position:relative; aspect-ratio:4/3; border-radius:20px; overflow:hidden;
-  background:linear-gradient(150deg, rgba(255,255,255,.78), rgba(255,255,255,.42));
-  border:1px solid rgba(255,255,255,.8);
-  box-shadow:0 26px 60px -28px rgba(18,30,55,.45), 0 2px 0 rgba(255,255,255,.9) inset;
-  backdrop-filter:blur(20px) saturate(165%); -webkit-backdrop-filter:blur(20px) saturate(165%);
-  padding:1.1rem; display:flex; flex-direction:column; gap:.7rem;
-}
-.mock::after{
-  content:''; position:absolute; inset:-30%; z-index:-1; filter:blur(60px);
-  background:radial-gradient(circle at 40% 30%, rgba(63,55,201,.34), transparent 62%);
-}
-.mock--pink::after{ background:radial-gradient(circle at 60% 35%, rgba(194,24,91,.30), transparent 62%); }
-.mock__bar{ display:flex; align-items:center; gap:.4rem; font-family:'JetBrains Mono', monospace; font-size:.7rem; color:var(--ink-muted); }
-.mock__dot{ width:9px; height:9px; border-radius:50%; background:var(--border-firm); }
-.mock__row{
-  background:rgba(255,255,255,.72); border:1px solid var(--border);
-  border-radius:10px; padding:.6rem .75rem; font-size:.78rem;
-  display:flex; justify-content:space-between; align-items:center; gap:.75rem;
-}
-.mock__row b{ font-weight:700; font-size:.78rem; }
-.mock__row span{ font-family:'JetBrains Mono', monospace; font-size:.7rem; color:var(--ink-muted); }
-.mock__pill{ font-family:'JetBrains Mono', monospace; font-size:.64rem; padding:.15rem .45rem; border-radius:5px; background:rgba(63,55,201,.12); color:var(--accent); }
-.mock--pink .mock__pill{ background:rgba(194,24,91,.12); color:var(--accent-3); }
-.mock__fill{ flex:1; display:grid; place-items:center; font-family:'JetBrains Mono', monospace; font-size:.7rem; color:var(--ink-muted); border:1px dashed var(--border-firm); border-radius:10px; }
+.tele > div{ background:var(--bg); padding:1rem var(--gut); }
+.tele dt{ font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); margin-bottom:.35rem; }
+.tele dd{ margin:0; font-size:.8rem; color:var(--fg); font-variant-numeric:tabular-nums; line-height:1.5; }
 
-/* ── Homelab grid (deliberately not uniform bento tiles) ────── */
-.lab{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.1rem; }
-.lab article{
-  background:var(--surface-solid); border:1px solid var(--border-firm); border-radius:var(--r);
-  padding:1.5rem; transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s, border-color .3s;
+/* ── Section scaffold ──────────────────────────────────────── */
+.sec{ padding-block:clamp(2.6rem,6vw,5rem); border-bottom:1px solid var(--line); }
+.sec__hd{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1.2rem;
+  margin-bottom:clamp(1.6rem,3.5vw,2.6rem);
 }
-.lab article:hover{ transform:translateY(-4px); box-shadow:0 18px 40px -24px rgba(18,30,55,.4); border-color:var(--accent); }
-.lab h3{ font-size:var(--step-1); margin-bottom:.5rem; }
-.lab p{ color:var(--ink-muted); font-size:var(--step-0); margin-bottom:1rem; }
-
-/* ── Experience ─────────────────────────────────────────────── */
-.xp{ display:grid; grid-template-columns:220px 1fr; gap:clamp(1.5rem,4vw,3.5rem); padding:2rem 0; border-top:1px solid var(--border-firm); }
-@media (max-width:760px){ .xp{ grid-template-columns:1fr; gap:.75rem; } }
-.xp__when{ font-family:'JetBrains Mono', monospace; font-size:var(--step--1); letter-spacing:.05em; text-transform:uppercase; color:var(--accent); font-weight:700; }
-.xp h3{ font-size:var(--step-2); margin-bottom:.25rem; }
-.xp__org{ color:var(--ink-muted); margin-bottom:1rem; }
-.xp ul{ margin:0; padding-left:1.1rem; color:var(--ink-muted); }
-.xp li{ margin-bottom:.5rem; }
-
-/* ── Consulting ─────────────────────────────────────────────── */
-.svc{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1px; background:var(--border-firm); border:1px solid var(--border-firm); border-radius:var(--r); overflow:hidden; margin-bottom:clamp(2rem,4vw,3rem); }
-.svc article{ background:rgba(255,255,255,.7); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); padding:1.6rem; }
-.svc h3{ font-size:var(--step-1); margin-bottom:.45rem; }
-.svc p{ margin:0; color:var(--ink-muted); font-size:var(--step-0); }
-.steps{ list-style:none; counter-reset:s; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.4rem; }
-.steps li{ counter-increment:s; padding-top:1rem; border-top:2px solid var(--accent); }
-.steps li::before{ content:counter(s,decimal-leading-zero); font-family:'JetBrains Mono', monospace; font-weight:700; color:var(--accent); font-size:var(--step--1); display:block; margin-bottom:.5rem; }
-.steps h3{ font-size:var(--step-1); margin-bottom:.35rem; }
-.steps p{ margin:0; color:var(--ink-muted); font-size:var(--step-0); }
-
-/* ── Skills ─────────────────────────────────────────────────── */
-.skills{ display:flex; flex-wrap:wrap; gap:.6rem; padding:0; margin:0; list-style:none; }
-.skills li{
-  font-family:'JetBrains Mono', monospace; font-size:var(--step-0);
-  background:var(--surface-solid); border:1px solid var(--border-firm);
-  padding:.55rem 1rem; border-radius:10px;
-  transition:border-color .2s, color .2s, transform .2s;
+.sec__ref{ font-size:.7rem; letter-spacing:.18em; color:var(--signal); }
+.sec__hd h2{
+  font-weight:800; font-size:clamp(1.5rem,4.6vw,3.1rem);
+  letter-spacing:-.035em; line-height:.92;
 }
-.skills li:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+.sec__hd .rule{ flex:1; min-width:2rem; height:1px; background:var(--line-2); }
+.sec__intro{ color:var(--muted); max-width:66ch; margin-bottom:clamp(1.6rem,3.5vw,2.4rem); line-height:1.75; }
 
-/* ── FAQ ────────────────────────────────────────────────────── */
-.faq{ max-width:76ch; }
-.faq details{ border-bottom:1px solid var(--border-firm); }
+/* ── About ─────────────────────────────────────────────────── */
+.about{ display:grid; grid-template-columns:1.25fr .75fr; gap:clamp(1.5rem,4vw,4rem); }
+@media (max-width:880px){ .about{ grid-template-columns:1fr; } }
+.about__body{ display:grid; gap:1.1rem; color:var(--muted); line-height:1.8; max-width:64ch; }
+.about__body p:first-child{ color:var(--fg); font-size:clamp(.92rem,1.5vw,1.08rem); line-height:1.6; }
+.pill{ display:grid; gap:1px; background:var(--line); border:1px solid var(--line-2); align-content:start; }
+.pill li{ background:var(--panel); padding:1.05rem 1.2rem; }
+.pill h3{ font-size:.82rem; font-weight:700; letter-spacing:.02em; margin-bottom:.35rem; }
+.pill p{ color:var(--dim); font-size:.76rem; line-height:1.6; }
+
+/* ── Work index ────────────────────────────────────────────── */
+.unit{
+  display:grid; grid-template-columns:minmax(190px,1fr) 2.1fr auto;
+  gap:1rem clamp(1.2rem,3.5vw,3rem);
+  padding-block:clamp(1.4rem,3vw,2.2rem); border-top:1px solid var(--line-2);
+  align-items:start;
+}
+.unit:last-of-type{ border-bottom:1px solid var(--line-2); }
+@media (max-width:880px){ .unit{ grid-template-columns:1fr; gap:.75rem; } }
+.unit h3{ font-weight:800; font-size:clamp(1.3rem,3.4vw,2.2rem); letter-spacing:-.03em; line-height:.95; }
+.unit__id{ display:block; margin-top:.5rem; font-size:.7rem; letter-spacing:.18em; color:var(--dim); }
+/* One measure for the whole body so prose and the spec table share a right edge. */
+.unit__body{ display:grid; gap:.9rem; max-width:76ch; }
+.unit__body > p{ color:var(--muted); line-height:1.75; }
+.unit__body > p.lede{ color:var(--fg); }
+.spec{ display:grid; gap:1px; background:var(--line); border:1px solid var(--line); }
+.spec div{ background:var(--bg); padding:.6rem .8rem; display:grid; grid-template-columns:minmax(88px,auto) 1fr; gap:.9rem; }
+.spec dt{ font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); padding-top:.15rem; }
+.spec dd{ margin:0; font-size:.76rem; color:var(--muted); line-height:1.6; }
+.spec dd b{ color:var(--fg); font-weight:500; }
+.st{
+  font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+  border:1px solid var(--signal-d); color:var(--signal);
+  padding:.36rem .65rem; justify-self:start; white-space:nowrap;
+}
+.unit__go{
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none;
+  color:var(--fg); border-bottom:1px solid var(--signal); padding-bottom:3px;
+  white-space:nowrap; justify-self:start; transition:color .15s;
+}
+.unit__go:hover{ color:var(--signal); }
+.unit__side{ display:grid; gap:1rem; justify-items:start; }
+
+/* ── Lab grid ──────────────────────────────────────────────── */
+.lab{ display:grid; grid-template-columns:repeat(auto-fit, minmax(255px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line-2); }
+.lab article{ background:var(--panel); padding:1.3rem 1.4rem; display:flex; flex-direction:column; gap:.6rem; }
+.lab h3{ font-size:.88rem; font-weight:700; letter-spacing:.01em; }
+.lab p{ color:var(--dim); font-size:.78rem; line-height:1.65; }
+.tags{ display:flex; flex-wrap:wrap; gap:.35rem; margin-top:auto; padding-top:.5rem; }
+.tags span{
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+  border:1px solid var(--line-2); color:var(--muted); padding:.32rem .55rem;
+}
+
+/* ── Experience ────────────────────────────────────────────── */
+.xp{ display:grid; grid-template-columns:minmax(150px,.5fr) 2fr; gap:1rem clamp(1.2rem,3.5vw,3rem); padding-block:clamp(1.3rem,3vw,2rem); border-top:1px solid var(--line-2); }
+.xp:last-of-type{ border-bottom:1px solid var(--line-2); }
+@media (max-width:760px){ .xp{ grid-template-columns:1fr; gap:.6rem; } }
+.xp__when{ font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--signal); }
+.xp h3{ font-size:clamp(1rem,2.2vw,1.35rem); font-weight:700; letter-spacing:-.01em; margin-bottom:.25rem; }
+.xp__org{ color:var(--dim); font-size:.76rem; margin-bottom:.9rem; }
+.xp ul{ display:grid; gap:.5rem; }
+.xp li{ color:var(--muted); font-size:.8rem; line-height:1.65; padding-left:1.2rem; position:relative; }
+.xp li::before{ content:'//'; position:absolute; left:0; color:var(--line-2); }
+
+/* ── Consulting ────────────────────────────────────────────── */
+.svc{ display:grid; grid-template-columns:repeat(auto-fit, minmax(235px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line-2); margin-bottom:clamp(1.8rem,4vw,3rem); }
+.svc article{ background:var(--panel); padding:1.3rem 1.4rem; }
+.svc h3{ font-size:.85rem; font-weight:700; margin-bottom:.4rem; }
+.svc p{ color:var(--dim); font-size:.78rem; line-height:1.65; }
+.steps{ display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:clamp(1.2rem,3vw,2rem); }
+.steps li{ border-top:2px solid var(--signal); padding-top:.9rem; }
+.steps__n{ font-size:.7rem; letter-spacing:.18em; color:var(--signal); display:block; margin-bottom:.5rem; }
+.steps h3{ font-size:.88rem; font-weight:700; margin-bottom:.35rem; }
+.steps p{ color:var(--dim); font-size:.78rem; line-height:1.65; }
+
+/* ── Capability matrix ─────────────────────────────────────── */
+.caps{ display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line-2); }
+.caps li{
+  background:var(--bg); padding:.75rem .9rem; font-size:.72rem;
+  letter-spacing:.06em; text-transform:uppercase; color:var(--muted);
+  transition:background .15s, color .15s;
+}
+.caps li:hover{ background:var(--panel); color:var(--signal); }
+
+/* ── FAQ ───────────────────────────────────────────────────── */
+.faq{ max-width:104ch; border-top:1px solid var(--line-2); }
+.faq details{ border-bottom:1px solid var(--line-2); }
 .faq summary{
-  cursor:pointer; list-style:none; padding:1.25rem 0; font-family:'Sora',sans-serif;
-  font-size:var(--step-1); font-weight:600; letter-spacing:-0.01em;
+  cursor:pointer; list-style:none; padding:1.1rem 0;
+  font-family:var(--sans); font-weight:700; text-transform:uppercase;
+  font-size:clamp(.82rem,1.7vw,1rem); letter-spacing:-.005em;
   display:flex; justify-content:space-between; align-items:center; gap:1rem;
 }
 .faq summary::-webkit-details-marker{ display:none; }
-.faq summary::after{ content:'+'; font-family:'JetBrains Mono',monospace; font-size:var(--step-2); color:var(--accent); line-height:1; flex:none; transition:transform .25s; }
-.faq details[open] summary::after{ content:'–'; }
-.faq summary:hover{ color:var(--accent); }
-.faq__a{ padding:0 0 1.4rem; color:var(--ink-muted); max-width:62ch; }
-.faq__a p:last-child{ margin-bottom:0; }
+.faq summary::after{ content:'[+]'; font-family:var(--mono); font-size:.7rem; color:var(--signal); flex:none; }
+.faq details[open] summary::after{ content:'[-]'; }
+.faq summary:hover{ color:var(--signal); }
+.faq__a{ padding-bottom:1.3rem; color:var(--muted); max-width:88ch; line-height:1.8; }
 
-/* ── Closing CTA (cta-full-bleed-close) ─────────────────────── */
-.close{ text-align:center; position:relative; overflow:hidden; }
-.close .shell{ position:relative; z-index:2; }
-.close__glow{
-  position:absolute; inset:0; z-index:0; pointer-events:none;
-  background:
-    radial-gradient(at 22% 12%, hsla(245,80%,62%,0.42) 0px, transparent 52%),
-    radial-gradient(at 78% 78%, hsla(178,70%,45%,0.30) 0px, transparent 50%);
+/* ── Close ─────────────────────────────────────────────────── */
+.close{ background:var(--fg); color:var(--bg); padding-block:clamp(2.6rem,6vw,5rem); }
+.close__lbl{ font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:#4a4d45; margin-bottom:1.2rem; }
+.close h2{ font-weight:900; font-size:clamp(1.9rem,6.6vw,4.6rem); letter-spacing:-.045em; line-height:.9; max-width:17ch; }
+.close p{ margin-top:1.3rem; max-width:68ch; color:#3c3f38; line-height:1.75; }
+.close__cta{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:2rem; }
+.btn--inv{ border-color:#0f1010; color:#0f1010; }
+.btn--inv:hover{ background:#0f1010; color:var(--fg); }
+.btn--invSolid{ background:#0f1010; color:var(--fg); border-color:#0f1010; font-weight:600; }
+.btn--invSolid:hover{ background:var(--signal-d); border-color:var(--signal-d); }
+
+/* ── Footer ────────────────────────────────────────────────── */
+.foot{ padding-block:1.5rem; }
+.foot__in{
+  display:flex; flex-wrap:wrap; gap:.7rem 1.6rem; align-items:center; justify-content:space-between;
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);
 }
-.close__prompt{ font-family:'JetBrains Mono', monospace; font-size:var(--step--1); color:#9fe8e2; letter-spacing:.03em; margin-bottom:1.4rem; }
-.close h2{ font-size:clamp(var(--step-3), 5.4vw, var(--step-5)); max-width:18ch; margin-inline:auto; margin-bottom:1.2rem; }
-.close p{ color:var(--on-dark-muted); max-width:52ch; margin-inline:auto; font-size:var(--step-1); }
-.close__cta{ display:flex; flex-wrap:wrap; gap:.85rem; justify-content:center; margin-top:2rem; }
-.btn--onDark{ background:#fff; color:var(--ink-dark-bg); }
-.btn--onDark:hover{ background:#e2e6f7; transform:translateY(-2px); }
-.btn--outlineDark{ border-color:rgba(238,241,251,.4); color:var(--on-dark); background:transparent; }
-.btn--outlineDark:hover{ border-color:#fff; background:rgba(255,255,255,.08); transform:translateY(-2px); }
+.foot a{ text-decoration:none; color:var(--dim); transition:color .15s; }
+.foot a:hover{ color:var(--signal); }
+.foot ul{ display:flex; flex-wrap:wrap; gap:1.2rem; }
 
-/* ── Footer (footer-slim) ───────────────────────────────────── */
-.foot{ border-top:1px solid var(--border-firm); padding:1.8rem 0; }
-.foot__in{ display:flex; flex-wrap:wrap; gap:1rem 2rem; align-items:center; justify-content:space-between; }
-.foot p{ margin:0; font-family:'JetBrains Mono', monospace; font-size:var(--step--1); color:var(--ink-muted); }
-.foot ul{ display:flex; flex-wrap:wrap; gap:1.3rem; list-style:none; margin:0; padding:0; }
-.foot a{ font-size:var(--step--1); color:var(--ink-muted); text-decoration:none; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
-.foot a:hover{ color:var(--accent); text-decoration:underline; }
+/* ═══ MOTION ════════════════════════════════════════════════
+   One orchestrated boot sequence, then sharp scroll reveals.
+   Easing is stepped or hard-out — nothing soft or bouncy, so
+   it reads as machinery powering up rather than a UI easing in.
+   Everything below is gated on prefers-reduced-motion, and the
+   resting state is always visible: no content waits on JS.
+   ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: no-preference){
 
-/* ═══ SCROLL CHOREOGRAPHY — three recipes, per effects-library
-       "Choosing among these": one structural move (hero compress
-       on exit), one text reveal (line mask), plus the ambient/
-       progress layer above. Everything else is a plain fade-up. ══ */
-@supports (animation-timeline: view()){
-  @media (prefers-reduced-motion: no-preference){
-    /* (1) structural: hero compresses and dims as you leave it */
-    .hero__in{
-      animation:hero-exit linear both;
-      animation-timeline:view();
-      animation-range:exit 0% exit 100%;
-    }
-    @keyframes hero-exit{ to{ transform:scale(.94) translateY(-26px); opacity:.3; } }
-
-    /* (2) text reveal: line-by-line mask, staggered by range not delay */
-    .lines .line > span{
-      animation:line-up cubic-bezier(.22,1,.36,1) both;
-      animation-timeline:view();
-      animation-range:entry 8% entry 62%;
-    }
-    .lines .line:nth-child(2) > span{ animation-range:entry 16% entry 70%; }
-    .lines .line:nth-child(3) > span{ animation-range:entry 24% entry 78%; }
-    @keyframes line-up{ to{ transform:translateY(0); } }
-
-    /* baseline entrance for everything else */
-    .reveal{
-      animation:fade-up linear both;
-      animation-timeline:view();
-      animation-range:entry 0% cover 26%;
-    }
-    @keyframes fade-up{ from{ opacity:0; transform:translateY(22px); } to{ opacity:1; transform:none; } }
+  /* (1) CRT sweep — one pass down the screen on load. */
+  .sweep{
+    position:fixed; left:0; right:0; top:0; height:38vh; z-index:92;
+    pointer-events:none; opacity:.5;
+    background:linear-gradient(180deg, transparent, rgba(127,166,201,.10) 62%, rgba(127,166,201,.28));
+    animation:sweep 1.15s cubic-bezier(.4,0,.2,1) 1 both;
   }
-}
-/* The mask only clips once we know the animation can run — no
-   support, no JS, or reduced motion all leave the text in place. */
-@supports (animation-timeline: view()){
-  @media (prefers-reduced-motion: no-preference){
-    .lines .line{ display:block; overflow:hidden; }
-    .lines .line > span{ display:block; transform:translateY(105%); }
+  @keyframes sweep{
+    from{ transform:translateY(-100%); }
+    to{ transform:translateY(240vh); }
   }
+
+  /* (2) HUD drops in, then its rule draws across. */
+  .hud{ animation:boot-fade .4s steps(3,end) both; }
+  .hud::after{
+    content:''; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+    background:var(--signal); transform-origin:0 50%;
+    animation:rule-draw .7s cubic-bezier(.22,1,.36,1) .25s both;
+  }
+  @keyframes rule-draw{ from{ transform:scaleX(0); } 60%{ transform:scaleX(1); } to{ transform:scaleX(1); opacity:0; } }
+
+  /* (3) Headline wipes in line by line, hard edge, no fade. */
+  .hero h1 .w{ display:block; animation:wipe .62s cubic-bezier(.16,1,.3,1) both; }
+  .hero h1 .w:nth-child(1){ animation-delay:.18s; }
+  .hero h1 .w:nth-child(2){ animation-delay:.32s; }
+  @keyframes wipe{
+    from{ clip-path:inset(0 100% 0 0); }
+    to{ clip-path:inset(0 0 0 0); }
+  }
+
+  /* (4) Everything else in the first screen steps up behind it. */
+  .hero .lbl{ animation:boot-up .5s steps(4,end) .06s both; }
+  .hero__lede{ animation:boot-up .5s cubic-bezier(.22,1,.36,1) .46s both; }
+  .hero__cta{ animation:boot-up .5s cubic-bezier(.22,1,.36,1) .56s both; }
+  .tele > div{ animation:boot-up .45s cubic-bezier(.22,1,.36,1) both; }
+  .tele > div:nth-child(1){ animation-delay:.62s; }
+  .tele > div:nth-child(2){ animation-delay:.70s; }
+  .tele > div:nth-child(3){ animation-delay:.78s; }
+  .tele > div:nth-child(4){ animation-delay:.86s; }
+  @keyframes boot-fade{ from{ opacity:0; } to{ opacity:1; } }
+  @keyframes boot-up{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+
+  /* (5) Scroll reveals. Native scroll-driven where supported;
+         the JS fallback below mirrors it for everything else. */
+  @supports (animation-timeline: view()){
+    /* Range is entry-relative only. Mixing `entry` with `cover` resolves
+       against different lengths, which left blocks stuck part-faded while
+       fully on screen. entry 0%→90% finishes before the block is fully in. */
+    .rv{
+      animation:rv-in linear both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 90%;
+    }
+    .sec__hd .rule{
+      animation:rule-grow linear both;
+      animation-timeline:view();
+      animation-range:entry 10% entry 95%;
+    }
+    @keyframes rule-grow{ from{ transform:scaleX(0); transform-origin:0 50%; } to{ transform:scaleX(1); } }
+  }
+  @keyframes rv-in{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
+
+  /* JS-fallback classes (only applied when view() is unsupported). */
+  .rv-hide{ opacity:0; transform:translateY(16px); }
+  .rv-show{ opacity:1; transform:none; transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1); }
 }
+
+/* ── Hover: snaps, never eases into a glow ─────────────────── */
+.unit{ transition:background .12s linear; }
+.unit:hover{ background:#121412; }
+.unit__go{ position:relative; }
+.unit__go::after{
+  content:''; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+  background:var(--fg); transform:scaleX(0); transform-origin:0 50%;
+  transition:transform .18s cubic-bezier(.22,1,.36,1);
+}
+.unit__go:hover::after{ transform:scaleX(1); }
+.lab article, .svc article{ transition:background .12s linear, border-color .12s linear; }
+.lab article:hover, .svc article:hover{ background:#191b18; }
+.tags span{ transition:border-color .12s linear, color .12s linear; }
+.lab article:hover .tags span{ border-color:var(--signal-d); color:var(--signal); }
+.btn:active, .unit__go:active{ transform:translateY(1px); }
+.hud__nav a::after{
+  content:''; position:absolute; left:0; right:0; bottom:-2px; height:1px;
+  background:var(--signal); transform:scaleX(0); transform-origin:0 50%;
+  transition:transform .18s cubic-bezier(.22,1,.36,1);
+}
+.hud__nav a:hover::after{ transform:scaleX(1); }
+.faq summary{ transition:color .12s linear; }
+.faq summary::after{ transition:color .12s linear; }
+.caps li:hover{ outline:1px solid var(--signal-d); outline-offset:-1px; }
+
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *,*::before,*::after{ animation:none !important; transition-duration:.01ms !important; }
+  .sweep{ display:none; }
+  .hud::after{ display:none; }
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="progress" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+<div class="sweep" aria-hidden="true"></div>
 
-<header class="nav">
-  <div class="shell nav__in">
-    <a class="brand" href="#top"><span class="brand__mark" aria-hidden="true">OJ</span>oakljen<span style="color:var(--accent)">.com</span></a>
-    <ul class="nav__links">
-      <li><a href="#about" data-index-link>About</a></li>
-      <li><a href="#work" data-index-link>Work</a></li>
-      <li><a href="#experience" data-index-link>Experience</a></li>
-      <li><a href="#consulting" data-index-link>Consulting</a></li>
-      <li><a href="#faq" data-index-link>FAQ</a></li>
-    </ul>
-    <a class="btn btn--primary" href="mailto:enquirys@oakljen.com">Get in touch</a>
+<header class="hud">
+  <div class="gut hud__in">
+    <a class="hud__id" href="#top">OAKLJEN.COM<sup>®</sup></a>
+    <nav class="hud__nav" aria-label="Sections">
+      <a href="#about" data-index-link>About</a>
+      <a href="#work" data-index-link>Work</a>
+      <a href="#homelab" data-index-link>Homelab</a>
+      <a href="#experience" data-index-link>Experience</a>
+      <a href="#consulting" data-index-link>Consulting</a>
+      <a href="#faq" data-index-link>FAQ</a>
+    </nav>
+    <p class="hud__st"><span class="hud__dot" aria-hidden="true"></span>Available</p>
   </div>
 </header>
 
 <main id="main">
-<section class="hero" id="top">
-  <div class="mesh" aria-hidden="true"></div>
-  <div class="shell">
-    <div class="hero__in">
-      <p class="status"><span class="status__dot" aria-hidden="true"></span>Sydney · available for new consulting clients</p>
-      <h1>Oakley Jenke. I build things that <em>actually work</em>.</h1>
-      <p class="hero__sub">IT &amp; customer support by day, automation tinkerer and IT consultant on the side, and someone who can't stop self-hosting things on weekends. If you're trying to work out whether I'm worth hiring — <strong>this page is basically my case for it</strong>.</p>
+<section class="gut hero" id="top">
+  <p class="lbl">Sydney / AU &nbsp;//&nbsp; IT support · automation · networks</p>
+  <div class="hero__grid">
+    <div>
+      <h1><span class="w">Oakley</span><span class="w">Jenke</span></h1>
+      <p class="hero__lede">I build and run the things I'd want to use. Two live products, a homelab that doubles as a lab, and a day job being the person tickets get escalated to. If you're working out whether I'm worth hiring — <b>the work below is the case for it</b>.</p>
       <div class="hero__cta">
-        <a class="btn btn--primary btn--lg" href="mailto:enquirys@oakljen.com">Get in touch</a>
-        <a class="btn btn--ghost btn--lg" href="#work">See what I've built</a>
+        <a class="btn btn--solid" href="#work">See the work</a>
+        <a class="btn" href="mailto:enquirys@oakljen.com">Get in touch</a>
       </div>
     </div>
-    <dl class="factrail">
-      <div><dt>Based</dt><dd>Sydney, AU — remote &amp; on-site</dd></div>
-      <div><dt>Currently</dt><dd>IT &amp; Customer Support, nationwide company</dd></div>
-      <div><dt>Studying</dt><dd>Computer Science, Western Sydney University</dd></div>
-      <div><dt>Shipped</dt><dd>FilmKit (beta) &amp; TrainyTracker (live)</dd></div>
-    </dl>
+    <figure class="portrait">
+      <img src="media/profile.jpg" width="1600" height="1067"
+           alt="Oakley Jenke, arms folded, lit from one side against a black background."
+           fetchpriority="high" decoding="async">
+      <figcaption><span>Oakley Jenke</span><span>Sydney</span></figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="band" id="about" aria-labelledby="about-h">
-  <div class="shell">
-    <div class="shead reveal">
-      <span class="shead__n" aria-hidden="true">01</span>
-      <h2 id="about-h" class="lines">
-        <span class="line"><span>About me</span></span>
-      </h2>
-      <span class="shead__rule" aria-hidden="true"></span>
+<dl class="tele">
+  <div><dt>Based</dt><dd>Sydney, AU — remote &amp; on-site</dd></div>
+  <div><dt>Currently</dt><dd>IT &amp; Customer Support, nationwide</dd></div>
+  <div><dt>Studying</dt><dd>Computer Science, WSU</dd></div>
+  <div><dt>Shipped</dt><dd>FilmKit (beta), TrainyTracker (live)</dd></div>
+</dl>
+
+<section class="gut sec" id="work" aria-labelledby="work-h">
+  <div class="sec__hd rv">
+    <span class="sec__ref">[ 01 / WORK ]</span>
+    <h2 id="work-h">Selected work</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p class="sec__intro rv">Two products I designed, built and shipped on my own. Both are live — the captures below are the real sites, not mockups.</p>
+
+  <article class="proj rv" aria-labelledby="p-filmkit">
+    <div class="plate">
+      <p class="plate__bar"><b>FIG 01</b><span>filmkit.studio</span><span>Live capture</span></p>
+      <img src="media/filmkit.jpg" width="2160" height="1200" loading="lazy" decoding="async"
+           alt="The FilmKit homepage: the headline &quot;Send the final cut. Not another link.&quot; set over a cream background, with delivery-link cards scattered behind it.">
     </div>
-    <div class="about">
-      <div class="about__body measure reveal">
-        <p>I work IT and customer support for a nationwide company. Officially I'm on the support desk, but I'm usually the one people escalate to when something actually needs fixing — I've ended up the most knowledgeable person on the team about how the platform works under the hood.</p>
-        <p>Outside of work, the same problem-solving turns into a hobby — pointed at my own homelab instead of someone else's spreadsheets.</p>
-        <p>I studied Computer Science at Western Sydney University, and I've spent the years since turning that into practical skills: dashboards that replace hours of manual copy-pasting, networks that don't fall over, and the occasional vintage rotary phone that now runs on SIP.</p>
-        <p>I like fixing things properly the first time, explaining what I did in plain English, and not disappearing once the invoice is sent.</p>
+    <div class="proj__meta">
+      <div>
+        <h3 id="p-filmkit">FilmKit</h3>
+        <span class="proj__id">UNIT 01 &nbsp;//&nbsp; SaaS · solo build</span>
+        <div class="proj__side">
+          <span class="st">Beta</span>
+          <a class="unit__go" href="https://filmkit.studio" rel="noopener">filmkit.studio &rarr;</a>
+        </div>
       </div>
-      <ul class="pillars reveal">
-        <li>
-          <h3>Live products, real users</h3>
-          <p>TrainyTracker and FilmKit aren't internal tools — people actually use them.</p>
-        </li>
-        <li>
-          <h3>Plain-language explanations</h3>
-          <p>You'll know what changed and why. No vague invoices.</p>
-        </li>
-        <li>
-          <h3>Fixes it if it breaks</h3>
-          <p>At work or on my own projects. My name's on it either way.</p>
-        </li>
+      <div class="proj__body">
+        <p class="lede">Studio management for video production teams who are currently duct-taping Drive, email and spreadsheets together.</p>
+        <p>Delivery, revisions, client sign-off and invoicing usually live in four different places, and the handoff between them is where a production loses a week. FilmKit puts the whole chain on one job record, so a client's "can we see v3 again?" stops being an archaeology dig through a shared inbox.</p>
+        <dl class="spec">
+          <div><dt>Delivery</dt><dd><b>Versions stay attached to the job</b> instead of the thread they were emailed in.</dd></div>
+          <div><dt>Sign-off</dt><dd><b>Approval is a recorded action</b>, not someone saying "yep looks good" on a call.</dd></div>
+          <div><dt>Invoicing</dt><dd><b>Billing hangs off the same job record</b>, so it doesn't get re-typed.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <article class="proj rv" aria-labelledby="p-trainy">
+    <div class="shots">
+      <div class="plate">
+        <p class="plate__bar"><b>FIG 02</b><span>trainytracker.com</span><span>Live capture</span></p>
+        <img src="media/trainytracker-home.jpg" width="2160" height="990" loading="lazy" decoding="async"
+             alt="The TrainyTracker homepage: the headline &quot;Track Sydney &amp; Victoria trains in real time&quot; beside a dark preview of the live map, with counters reading 429 trains in service and a 30-second refresh.">
+      </div>
+      <div class="plate plate--tall">
+        <p class="plate__bar"><b>FIG 03</b><span>/map on a phone</span></p>
+        <img src="media/trainytracker-mobile.jpg" width="828" height="1720" loading="lazy" decoding="async"
+             alt="The live map at phone width: the Sydney network covered in orange train markers — the view you'd actually use standing on a platform.">
+      </div>
+    </div>
+    <div class="proj__meta">
+      <div>
+        <h3 id="p-trainy">TrainyTracker</h3>
+        <span class="proj__id">UNIT 02 &nbsp;//&nbsp; PWA · realtime</span>
+        <div class="proj__side">
+          <span class="st">Live</span>
+          <a class="unit__go" href="https://trainytracker.com" rel="noopener">trainytracker.com &rarr;</a>
+        </div>
+      </div>
+      <div class="proj__body">
+        <p class="lede">Real-time train tracking across NSW &amp; Victoria, built for the phone that's already in your hand on the platform.</p>
+        <p>Live positions, platform info and timings, refreshed every 30 seconds across three networks. It's an installable PWA rather than a store app because the moment you need it is the moment you're standing on a cold platform wondering whether the 7:42 exists — that shouldn't require a download.</p>
+        <dl class="spec">
+          <div><dt>Positions</dt><dd><b>Where the train is now</b>, not where the timetable says it should be.</dd></div>
+          <div><dt>Timings</dt><dd><b>Platform and departure</b> — the two things you check before you run.</dd></div>
+          <div><dt>Install</dt><dd><b>Add to home screen</b>, works like an app, no store listing.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="gut sec" id="homelab" aria-labelledby="lab-h">
+  <div class="sec__hd rv">
+    <span class="sec__ref">[ 02 / HOMELAB ]</span>
+    <h2 id="lab-h">The homelab</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p class="sec__intro rv">Nobody asked for any of these. That's sort of the point — this is where the practice happens.</p>
+  <div class="lab rv">
+    <article>
+      <h3>Self-hosted infrastructure</h3>
+      <p>oakljen.com runs on Cloudflare in front of Oracle Cloud instances, with a status page and services behind it. If this page loads, the setup is working.</p>
+      <div class="tags"><span>Cloudflare</span><span>OCI</span><span>Linux</span></div>
+    </article>
+    <article>
+      <h3>Rotary-Pi &amp; VoIP</h3>
+      <p>A personal Asterisk PBX that turns vintage GPO 746 rotary phones into SIP extensions — baresip, GPIO bell drivers, and a bridge into Discord audio. The bell is mechanical. It is very loud.</p>
+      <div class="tags"><span>Asterisk</span><span>Raspberry Pi</span><span>SIP</span></div>
+    </article>
+    <article>
+      <h3>OakleyNuk · Minecraft</h3>
+      <p>A Paper server with Geyser/Floodgate crossplay, plus a ScreenBlock plugin I wrote that renders live webcam video as in-game multiblock screens.</p>
+      <div class="tags"><span>Paper</span><span>Geyser</span><span>Java</span></div>
+    </article>
+    <article>
+      <h3>Home automation</h3>
+      <p>Home Assistant wired to Amazon Alexa through a custom AWS Lambda smart-home skill, so the house answers to something I control rather than someone else's cloud.</p>
+      <div class="tags"><span>Home Assistant</span><span>AWS Lambda</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="gut sec" id="about" aria-labelledby="about-h">
+  <div class="sec__hd rv">
+    <span class="sec__ref">[ 03 / ABOUT ]</span>
+    <h2 id="about-h">About me</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <div class="about rv">
+    <div class="about__body">
+      <p>I work IT and customer support for a nationwide company. Officially I'm on the support desk, but I'm usually the one people escalate to when something actually needs fixing — I've ended up the most knowledgeable person on the team about how the platform works under the hood.</p>
+      <p>Outside of work, the same problem-solving turns into a hobby — pointed at my own homelab instead of someone else's spreadsheets.</p>
+      <p>I studied Computer Science at Western Sydney University, and I've spent the years since turning that into practical skills: dashboards that replace hours of manual copy-pasting, networks that don't fall over, and the occasional vintage rotary phone that now runs on SIP.</p>
+      <p>I like fixing things properly the first time, explaining what I did in plain English, and not disappearing once the invoice is sent.</p>
+    </div>
+    <ul class="pill">
+      <li>
+        <h3>Live products, real users</h3>
+        <p>TrainyTracker and FilmKit aren't internal tools — people actually use them.</p>
+      </li>
+      <li>
+        <h3>Plain-language explanations</h3>
+        <p>You'll know what changed and why. No vague invoices.</p>
+      </li>
+      <li>
+        <h3>Fixes it if it breaks</h3>
+        <p>At work or on my own projects. My name's on it either way.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="gut sec" id="experience" aria-labelledby="xp-h">
+  <div class="sec__hd rv">
+    <span class="sec__ref">[ 04 / RECORD ]</span>
+    <h2 id="xp-h">Experience</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p class="sec__intro rv">The short version of my resume.</p>
+  <div class="xp rv">
+    <p class="xp__when">Current</p>
+    <div>
+      <h3>IT &amp; Customer Support Agent</h3>
+      <p class="xp__org">Workplace compliance platform · nationwide company</p>
+      <ul>
+        <li>First contact for tickets and client email on a compliance and induction platform used nationwide.</li>
+        <li>The team's escalation point for real troubleshooting rather than script-following.</li>
+        <li>Built Power BI dashboards from support and telephony data, with DST-aware AEST handling and Erlang C staffing models.</li>
+        <li>Cloudflare Workers, Power Automate flows and Python sync scripts feeding SharePoint-hosted reporting.</li>
+        <li>Shipped an internal Chrome extension served through a Cloudflare Worker.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="xp rv">
+    <p class="xp__when">Education</p>
+    <div>
+      <h3>Bachelor of Computer Science</h3>
+      <p class="xp__org">Western Sydney University</p>
+      <ul>
+        <li>Discrete mathematics, combinatorics and logic.</li>
+        <li>Systems programming in C — Unix syscalls and low-level I/O.</li>
+        <li>Statistics and decision making.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="band band--warm" id="work" aria-labelledby="work-h">
-  <div class="shell">
-    <div class="shead reveal">
-      <span class="shead__n" aria-hidden="true">02</span>
-      <h2 id="work-h" class="lines">
-        <span class="line"><span>Things I've built</span></span>
-      </h2>
-      <span class="shead__rule" aria-hidden="true"></span>
-    </div>
-    <p class="sintro reveal">Real products I designed and shipped on my own, plus the homelab experiments I do for fun.</p>
-
-    <article class="case reveal" aria-labelledby="c-filmkit">
-      <div class="case__body">
-        <p class="case__tag">Featured · Beta · SaaS</p>
-        <h3 id="c-filmkit">FilmKit</h3>
-        <p class="lede">Studio management for video production teams who are currently duct-taping Drive, email and spreadsheets together.</p>
-        <p>Delivery, revisions, client sign-off and invoicing usually live in four different places, and the handoff between them is where a production loses a week. FilmKit puts the whole chain in one place so a client's "can we see v3 again?" doesn't turn into an archaeology dig through a shared inbox.</p>
-        <ul>
-          <li><strong>Delivery &amp; revisions</strong> — versions stay attached to the job instead of the thread they were emailed in.</li>
-          <li><strong>Client sign-off</strong> — approval is a recorded action, not someone saying "yep looks good" on a call.</li>
-          <li><strong>Invoicing</strong> — billing hangs off the same job record, so it doesn't get re-typed.</li>
-        </ul>
-        <ul class="stack">
-          <li><span class="chip">SaaS</span></li><li><span class="chip">Web app</span></li><li><span class="chip">Solo build</span></li>
-        </ul>
-        <a class="btn btn--primary" href="https://filmkit.studio" rel="noopener">Visit filmkit.studio</a>
-      </div>
-      <div class="case__media">
-        <div class="mock" role="img" aria-label="Illustration of the FilmKit job view: a production job with three delivery versions and their approval status.">
-          <p class="mock__bar"><span class="mock__dot" aria-hidden="true"></span><span class="mock__dot" aria-hidden="true"></span><span class="mock__dot" aria-hidden="true"></span>&nbsp;filmkit.studio / jobs / spring-campaign</p>
-          <p class="mock__row"><b>Spring campaign — cut v3</b><span class="mock__pill">Awaiting sign-off</span></p>
-          <p class="mock__row"><b>Spring campaign — cut v2</b><span>Approved 12 Mar</span></p>
-          <p class="mock__row"><b>Spring campaign — cut v1</b><span>Superseded</span></p>
-          <p class="mock__fill">invoice drafts from the same job record</p>
-        </div>
-      </div>
+<section class="gut sec" id="consulting" aria-labelledby="con-h">
+  <div class="sec__hd rv">
+    <span class="sec__ref">[ 05 / SERVICES ]</span>
+    <h2 id="con-h">Hire me for IT consulting</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p class="sec__intro rv">Outside of the day-to-day, I take on IT consulting work directly. You don't need to know what a "reverse proxy" is to work with me — tell me what's broken or slow, and I'll explain what's going on in plain English before I touch anything.</p>
+  <div class="svc rv">
+    <article>
+      <h3>Troubleshooting &amp; support</h3>
+      <p>Slow machines, printers that won't, Wi-Fi dead zones, and the recurring problem nobody's got to the bottom of.</p>
     </article>
-
-    <article class="case case--pink reveal" aria-labelledby="c-trainy">
-      <div class="case__body">
-        <p class="case__tag">Featured · Live · PWA</p>
-        <h3 id="c-trainy">TrainyTracker</h3>
-        <p class="lede">Real-time train tracking across NSW &amp; Victoria, built for the phone that's already in your hand on the platform.</p>
-        <p>Live positions, platform info and timings. It's an installable PWA rather than a store app because the moment you need it is the moment you're standing on a cold platform wondering whether the 7:42 exists — that shouldn't require a download.</p>
-        <ul>
-          <li><strong>Live positions</strong> — where the train is now, not where the timetable says it should be.</li>
-          <li><strong>Platform &amp; timings</strong> — the two things you actually check before you run.</li>
-          <li><strong>Installable</strong> — add to home screen, works like an app, no store listing.</li>
-        </ul>
-        <ul class="stack">
-          <li><span class="chip">PWA</span></li><li><span class="chip">Realtime data</span></li><li><span class="chip">NSW + VIC</span></li>
-        </ul>
-        <a class="btn btn--primary" href="https://trainytracker.com" rel="noopener" style="background:var(--accent-3); box-shadow:0 6px 18px rgba(194,24,91,.28)">Visit trainytracker.com</a>
-      </div>
-      <div class="case__media">
-        <div class="mock mock--pink" role="img" aria-label="Illustration of the TrainyTracker departures view showing three services with live platform and delay information.">
-          <p class="mock__bar"><span class="mock__dot" aria-hidden="true"></span>&nbsp;Central → Parramatta · live</p>
-          <p class="mock__row"><b>T1 Western · 7:42</b><span class="mock__pill">Plat 18 · on time</span></p>
-          <p class="mock__row"><b>T2 Inner West · 7:48</b><span>Plat 21 · +3 min</span></p>
-          <p class="mock__row"><b>T1 Western · 7:56</b><span>Plat 18 · on time</span></p>
-          <p class="mock__fill">live positions update as you watch</p>
-        </div>
-      </div>
+    <article>
+      <h3>Automation &amp; reporting</h3>
+      <p>Power BI dashboards and Power Automate or Python flows, replacing the weekly copy-paste ritual.</p>
+    </article>
+    <article>
+      <h3>Networks &amp; setup</h3>
+      <p>A new office, site or home network designed and set up — and documented, so the next person isn't guessing.</p>
+    </article>
+    <article>
+      <h3>Backups &amp; infrastructure</h3>
+      <p>Self-hosted or cloud backup, set up once and left running.</p>
     </article>
   </div>
+  <ol class="steps rv">
+    <li>
+      <span class="steps__n">STEP 01</span>
+      <h3>Tell me what's wrong</h3>
+      <p>A call or an email. No jargon required, and no need to diagnose it yourself first.</p>
+    </li>
+    <li>
+      <span class="steps__n">STEP 02</span>
+      <h3>I quote you straight</h3>
+      <p>Plain-English diagnosis, scope and cost, before any work starts.</p>
+    </li>
+    <li>
+      <span class="steps__n">STEP 03</span>
+      <h3>I fix it and stick around</h3>
+      <p>Notes on what changed, and I'm still reachable after the invoice.</p>
+    </li>
+  </ol>
 </section>
 
-<section class="band" id="homelab" aria-labelledby="lab-h">
-  <div class="shell">
-    <div class="shead reveal">
-      <span class="shead__n" aria-hidden="true">03</span>
-      <h2 id="lab-h">The homelab</h2>
-      <span class="shead__rule" aria-hidden="true"></span>
-    </div>
-    <p class="sintro reveal">Nobody asked for any of these. That's sort of the point — this is where the practice happens.</p>
-    <div class="lab">
-      <article class="reveal">
-        <h3>Self-hosted infrastructure</h3>
-        <p>oakljen.com runs on Cloudflare in front of Oracle Cloud instances, with a status page and services behind it. If this page loads, the setup is working.</p>
-        <ul class="stack"><li><span class="chip">Cloudflare</span></li><li><span class="chip">OCI</span></li><li><span class="chip">Linux</span></li></ul>
-      </article>
-      <article class="reveal">
-        <h3>Rotary-Pi &amp; VoIP</h3>
-        <p>A personal Asterisk PBX that turns vintage GPO 746 rotary phones into SIP extensions — baresip, GPIO bell drivers, and a bridge into Discord audio. The bell is mechanical. It is very loud.</p>
-        <ul class="stack"><li><span class="chip">Asterisk</span></li><li><span class="chip">Raspberry Pi</span></li><li><span class="chip">SIP</span></li></ul>
-      </article>
-      <article class="reveal">
-        <h3>OakleyNuk · Minecraft</h3>
-        <p>A Paper server with Geyser/Floodgate crossplay, plus a ScreenBlock plugin I wrote that renders live webcam video as in-game multiblock screens.</p>
-        <ul class="stack"><li><span class="chip">Paper</span></li><li><span class="chip">Geyser</span></li><li><span class="chip">Java</span></li></ul>
-      </article>
-      <article class="reveal">
-        <h3>Home automation</h3>
-        <p>Home Assistant wired to Amazon Alexa through a custom AWS Lambda smart-home skill, so the house answers to something I control rather than someone else's cloud.</p>
-        <ul class="stack"><li><span class="chip">Home Assistant</span></li><li><span class="chip">AWS Lambda</span></li></ul>
-      </article>
-    </div>
+<section class="gut sec" id="skills" aria-labelledby="sk-h">
+  <div class="sec__hd rv">
+    <span class="sec__ref">[ 06 / CAPABILITY ]</span>
+    <h2 id="sk-h">Skills &amp; tools</h2>
+    <span class="rule" aria-hidden="true"></span>
   </div>
+  <ul class="caps rv">
+    <li>Python</li><li>C</li><li>R</li><li>SQL / DAX</li><li>HTML / CSS / JS</li>
+    <li>Flask</li><li>Kotlin</li><li>Cloudflare Workers</li><li>Power BI</li>
+    <li>Power Automate</li><li>Linux CLI</li>
+  </ul>
 </section>
 
-<section class="band band--warm" id="experience" aria-labelledby="xp-h">
-  <div class="shell">
-    <div class="shead reveal">
-      <span class="shead__n" aria-hidden="true">04</span>
-      <h2 id="xp-h">Experience</h2>
-      <span class="shead__rule" aria-hidden="true"></span>
-    </div>
-    <p class="sintro reveal">The short version of my resume.</p>
-    <div class="xp reveal">
-      <p class="xp__when">Current</p>
-      <div>
-        <h3>IT &amp; Customer Support Agent</h3>
-        <p class="xp__org">Workplace compliance platform · nationwide company</p>
-        <ul>
-          <li>First contact for tickets and client email on a compliance and induction platform used nationwide.</li>
-          <li>The team's escalation point for real troubleshooting rather than script-following.</li>
-          <li>Built Power BI dashboards from support and telephony data, with DST-aware AEST handling and Erlang C staffing models.</li>
-          <li>Cloudflare Workers, Power Automate flows and Python sync scripts feeding SharePoint-hosted reporting.</li>
-          <li>Shipped an internal Chrome extension served through a Cloudflare Worker.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="xp reveal">
-      <p class="xp__when">Education</p>
-      <div>
-        <h3>Bachelor of Computer Science</h3>
-        <p class="xp__org">Western Sydney University</p>
-        <ul>
-          <li>Discrete mathematics, combinatorics and logic.</li>
-          <li>Systems programming in C — Unix syscalls and low-level I/O.</li>
-          <li>Statistics and decision making.</li>
-        </ul>
-      </div>
-    </div>
+<section class="gut sec" id="faq" aria-labelledby="faq-h">
+  <div class="sec__hd rv">
+    <span class="sec__ref">[ 07 / BEFORE YOU EMAIL ]</span>
+    <h2 id="faq-h">Common questions</h2>
+    <span class="rule" aria-hidden="true"></span>
   </div>
-</section>
-
-<section class="band" id="consulting" aria-labelledby="con-h">
-  <div class="shell">
-    <div class="shead reveal">
-      <span class="shead__n" aria-hidden="true">05</span>
-      <h2 id="con-h" class="lines">
-        <span class="line"><span>Hire me for IT consulting</span></span>
-      </h2>
-      <span class="shead__rule" aria-hidden="true"></span>
-    </div>
-    <p class="sintro reveal">Outside of the day-to-day, I take on IT consulting work directly. You don't need to know what a "reverse proxy" is to work with me — tell me what's broken or slow, and I'll explain what's going on in plain English before I touch anything.</p>
-    <div class="svc reveal">
-      <article>
-        <h3>Troubleshooting &amp; support</h3>
-        <p>Slow machines, printers that won't, Wi-Fi dead zones, and the recurring problem nobody's got to the bottom of.</p>
-      </article>
-      <article>
-        <h3>Automation &amp; reporting</h3>
-        <p>Power BI dashboards and Power Automate or Python flows, replacing the weekly copy-paste ritual.</p>
-      </article>
-      <article>
-        <h3>Networks &amp; setup</h3>
-        <p>A new office, site or home network designed and set up — and documented, so the next person isn't guessing.</p>
-      </article>
-      <article>
-        <h3>Backups &amp; infrastructure</h3>
-        <p>Self-hosted or cloud backup, set up once and left running.</p>
-      </article>
-    </div>
-    <ol class="steps reveal">
-      <li>
-        <h3>Tell me what's wrong</h3>
-        <p>A call or an email. No jargon required, and no need to diagnose it yourself first.</p>
-      </li>
-      <li>
-        <h3>I quote you straight</h3>
-        <p>Plain-English diagnosis, scope and cost, before any work starts.</p>
-      </li>
-      <li>
-        <h3>I fix it and stick around</h3>
-        <p>Notes on what changed, and I'm still reachable after the invoice.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="band band--warm" id="skills" aria-labelledby="sk-h">
-  <div class="shell">
-    <div class="shead reveal">
-      <span class="shead__n" aria-hidden="true">06</span>
-      <h2 id="sk-h">Skills &amp; tools</h2>
-      <span class="shead__rule" aria-hidden="true"></span>
-    </div>
-    <ul class="skills reveal">
-      <li>Python</li><li>C</li><li>R</li><li>SQL / DAX</li><li>HTML / CSS / JS</li>
-      <li>Flask</li><li>Kotlin</li><li>Cloudflare Workers</li><li>Power BI</li>
-      <li>Power Automate</li><li>Linux CLI</li>
-    </ul>
-  </div>
-</section>
-
-<section class="band" id="faq" aria-labelledby="faq-h">
-  <div class="shell">
-    <div class="shead reveal">
-      <span class="shead__n" aria-hidden="true">07</span>
-      <h2 id="faq-h">Before you email me</h2>
-      <span class="shead__rule" aria-hidden="true"></span>
-    </div>
-    <div class="faq reveal">
-      <details open>
-        <summary>What does it cost?</summary>
-        <div class="faq__a"><p>There's no price list here, because I'd be making it up before I know what the job is. You tell me what's wrong, I diagnose it, and you get scope and cost in plain English before I start. If the answer is "this is a five-minute fix, don't pay me for it," I'll say that too.</p></div>
-      </details>
-      <details>
-        <summary>Do you work remote or on-site?</summary>
-        <div class="faq__a"><p>Both. I'm in Sydney, so on-site is straightforward around the city. Most reporting and automation work happens remotely anyway.</p></div>
-      </details>
-      <details>
-        <summary>What happens if it breaks again?</summary>
-        <div class="faq__a"><p>I fix it. That's the short answer. The longer one is that I leave notes on what I changed and I'm still reachable after the invoice is sent — a job isn't finished the moment I get paid.</p></div>
-      </details>
-      <details>
-        <summary>I don't know what's actually wrong. Is that a problem?</summary>
-        <div class="faq__a"><p>No — that's most of the job. "It's slow", "it keeps doing the thing", or "someone set this up in 2019 and left" are all fine starting points. Working out what's actually happening is the part you're hiring me for.</p></div>
-      </details>
-      <details>
-        <summary>Are you also looking for full-time work?</summary>
-        <div class="faq__a"><p>I'm currently in IT and customer support at a nationwide company and studying Computer Science at Western Sydney University. If you're reading this page as a hiring manager rather than a client, the same email works.</p></div>
-      </details>
-    </div>
+  <div class="faq rv">
+    <details open>
+      <summary>What does it cost?</summary>
+      <div class="faq__a"><p>There's no price list here, because I'd be making it up before I know what the job is. You tell me what's wrong, I diagnose it, and you get scope and cost in plain English before I start. If the answer is "this is a five-minute fix, don't pay me for it," I'll say that too.</p></div>
+    </details>
+    <details>
+      <summary>Do you work remote or on-site?</summary>
+      <div class="faq__a"><p>Both. I'm in Sydney, so on-site is straightforward around the city. Most reporting and automation work happens remotely anyway.</p></div>
+    </details>
+    <details>
+      <summary>What happens if it breaks again?</summary>
+      <div class="faq__a"><p>I fix it. That's the short answer. The longer one is that I leave notes on what I changed and I'm still reachable after the invoice is sent — a job isn't finished the moment I get paid.</p></div>
+    </details>
+    <details>
+      <summary>I don't know what's actually wrong. Is that a problem?</summary>
+      <div class="faq__a"><p>No — that's most of the job. "It's slow", "it keeps doing the thing", or "someone set this up in 2019 and left" are all fine starting points. Working out what's actually happening is the part you're hiring me for.</p></div>
+    </details>
+    <details>
+      <summary>Are you also looking for full-time work?</summary>
+      <div class="faq__a"><p>I'm currently in IT and customer support at a nationwide company and studying Computer Science at Western Sydney University. If you're reading this page as a hiring manager rather than a client, the same email works.</p></div>
+    </details>
   </div>
 </section>
 </main>
 
-<section class="band band--dark close" aria-labelledby="close-h">
-  <div class="close__glow" aria-hidden="true"></div>
-  <div class="shell">
-    <p class="close__prompt">oakley@sydney:~$ ./contact.sh</p>
-    <h2 id="close-h">Got a system that's held together with hope?</h2>
-    <p>A messy reporting pipeline, a network that needs sorting, something that probably shouldn't work but does — send it my way.</p>
-    <div class="close__cta">
-      <a class="btn btn--onDark btn--lg" href="mailto:enquirys@oakljen.com">enquirys@oakljen.com</a>
-      <a class="btn btn--outlineDark btn--lg" href="https://github.com/oakljen" rel="noopener">GitHub</a>
-    </div>
+<section class="gut close" aria-labelledby="close-h">
+  <p class="close__lbl">[ 08 / CONTACT ]</p>
+  <h2 id="close-h">Got a system that's held together with hope?</h2>
+  <p>A messy reporting pipeline, a network that needs sorting, something that probably shouldn't work but does — send it my way.</p>
+  <div class="close__cta">
+    <a class="btn btn--invSolid" href="mailto:enquirys@oakljen.com">enquirys@oakljen.com</a>
+    <a class="btn btn--inv" href="https://github.com/oakljen" rel="noopener">GitHub</a>
   </div>
 </section>
 
-<footer class="foot">
-  <div class="shell foot__in">
+<footer class="gut foot">
+  <div class="foot__in">
     <p>© 2026 Oakley Jenke · oakljen.com</p>
     <ul>
       <li><a href="#about">About</a></li>
@@ -721,10 +766,8 @@ section{ position:relative; }
 </footer>
 
 <script>
-/* Active section in nav — styled off aria-current so the accessible
-   state and the visual state can't drift apart. Collapsing the
-   observer root to a thin mid-viewport band makes "which section
-   am I in" resolve to exactly one answer. */
+/* Active section in the HUD nav. Styled off aria-current so the accessible
+   state and the visual state can't drift apart. */
 (function(){
   var links = {};
   document.querySelectorAll('[data-index-link]').forEach(function(a){
@@ -745,34 +788,39 @@ section{ position:relative; }
   });
 })();
 
-/* Fallback entrances where animation-timeline isn't supported.
-   Content is visible by default; this only adds the animation
-   when we know we can also remove it. */
+/* Scroll-reveal fallback where animation-timeline: view() is unsupported.
+   Content is visible by default; we only hide it once we know we can also
+   reveal it again, and a timeout guarantees nothing stays hidden. */
 (function(){
   if (CSS.supports('animation-timeline: view()')) return;
   if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
   if (!('IntersectionObserver' in window)) return;
-  var els = document.querySelectorAll('.reveal');
-  var style = document.createElement('style');
-  style.textContent = '.js-hide{opacity:0;transform:translateY(22px)}' +
-    '.js-in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}';
-  document.head.appendChild(style);
-  els.forEach(function(el){ el.classList.add('js-hide'); });
+  var els = document.querySelectorAll('.rv');
+  if (!els.length) return;
+  els.forEach(function(el){ el.classList.add('rv-hide'); });
   var io = new IntersectionObserver(function(entries, obs){
     entries.forEach(function(e){
       if (!e.isIntersecting) return;
-      e.target.classList.remove('js-hide');
-      e.target.classList.add('js-in');
+      e.target.classList.remove('rv-hide');
+      e.target.classList.add('rv-show');
       obs.unobserve(e.target);
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.04 });
   els.forEach(function(el){ io.observe(el); });
-  /* Safety net: nothing stays hidden longer than 3s, whatever happens. */
   setTimeout(function(){
-    document.querySelectorAll('.js-hide').forEach(function(el){
-      el.classList.remove('js-hide'); el.classList.add('js-in');
+    document.querySelectorAll('.rv-hide').forEach(function(el){
+      el.classList.remove('rv-hide'); el.classList.add('rv-show');
     });
   }, 3000);
+})();
+
+/* The CRT sweep is a one-shot; drop it from the DOM when it finishes so it
+   never sits over the page as an invisible fixed layer. */
+(function(){
+  var s = document.querySelector('.sweep');
+  if (!s) return;
+  s.addEventListener('animationend', function(){ s.remove(); });
+  setTimeout(function(){ if (s.isConnected) s.remove(); }, 3000);
 })();
 </script>
 </body>
