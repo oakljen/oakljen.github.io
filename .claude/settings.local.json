@@ -9,5 +9,8 @@
       "Bash(git commit *)",
       "Bash(grep *)"
     ]
-  }
+  },
+  "disabledMcpjsonServers": [
+    "supabase"
+  ]
 }
