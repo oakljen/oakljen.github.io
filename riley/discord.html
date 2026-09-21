@@ -1,0 +1,17 @@
+<h1>Riley Discord Ping</h1>
+<button id="pingButton">Ping Riley</button>
+<script>
+    document.getElementById("pingButton").addEventListener("click", function() {
+        fetch("https://nuck.oakljen.com/api/discord-ping-grease", {
+            method: "PUT"
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+        })
+        .catch(error => {
+            console.error("Error pinging Riley:", error);
+            alert("Failed to ping Riley. Please try again later.");
+        });
+    });
+</script>
