@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B2 — a home in tranquility</title>
+<meta name="description" content="B2: a white pod home on a red, quiet landscape. A scroll-driven design study.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#07080a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top" aria-label="B2 home">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17M10 1v18M1 10h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+  </a>
+  <nav aria-label="Main">
+    <a href="#top">Home</a>
+    <a href="#explore">Explore</a>
+    <a href="#inside">Inside</a>
+    <a href="#new">Pricing</a>
+  </nav>
+  <a class="pill" href="#contact">Contact</a>
+</header>
+
+<main>
+  <!-- 1 · hero: the window frame scales past the viewport as you scroll -->
+  <section class="hero" id="top">
+    <div class="hero-stick">
+      <div class="hero-bg"><img id="img-valley" src="img/valley.jpg" fetchpriority="high" alt="A red grass valley under snow-capped mountains, a white pod home on the far slope"></div>
+      <svg class="hero-frame" aria-hidden="true">
+        <defs>
+          <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#9cc8ff"/>
+            <stop offset=".5" stop-color="#3f7fd6"/>
+            <stop offset="1" stop-color="#1f4c9a"/>
+          </linearGradient>
+          <radialGradient id="shell" cx=".5" cy=".45" r=".75">
+            <stop offset="0" stop-color="#1b1f26"/>
+            <stop offset="1" stop-color="#050608"/>
+          </radialGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
+        </defs>
+        <path class="frame-fill" fill="url(#shell)" fill-rule="evenodd"/>
+        <path class="rim-glow" fill="none" stroke="#4d8fe8" stroke-width="18" filter="url(#glow)" opacity=".55"/>
+        <path class="rim" fill="none" stroke="url(#rim)" stroke-width="12"/>
+        <path class="rim-inner" fill="none" stroke="#0b0e13" stroke-width="3"/>
+      </svg>
+      <div class="hero-copy">
+        <p class="ticket"><span aria-hidden="true">✳</span> Ticket to a place you <b>haven't seen.</b></p>
+        <h1 class="split">Your new house<br>in tranquility</h1>
+        <a class="btn" href="#contact">Book a call</a>
+      </div>
+      <p class="scroll-hint" aria-hidden="true">scroll</p>
+    </div>
+  </section>
+
+  <!-- 2 · meet B2: hillside with hover tooltips -->
+  <section class="scene explore" id="explore">
+    <div class="capsule" aria-hidden="true">
+      <div class="capsule-shell">
+        <span class="vent"></span>
+        <div class="capsule-screen"><span class="split">Meet B2.</span></div>
+        <span class="vent"></span>
+        <span class="leds"><i></i><i></i><i></i></span>
+      </div>
+    </div>
+    <h2 class="sr-only">Meet B2</h2>
+    <img class="scene-img" id="img-hillside" src="img/hillside.jpg" alt="Close view of the white B2 pod resting on a crimson grass hillside beside a red acacia tree">
+    <p class="note tl">get lost in amazing<br>scenes of surrounding<br>landscape</p>
+
+    <div class="hotspot" data-mark="tree">
+      <button class="tag" type="button" aria-describedby="peek-tree">Tree animals</button>
+      <figure class="peek" id="peek-tree" role="tooltip"><img src="img/tree.jpg" loading="lazy" alt=""><figcaption>Birds nest in the red acacias</figcaption></figure>
+    </div>
+    <div class="hotspot" data-mark="pod">
+      <button class="tag" type="button" aria-describedby="peek-pod">Inside look</button>
+      <figure class="peek" id="peek-pod" role="tooltip"><img src="img/inside.jpg" loading="lazy" alt=""><figcaption>One room, one round window</figcaption></figure>
+    </div>
+    <div class="hotspot" data-mark="grass">
+      <button class="tag" type="button" aria-describedby="peek-grass">Grass species</button>
+      <figure class="peek" id="peek-grass" role="tooltip"><img src="img/flora.jpg" loading="lazy" alt=""><figcaption>Thistle-red flora, 40+ kinds</figcaption></figure>
+    </div>
+
+    <p class="note bl split">// hidden gems<br>all around you</p>
+    <span class="dots" aria-hidden="true"></span>
+  </section>
+
+  <!-- 3 · inside: one component, two states -->
+  <section class="scene inside" id="inside">
+    <div class="capsule" aria-hidden="true">
+      <div class="capsule-shell">
+        <span class="vent"></span>
+        <div class="capsule-screen"><span class="split">Inside B2 Block.</span></div>
+        <span class="vent"></span>
+        <span class="leds"><i></i><i></i><i></i></span>
+      </div>
+    </div>
+    <h2 class="sr-only">Inside B2</h2>
+    <img class="scene-img state-off" id="img-off" src="img/interior-off.jpg" loading="lazy" alt="The pod interior in daylight: padded arched walls, a bed and a round window onto the valley">
+    <img class="scene-img state-on" id="img-on" src="img/interior-on.jpg" loading="lazy" alt="">
+    <div class="lights">
+      <p class="note">// Turn lights on and<br>off with a single tap</p>
+      <button class="switch" type="button" role="switch" aria-checked="false" aria-label="Interior lights">
+        <span class="knob"></span>
+      </button>
+    </div>
+    <p class="note br">// Incredible picture<br>from any point of view</p>
+  </section>
+
+  <!-- 4 · new home: card stack scrolls through the meadow -->
+  <section class="finale" id="new">
+    <div class="finale-stick">
+      <div class="capsule" aria-hidden="true">
+        <div class="capsule-shell">
+          <span class="vent"></span>
+          <div class="capsule-screen"><span class="split">New Home.</span></div>
+          <span class="vent"></span>
+          <span class="leds"><i></i><i></i><i></i></span>
+        </div>
+      </div>
+      <img class="scene-img" id="img-meadow" src="img/meadow.jpg" loading="lazy" alt="Tall red and gold grass in front of the valley and mountains">
+      <p class="dream"><span aria-hidden="true">+</span> From dream to live</p>
+      <h2 class="flank left">New<br>For You</h2>
+      <p class="flank right" aria-hidden="true">Home<br>With B2</p>
+      <div class="stack">
+        <article class="card"><img src="img/bird.jpg" loading="lazy" alt="A small orange bird on a branch"><h3>Rare<br>species</h3><p>all you see and don't see<br>is part of hidden ecosystem</p></article>
+        <article class="card"><img src="img/flora.jpg" loading="lazy" alt="A spiky red thistle in close-up"><h3>Red<br>flora</h3><p>forty kinds of grass,<br>none of them green</p></article>
+        <article class="card"><img src="img/inside.jpg" loading="lazy" alt="The lit pod interior"><h3>Warm<br>nights</h3><p>a bed facing<br>the whole valley</p></article>
+        <article class="card"><img src="img/tree.jpg" loading="lazy" alt="A red acacia tree on the hill"><h3>Quiet<br>neighbours</h3><p>the nearest pod is<br>two hills away</p></article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="foot-row">
+    <p class="foot-big split">Book a call.<br>Bring nothing.</p>
+    <a class="btn" href="mailto:enquirys@oakljen.com?subject=B2">enquirys@oakljen.com</a>
+  </div>
+  <div class="foot-row small">
+    <p>B2 is a fictional design study. Layout and interactions after Marina Budarina's Framer build (@marina_uiux). Every image here is painted in code, no photos.</p>
+    <a href="/">← oakljen.com</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

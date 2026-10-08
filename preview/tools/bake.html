@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>B2 scene bake</title>
+<style>body{background:#111;color:#ddd;font:13px ui-monospace,monospace;padding:20px}</style>
+</head>
+<body>
+<p>Bakes the procedural scenes in scenes.js into preview/img/*.jpg.
+Needs a local server that accepts PUT to /preview/img/ — GitHub Pages can't run this.</p>
+<pre id="log"></pre>
+<script src="scenes.js"></script>
+<script>
+const log = m => (document.getElementById('log').textContent += m + '\n');
+const put = (name, c, q = 0.84) => new Promise(res => c.toBlob(async b => {
+  const r = await fetch('/preview/img/' + name, { method: 'PUT', body: b });
+  log(`${name} ${c.width}×${c.height} ${(b.size / 1024) | 0}KB → ${r.status}`);
+  res();
+}, 'image/jpeg', q));
+
+async function bake() {
+  const W = 2000, H = 1250;
+  const valley = Scenes.valley(W, H);
+  await put('valley.jpg', valley);
+  const hill = Scenes.hillside(W, H);
+  await put('hillside.jpg', hill);
+  await put('tree.jpg', Scenes.crop(hill, hill.marks.tree[0], hill.marks.tree[1] + 0.05, 0.28));
+  const on = Scenes.interior(valley, true, 2000, 1250);
+  await put('interior-off.jpg', Scenes.interior(valley, false, 2000, 1250));
+  await put('interior-on.jpg', on);
+  await put('inside.jpg', Scenes.crop(on, 0.52, 0.55, 0.42));
+  await put('bird.jpg', Scenes.bird());
+  await put('flora.jpg', Scenes.flora());
+  await put('meadow.jpg', Scenes.meadow(W, H));
+  log('hillside marks: ' + JSON.stringify(hill.marks));
+  return hill.marks;
+}
+window.baked = bake();
+</script>
+</body>
+</html>
