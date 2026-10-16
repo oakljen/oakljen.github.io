@@ -118,11 +118,6 @@ body::after{
 .hero__fig{position:absolute;z-index:2;left:50%;bottom:0;
   width:min(64vh,560px);margin-left:calc(min(64vh,560px) / -2);transform-origin:50% 100%}
 .hero__fig img{width:100%;filter:drop-shadow(0 30px 40px rgb(20 25 28 / .35))}
-/* Interim: the real photo has a black backdrop, so it sits in an arch
-   window. Once a transparent cutout exists, drop --arch from the figure. */
-.hero__fig--arch{width:min(52vh,440px);margin-left:calc(min(52vh,440px) / -2)}
-.hero__fig--arch img{aspect-ratio:800/1036;object-fit:cover;border-radius:999px 999px 0 0;
-  background:#000;filter:none;box-shadow:0 0 0 10px var(--bone), 0 40px 80px -30px rgb(20 25 28 / .6)}
 
 .hero__front{position:absolute;z-index:3;left:0;right:0;bottom:clamp(20px,5vh,56px)}
 .hero__front .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
@@ -153,7 +148,6 @@ body::after{
   .hero{min-height:680px}
   .hero__name{top:12vh;font-size:30vw}
   .hero__fig{width:min(92vw,440px);margin-left:calc(min(92vw,440px) / -2)}
-  .hero__fig--arch{width:min(72vw,330px);margin-left:calc(min(72vw,330px) / -2)}
   .hero__front .wrap{flex-direction:column;align-items:stretch}
   .hero__roles{display:none}
   .hero__intro{max-width:none}
@@ -361,9 +355,9 @@ body::after{
   <p class="hero__name" data-speed=".55" data-mx="10" aria-hidden="true">
     <span data-x="-.35">Oakley</span><span class="o" data-x=".35">Jenke</span>
   </p>
-  <figure class="hero__fig hero__fig--arch" data-speed=".12" data-scale="-.08" data-mx="-6" style="margin-block:0">
-    <img src="media/oakley-hero-arch.webp" width="800" height="1036"
-         alt="Oakley Jenke standing arms-crossed in a black t-shirt, lit from the side against a dark background."
+  <figure class="hero__fig" data-speed=".12" data-scale="-.08" data-mx="-6" style="margin-block:0">
+    <img src="media/oakley-hero-cutout.webp" width="1024" height="1536"
+         alt="Oakley Jenke standing arms-crossed in a black t-shirt, lit from the side."
          fetchpriority="high" decoding="async">
   </figure>
 
